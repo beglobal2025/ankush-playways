@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 430" role="img" aria-labelledby="title desc">
+  <title id="title">Hot air balloon decoration</title>
+  <desc id="desc">A colourful toy-like hot air balloon.</desc>
+  <g>
+    <ellipse cx="150" cy="138" rx="115" ry="128" fill="#ff6b58"/>
+    <path fill="#ffdf58" d="M86 24c43 19 72 65 72 118 0 51-27 95-67 116-34-23-56-67-56-117 0-51 20-95 51-117Z"/>
+    <path fill="#33c477" d="M145 12c34 23 56 70 56 126s-22 103-56 126c-27-27-43-72-43-126s16-99 43-126Z"/>
+    <path fill="#2aa0e8" d="M213 37c32 23 52 61 52 104 0 47-25 88-62 110 19-30 30-69 30-111 0-40-7-75-20-103Z"/>
+    <path fill="none" stroke="#824a2a" stroke-width="7" d="M85 263 118 342M215 263l-33 79"/>
+    <rect x="103" y="333" width="94" height="58" rx="8" fill="#9a633d"/>
+    <path fill="#6d3f28" d="M103 356h94v35h-94z"/>
+  </g>
+</svg>

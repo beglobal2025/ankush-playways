@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: light;
+  --background: #ffffff;
+  --foreground: #18213a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  background: var(--background);
+  color: var(--foreground);
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.kid-pattern {
+  background-color: #fff1f5;
+  background-image:
+    radial-gradient(circle at 18px 18px, rgba(255, 193, 7, 0.18) 0 2px, transparent 2px),
+    radial-gradient(circle at 72px 42px, rgba(37, 99, 235, 0.12) 0 2px, transparent 2px),
+    radial-gradient(circle at 42px 78px, rgba(20, 184, 166, 0.12) 0 2px, transparent 2px);
+  background-size: 110px 110px;
+}
+
+.paper-shadow {
+  box-shadow: 0 24px 70px rgba(42, 54, 94, 0.16);
+}
+
+.hero-product-cutout {
+  filter: saturate(1.08) contrast(1.08) drop-shadow(0 34px 30px rgba(31, 87, 140, 0.25));
+}
+
+.wave-footer {
+  clip-path: ellipse(120% 100% at 50% 100%);
+}

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 560" role="img" aria-labelledby="title desc">
+  <title id="title">Blue and yellow tricycle</title>
+  <desc id="desc">A colourful toddler tricycle with blue handles and wheels.</desc>
+  <g>
+    <path fill="#ffd535" d="M216 342h282c40 0 72 32 72 72v20H144v-20c0-40 32-72 72-72Z"/>
+    <path fill="#ff634d" d="M271 293h171c22 0 40 18 40 40v26H231v-26c0-22 18-40 40-40Z"/>
+    <path fill="#2fb0ec" d="M442 157c0-25 20-45 45-45h79v58h-79c-8 0-14 6-14 14v144h-31V157Z"/>
+    <path fill="#2fb0ec" d="M333 192h164v58H333c-16 0-29-13-29-29s13-29 29-29Z"/>
+    <rect x="510" y="96" width="112" height="42" rx="21" fill="#2fb0ec"/>
+    <path fill="#2fb0ec" d="M195 276h151c18 0 33 15 33 33s-15 33-33 33H195c-18 0-33-15-33-33s15-33 33-33Z"/>
+    <circle cx="208" cy="432" r="70" fill="#1875d1"/>
+    <circle cx="208" cy="432" r="31" fill="#8bdfff"/>
+    <circle cx="520" cy="432" r="70" fill="#1875d1"/>
+    <circle cx="520" cy="432" r="31" fill="#8bdfff"/>
+    <circle cx="365" cy="432" r="50" fill="#1875d1"/>
+    <circle cx="365" cy="432" r="22" fill="#8bdfff"/>
+    <path fill="#fff" d="M171 210h144c25 0 46 21 46 46v4H125v-4c0-25 21-46 46-46Z"/>
+    <rect x="211" y="132" width="119" height="86" rx="35" fill="#2fb0ec"/>
+  </g>
+</svg>

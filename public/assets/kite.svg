@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 340" role="img" aria-labelledby="title desc">
+  <title id="title">Kite decoration</title>
+  <desc id="desc">A bright red kite with a colourful tail.</desc>
+  <g fill="none" fill-rule="evenodd">
+    <path fill="#ff6f64" d="m123 18 98 109-52 125L47 85z"/>
+    <path stroke="#fff2c7" stroke-linecap="round" stroke-width="6" d="m123 18 46 234M47 85l174 42"/>
+    <path stroke="#f4a100" stroke-dasharray="12 16" stroke-linecap="round" stroke-width="5" d="M169 252c-7 31-32 41-60 52-26 10-49 23-54 54"/>
+    <path fill="#ff6f64" d="m97 296 22 16-28 11z"/>
+    <path fill="#2aa0e8" d="m61 333 23 9-23 18z"/>
+    <path fill="#8a64d6" d="m122 284 18 18-28 5z"/>
+    <circle cx="123" cy="18" r="7" fill="#ffd533"/>
+    <circle cx="47" cy="85" r="7" fill="#ffd533"/>
+    <circle cx="221" cy="127" r="7" fill="#ffd533"/>
+    <circle cx="169" cy="252" r="7" fill="#ffd533"/>
+  </g>
+</svg>

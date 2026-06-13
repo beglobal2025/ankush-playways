@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 360" role="img" aria-labelledby="title desc">
+  <title id="title">Toy alphabet blocks</title>
+  <desc id="desc">Stacked colourful alphabet blocks.</desc>
+  <g>
+    <path fill="#1aa8c6" d="M92 42h124l52 34-124 42-52-34V42Z"/>
+    <path fill="#1689aa" d="M144 118 268 76v116l-124 43V118Z"/>
+    <path fill="#48cce0" d="M92 84l52 34v117l-52-35V84Z"/>
+    <text x="159" y="172" fill="#fff" font-family="Arial, sans-serif" font-size="72" font-weight="900">A</text>
+    <path fill="#e972aa" d="M99 151h124l52 34-124 42-52-34v-42Z"/>
+    <path fill="#ce5a96" d="M151 227 275 185v116l-124 43V227Z"/>
+    <path fill="#f09cc6" d="M99 193l52 34v117l-52-35V193Z"/>
+    <text x="166" y="281" fill="#fff" font-family="Arial, sans-serif" font-size="72" font-weight="900">B</text>
+    <path fill="#ffb52f" d="M20 218h124l52 34-124 42-52-34v-42Z"/>
+    <path fill="#f29b18" d="M72 294 196 252v80l-124 28v-66Z"/>
+    <path fill="#ffd35b" d="M20 260l52 34v66l-52-28v-72Z"/>
+    <text x="86" y="334" fill="#fff" font-family="Arial, sans-serif" font-size="72" font-weight="900">C</text>
+  </g>
+</svg>

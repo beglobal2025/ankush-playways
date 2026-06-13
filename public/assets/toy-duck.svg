@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 560" role="img" aria-labelledby="title desc">
+  <title id="title">Duck ride-on toy</title>
+  <desc id="desc">A cute yellow duck ride-on toy with green wheels.</desc>
+  <g>
+    <path fill="#ffe04e" d="M178 306c0-82 66-148 148-148h109c72 0 130 58 130 130v54c0 49-40 89-89 89H267c-49 0-89-40-89-89v-36Z"/>
+    <path fill="#ffe04e" d="M441 143c32-48 85-70 136-54 37 12 65 43 73 81l-100 23c-27 6-56-4-73-26l-36-24Z"/>
+    <path fill="#ff9736" d="M587 161l79 21-75 42c-27 15-60 4-73-24l69-39Z"/>
+    <circle cx="550" cy="137" r="14" fill="#fff"/>
+    <circle cx="554" cy="137" r="6" fill="#13223c"/>
+    <path fill="#3ad169" d="M218 407h319c27 0 49 22 49 49H169c0-27 22-49 49-49Z"/>
+    <circle cx="256" cy="448" r="54" fill="#55d96b"/>
+    <circle cx="256" cy="448" r="22" fill="#ffe04e"/>
+    <circle cx="512" cy="448" r="54" fill="#55d96b"/>
+    <circle cx="512" cy="448" r="22" fill="#ffe04e"/>
+    <rect x="279" y="247" width="150" height="72" rx="36" fill="#54d975"/>
+    <path fill="#2c9be8" d="M223 247h-56c-19 0-34-15-34-34s15-34 34-34h56c19 0 34 15 34 34s-15 34-34 34Z"/>
+  </g>
+</svg>
