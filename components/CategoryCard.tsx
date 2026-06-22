@@ -1,7 +1,32 @@
 import Link from "next/link";
 import type { Category } from "@/lib/catalogue";
 
-const accents = ["bg-[#fff1a8]", "bg-[#c7f3ec]", "bg-[#ffd6e7]", "bg-[#dcebff]", "bg-[#eadbff]", "bg-[#ffe0bd]"];
+const themes = [
+  {
+    frame: "border-[var(--sun-sky)] bg-[var(--sun-sky)]",
+    image: "bg-[var(--sun-sky-soft)]",
+    footer: "bg-[var(--sun-sky-dark)]",
+    pill: "bg-white/95 text-[var(--sun-sky-dark)]",
+  },
+  {
+    frame: "border-[var(--sun-mint-strong)] bg-[var(--sun-mint-strong)]",
+    image: "bg-[var(--sun-mint-soft)]",
+    footer: "bg-[var(--sun-mint-strong)]",
+    pill: "bg-white/95 text-[#188b6e]",
+  },
+  {
+    frame: "border-[var(--sun-yellow)] bg-[var(--sun-yellow)]",
+    image: "bg-[var(--sun-yellow-pale)]",
+    footer: "bg-[var(--sun-yellow)]",
+    pill: "bg-white/95 text-[#9a6800]",
+  },
+  {
+    frame: "border-[var(--sun-coral-strong)] bg-[var(--sun-coral-strong)]",
+    image: "bg-[var(--sun-coral-soft)]",
+    footer: "bg-[var(--sun-coral-strong)]",
+    pill: "bg-white/95 text-[var(--sun-coral-strong)]",
+  },
+];
 
 interface CategoryCardProps {
   category: Category;
@@ -9,30 +34,31 @@ interface CategoryCardProps {
 }
 
 export default function CategoryCard({ category, index = 0 }: CategoryCardProps) {
+  const theme = themes[index % themes.length];
+
   return (
-    <article className="group h-full overflow-hidden rounded-[24px] border border-sky-100 bg-white p-4 shadow-xl shadow-sky-100/70 transition hover:-translate-y-1 hover:shadow-2xl hover:shadow-sky-100">
-      <div className={`grid aspect-[4/3] place-items-center rounded-[20px] ${accents[index % accents.length]} p-4`}>
-        <img
-          src={category.image.src}
-          alt={category.image.alt}
-          className="h-full max-h-52 w-full object-contain mix-blend-multiply transition duration-300 group-hover:scale-105"
-        />
-      </div>
-      <div className="pt-5">
-        <div className="flex items-start justify-between gap-4">
-          <h3 className="text-xl font-black leading-tight text-slate-900">{category.name}</h3>
-          <span className="shrink-0 rounded-full bg-sky-50 px-3 py-1 text-xs font-black text-sky-700">
-            {category.productCount} items
-          </span>
+    <Link
+      href={`/products?category=${encodeURIComponent(category.name)}`}
+      className={`group block h-full overflow-hidden rounded-[12px] border-[5px] ${theme.frame} shadow-xl shadow-[#7ecae1]/20 transition hover:-translate-y-1 hover:shadow-2xl hover:shadow-[#7ecae1]/25 focus:outline-none focus:ring-4 focus:ring-[var(--sun-yellow-soft)]`}
+    >
+      <article className="flex h-full flex-col bg-white">
+        <div className={`grid aspect-[4/3] place-items-center ${theme.image} p-4`}>
+          <img
+            src={category.image.src}
+            alt={category.image.alt}
+            className="h-full max-h-48 w-full object-contain mix-blend-multiply transition duration-300 group-hover:scale-105"
+          />
         </div>
-        <p className="mt-3 min-h-14 text-sm font-medium leading-6 text-slate-600">{category.description}</p>
-        <Link
-          href={`/products?category=${encodeURIComponent(category.name)}`}
-          className="mt-5 inline-flex rounded-full bg-teal-500 px-5 py-3 text-sm font-black text-white shadow-lg shadow-teal-100 transition hover:bg-teal-600"
-        >
-          View Products
-        </Link>
-      </div>
-    </article>
+        <div className={`flex flex-1 flex-col p-5 text-white ${theme.footer}`}>
+          <div className="flex items-start justify-between gap-4">
+            <h3 className="text-xl font-black leading-tight text-white">{category.name}</h3>
+            <span className={`shrink-0 rounded-full px-3 py-1 text-xs font-black shadow-sm ${theme.pill}`}>
+              {category.productCount} items
+            </span>
+          </div>
+          <p className="mt-3 min-h-14 text-sm font-semibold leading-6 text-white/90">{category.description}</p>
+        </div>
+      </article>
+    </Link>
   );
 }

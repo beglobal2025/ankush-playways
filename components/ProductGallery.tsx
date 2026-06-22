@@ -15,7 +15,7 @@ export default function ProductGallery({ images, title }: ProductGalleryProps) {
 
   return (
     <div>
-      <div className="grid aspect-square place-items-center rounded-[34px] border border-sky-100 bg-white p-6 shadow-2xl shadow-sky-100">
+      <div className="grid aspect-square place-items-center rounded-[34px] border border-[var(--sun-line)] bg-white p-6 shadow-2xl shadow-[#7ecae1]/20">
         <img src={current.src} alt={current.alt} className="h-full w-full object-contain mix-blend-multiply" />
       </div>
       {safeImages.length > 1 ? (
@@ -27,7 +27,7 @@ export default function ProductGallery({ images, title }: ProductGalleryProps) {
               aria-label={`Show image ${index + 1}`}
               onClick={() => setActive(index)}
               className={`grid aspect-square place-items-center rounded-2xl border bg-white p-2 transition ${
-                active === index ? "border-sky-500 shadow-lg shadow-sky-100" : "border-sky-100"
+                active === index ? "border-[var(--sun-sky-dark)] shadow-lg shadow-[#7ecae1]/20" : "border-[var(--sun-line)]"
               }`}
             >
               <img src={image.src} alt="" className="h-full w-full object-contain mix-blend-multiply" />

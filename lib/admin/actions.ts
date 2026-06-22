@@ -1,0 +1,392 @@
+"use server";
+
+import { mkdir, writeFile } from "fs/promises";
+import { extname, join } from "path";
+import { revalidatePath } from "next/cache";
+import { redirect } from "next/navigation";
+import { prisma } from "@/lib/prisma";
+import { signInAdmin, signOutAdmin, requireAdmin } from "./auth";
+import { slugify } from "./slug";
+
+function requiredString(formData: FormData, key: string): string {
+  const value = formData.get(key);
+
+  if (typeof value !== "string" || !value.trim()) {
+    throw new Error(`${key} is required`);
+  }
+
+  return value.trim();
+}
+
+function optionalString(formData: FormData, key: string): string {
+  const value = formData.get(key);
+  return typeof value === "string" ? value.trim() : "";
+}
+
+function parsePrice(value: string): number | null {
+  if (!value) {
+    return null;
+  }
+
+  const parsed = Number(value);
+  return Number.isFinite(parsed) ? Math.round(parsed) : null;
+}
+
+function parseSpecifications(value: string) {
+  if (!value) return {};
+
+  const trimmed = value.trim();
+
+  // Try JSON first
+  if ((trimmed.startsWith("{") && trimmed.endsWith("}")) || trimmed.startsWith("[")) {
+    try {
+      return JSON.parse(trimmed);
+    } catch (e) {
+      // fall through to line parser
+    }
+  }
+
+  const obj: Record<string, any> = {};
+
+  for (const rawLine of trimmed.split(/\r?\n/)) {
+    const line = rawLine.trim();
+    if (!line) continue;
+
+    const idx = line.indexOf(":");
+    if (idx === -1) {
+      // single token — store as boolean true
+      obj[line] = true;
+      continue;
+    }
+
+    const key = line.slice(0, idx).trim();
+    let val = line.slice(idx + 1).trim();
+
+    if (val === "") {
+      obj[key] = "";
+      continue;
+    }
+
+    // parse numbers
+    if (/^-?\d+(?:\.\d+)?$/.test(val)) {
+      obj[key] = Number(val);
+      continue;
+    }
+
+    // parse booleans
+    const lower = val.toLowerCase();
+    if (lower === "true" || lower === "false") {
+      obj[key] = lower === "true";
+      continue;
+    }
+
+    obj[key] = val;
+  }
+
+  return obj;
+}
+
+function uploadedFiles(formData: FormData, key: string): File[] {
+  return formData
+    .getAll(key)
+    .filter((value): value is File => value instanceof File && value.size > 0);
+}
+
+function safeExtension(file: File): string {
+  const extension = extname(file.name).toLowerCase();
+
+  if ([".jpg", ".jpeg", ".png", ".webp", ".gif", ".avif"].includes(extension)) {
+    return extension;
+  }
+
+  if (file.type === "image/png") {
+    return ".png";
+  }
+
+  if (file.type === "image/webp") {
+    return ".webp";
+  }
+
+  return ".jpg";
+}
+
+async function saveUploadedImage(file: File, folder: string, baseName: string, index = 0): Promise<string> {
+  if (!file.type.startsWith("image/")) {
+    throw new Error("Only image files can be uploaded");
+  }
+
+  const uploadDir = join(process.cwd(), "public", "uploads", folder);
+  await mkdir(uploadDir, { recursive: true });
+
+  const filename = `${slugify(baseName) || "image"}-${Date.now()}-${index}${safeExtension(file)}`;
+  const filepath = join(uploadDir, filename);
+  const buffer = Buffer.from(await file.arrayBuffer());
+
+  await writeFile(filepath, buffer);
+
+  return `/uploads/${folder}/${filename}`;
+}
+
+async function saveOptionalImage(formData: FormData, key: string, folder: string, baseName: string): Promise<string | null> {
+  const [file] = uploadedFiles(formData, key);
+  return file ? saveUploadedImage(file, folder, baseName) : null;
+}
+
+async function parseProductImages(formData: FormData, code: string, name: string, fallbackToDefault: boolean) {
+  const files = uploadedFiles(formData, "imageFiles");
+  const sources = await Promise.all(files.map((file, index) => saveUploadedImage(file, "products", `${code}-${name}`, index)));
+  const imageSources = sources.length || fallbackToDefault ? (sources.length ? sources : ["/assets/catalog/play-slide.jpg"]) : [];
+
+  return imageSources.map((src, index) => ({
+    src,
+    alt: `${code} - ${name}`,
+    sortOrder: index,
+  }));
+}
+
+async function getOrCreateCategory(name: string) {
+  const categorySlug = slugify(name);
+
+  return prisma.category.upsert({
+    where: { slug: categorySlug },
+    update: { name },
+    create: {
+      name,
+      slug: categorySlug,
+      imageAlt: `${name} product category`,
+    },
+  });
+}
+
+export async function createCategoryAction(formData: FormData) {
+  await requireAdmin();
+
+  const name = requiredString(formData, "name");
+  const categorySlug = slugify(name);
+
+  if (!categorySlug) {
+    throw new Error("Category name must include letters or numbers");
+  }
+
+  const uploadedImageSrc = await saveOptionalImage(formData, "imageFile", "categories", categorySlug);
+  const imageAlt = optionalString(formData, "imageAlt") || `${name} product category`;
+
+  await prisma.category.upsert({
+    where: { slug: categorySlug },
+    update: {
+      description: optionalString(formData, "description"),
+      ...(uploadedImageSrc ? { imageSrc: uploadedImageSrc } : {}),
+      imageAlt,
+      name,
+    },
+    create: {
+      name,
+      slug: categorySlug,
+      description: optionalString(formData, "description"),
+      imageSrc: uploadedImageSrc ?? "",
+      imageAlt,
+    },
+  });
+
+  revalidatePath("/");
+  revalidatePath("/admin");
+  revalidatePath("/products");
+  revalidatePath("/admin/products");
+  redirect("/admin/products/new");
+}
+
+export async function featureProductAction(productId: string) {
+  await requireAdmin();
+
+  await prisma.product.update({
+    where: { id: productId },
+    data: { isFeatured: true },
+  });
+
+  revalidatePath("/");
+  revalidatePath("/products");
+  revalidatePath("/admin");
+  revalidatePath("/admin/featured");
+  revalidatePath("/admin/products");
+}
+
+export async function unfeatureProductAction(productId: string) {
+  await requireAdmin();
+
+  await prisma.product.update({
+    where: { id: productId },
+    data: { isFeatured: false },
+  });
+
+  revalidatePath("/");
+  revalidatePath("/products");
+  revalidatePath("/admin");
+  revalidatePath("/admin/featured");
+  revalidatePath("/admin/products");
+}
+
+export async function loginAction(formData: FormData) {
+  const email = requiredString(formData, "email");
+  const password = requiredString(formData, "password");
+  const didLogin = await signInAdmin(email, password);
+
+  if (!didLogin) {
+    redirect("/admin/login?error=invalid");
+  }
+
+  redirect("/admin");
+}
+
+export async function logoutAction() {
+  await signOutAdmin();
+  redirect("/admin/login");
+}
+
+export async function updateBannerImageAction(formData: FormData) {
+  await requireAdmin();
+
+  const uploadedImageSrc = await saveOptionalImage(formData, "bannerImage", "banners", "home-banner");
+
+  if (!uploadedImageSrc) {
+    throw new Error("Banner image is required");
+  }
+
+  await prisma.siteSetting.upsert({
+    where: { key: "home_banner_image" },
+    update: { value: uploadedImageSrc },
+    create: {
+      key: "home_banner_image",
+      value: uploadedImageSrc,
+    },
+  });
+
+  revalidatePath("/");
+  revalidatePath("/admin");
+  revalidatePath("/admin/banner");
+  redirect("/admin/banner");
+}
+
+export async function createProductAction(formData: FormData) {
+  await requireAdmin();
+
+  const code = requiredString(formData, "code").toUpperCase().replace(/\s+/g, "");
+  const name = requiredString(formData, "name");
+  const categoryName = requiredString(formData, "category");
+  const category = await getOrCreateCategory(categoryName);
+  const slug = `${slugify(code)}-${slugify(name)}`;
+  const images = await parseProductImages(formData, code, name, true);
+
+  await prisma.product.create({
+    data: {
+      code,
+      name,
+      slug,
+      price: parsePrice(optionalString(formData, "price")),
+      specifications: parseSpecifications(optionalString(formData, "specifications")),
+      isFeatured: optionalString(formData, "isFeatured") === "on",
+      status: optionalString(formData, "status") === "DRAFT" ? "DRAFT" : "PUBLISHED",
+      categoryId: category.id,
+      images: {
+        create: images,
+      },
+    },
+  });
+
+  revalidatePath("/");
+  revalidatePath("/products");
+  revalidatePath("/admin/products");
+  revalidatePath(`/products/${slug}`);
+  redirect("/admin/products");
+}
+
+export async function updateProductAction(productId: string, formData: FormData) {
+  await requireAdmin();
+
+  const code = requiredString(formData, "code").toUpperCase().replace(/\s+/g, "");
+  const name = requiredString(formData, "name");
+  const categoryName = requiredString(formData, "category");
+  const category = await getOrCreateCategory(categoryName);
+  const slug = `${slugify(code)}-${slugify(name)}`;
+  const uploadedImages = await parseProductImages(formData, code, name, false);
+
+  await prisma.product.update({
+    where: { id: productId },
+    data: {
+      code,
+      name,
+      slug,
+      price: parsePrice(optionalString(formData, "price")),
+      specifications: parseSpecifications(optionalString(formData, "specifications")),
+      isFeatured: optionalString(formData, "isFeatured") === "on",
+      status: optionalString(formData, "status") === "DRAFT" ? "DRAFT" : "PUBLISHED",
+      categoryId: category.id,
+      ...(uploadedImages.length
+        ? {
+            images: {
+              deleteMany: {},
+              create: uploadedImages,
+            },
+          }
+        : {}),
+    },
+  });
+
+  revalidatePath("/");
+  revalidatePath("/products");
+  revalidatePath("/admin/products");
+  revalidatePath(`/products/${slug}`);
+  redirect("/admin/products");
+}
+
+export async function deleteProductAction(productId: string) {
+  await requireAdmin();
+
+  const product = await prisma.product.findUnique({
+    where: { id: productId },
+    select: { slug: true },
+  });
+
+  await prisma.product.delete({
+    where: { id: productId },
+  });
+
+  revalidatePath("/");
+  revalidatePath("/products");
+  revalidatePath("/admin/products");
+  if (product) {
+    revalidatePath(`/products/${product.slug}`);
+  }
+}
+
+export async function deleteCategoryAction(formData: FormData) {
+  await requireAdmin();
+
+  const value = formData.get("categoryId");
+  if (typeof value !== "string" || !value) {
+    throw new Error("categoryId is required");
+  }
+
+  const category = await prisma.category.findUnique({
+    where: { id: value },
+    include: { _count: { select: { products: true } } },
+  });
+
+  if (!category) {
+    throw new Error("Category not found");
+  }
+
+  if (category._count.products > 0) {
+    throw new Error("Cannot delete category with products. Remove products first.");
+  }
+
+  await prisma.category.delete({
+    where: { id: value },
+  });
+
+  revalidatePath("/");
+  revalidatePath("/products");
+  revalidatePath("/admin");
+  revalidatePath("/admin/products");
+  revalidatePath("/admin/categories/new");
+  redirect("/admin/categories/new");
+}

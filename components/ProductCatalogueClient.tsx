@@ -62,8 +62,8 @@ export default function ProductCatalogueClient({
           ))}
         </div>
       ) : (
-        <div className="mt-10 rounded-[28px] border border-dashed border-sky-200 bg-white p-10 text-center shadow-xl shadow-sky-100">
-          <h2 className="text-2xl font-black text-sky-700">No products found</h2>
+        <div className="mt-10 rounded-[28px] border border-dashed border-[var(--sun-line)] bg-white p-10 text-center shadow-xl shadow-[#7ecae1]/20">
+          <h2 className="text-2xl font-black text-[var(--sun-ink)]">No products found</h2>
           <p className="mt-3 font-medium text-slate-600">Try another category or search term.</p>
         </div>
       )}

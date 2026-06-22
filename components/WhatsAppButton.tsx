@@ -21,7 +21,7 @@ export default function WhatsAppButton({
       <a
         href={getWhatsAppUrl(product)}
         aria-label={label}
-        className={`fixed bottom-6 right-5 z-50 grid size-16 place-items-center rounded-2xl bg-[#25d366] text-white shadow-2xl shadow-green-300 transition hover:-translate-y-1 ${className}`}
+        className={`fixed bottom-6 right-5 z-50 grid size-16 place-items-center rounded-2xl bg-[#25d366] text-white shadow-2xl shadow-[#a6e5cd]/50 transition hover:-translate-y-1 ${className}`}
       >
         <WhatsAppIcon />
       </a>
@@ -32,7 +32,7 @@ export default function WhatsAppButton({
     <a
       href={getWhatsAppUrl(product)}
       aria-label={label}
-      className={`inline-flex items-center justify-center rounded-full bg-[#25d366] px-5 py-3 text-sm font-black text-white shadow-lg shadow-green-200 transition hover:-translate-y-0.5 hover:bg-[#1fbd5b] ${className}`}
+      className={`inline-flex items-center justify-center rounded-full bg-[#25d366] px-5 py-3 text-sm font-black text-white shadow-lg shadow-[#a6e5cd]/35 transition hover:-translate-y-0.5 hover:bg-[#1fbd5b] ${className}`}
     >
       {children}
     </a>

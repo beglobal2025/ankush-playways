@@ -7,7 +7,10 @@ import SectionHeading from "@/components/SectionHeading";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
 import WhatsAppButton from "@/components/WhatsAppButton";
-import { formatPrice, getProductBySlug, getRelatedProducts, products } from "@/lib/catalogue";
+import { formatPrice } from "@/lib/catalogue";
+import { getPublishedProductBySlug, getRelatedProducts } from "@/lib/catalogue-db";
+
+export const dynamic = "force-dynamic";
 
 interface ProductPageProps {
   params: Promise<{
@@ -15,15 +18,9 @@ interface ProductPageProps {
   }>;
 }
 
-export function generateStaticParams() {
-  return products.map((product) => ({
-    slug: product.slug,
-  }));
-}
-
 export async function generateMetadata({ params }: ProductPageProps): Promise<Metadata> {
   const { slug } = await params;
-  const product = getProductBySlug(slug);
+  const product = await getPublishedProductBySlug(slug);
 
   if (!product) {
     return {
@@ -44,34 +41,34 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
 
 export default async function ProductPage({ params }: ProductPageProps) {
   const { slug } = await params;
-  const product = getProductBySlug(slug);
+  const product = await getPublishedProductBySlug(slug);
 
   if (!product) {
     notFound();
   }
 
-  const relatedProducts = getRelatedProducts(product, 4);
+  const relatedProducts = await getRelatedProducts(product, 4);
   const details = product.specifications.details ?? [];
   const extraSpecs = Object.entries(product.specifications).filter(([key]) => key !== "details");
 
   return (
-    <main className="bg-[#f8fcff]">
+    <main className="bg-[var(--sun-yellow-pale)]">
       <SiteHeader />
       <section className="px-5 pb-16 pt-32 sm:px-8">
         <div className="mx-auto max-w-7xl">
-          <Link href="/products" className="text-sm font-black text-sky-700 transition hover:text-pink-500">
+          <Link href="/products" className="text-sm font-black text-[var(--sun-ink)] transition hover:text-[var(--sun-coral-strong)]">
             Back to catalogue
           </Link>
           <div className="mt-8 grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
             <ProductGallery images={product.images} title={product.name} />
 
-            <div className="rounded-[34px] bg-white p-7 shadow-2xl shadow-sky-100 sm:p-10">
+            <div className="rounded-[34px] bg-white p-7 shadow-2xl shadow-[#7ecae1]/20 sm:p-10">
               <div className="flex flex-wrap items-center gap-3">
-                <span className="rounded-full bg-pink-50 px-4 py-2 text-sm font-black text-pink-500">{product.code}</span>
-                <span className="rounded-full bg-sky-50 px-4 py-2 text-sm font-black text-sky-700">{product.category}</span>
+                <span className="rounded-full bg-[var(--sun-coral-soft)] px-4 py-2 text-sm font-black text-[var(--sun-coral-strong)]">{product.code}</span>
+                <span className="rounded-full bg-[var(--sun-sky-soft)] px-4 py-2 text-sm font-black text-[var(--sun-ink)]">{product.category}</span>
               </div>
               <h1 className="mt-6 text-4xl font-black leading-tight text-slate-900 sm:text-5xl">{product.name}</h1>
-              <p className="mt-5 text-3xl font-black text-sky-700">{formatPrice(product.price)}</p>
+              <p className="mt-5 text-3xl font-black text-[var(--sun-ink)]">{formatPrice(product.price)}</p>
               <p className="mt-6 max-w-2xl text-base font-semibold leading-8 text-slate-600">
                 Real catalogue product from ANKUSH Playways. Enquire for availability, finish options, dispatch, and
                 institutional supply details.
@@ -80,25 +77,25 @@ export default async function ProductPage({ params }: ProductPageProps) {
                 <WhatsAppButton product={product}>Enquire on WhatsApp</WhatsAppButton>
                 <Link
                   href={`/products?category=${encodeURIComponent(product.category)}`}
-                  className="inline-flex items-center justify-center rounded-full bg-sky-600 px-6 py-3 text-sm font-black text-white shadow-lg shadow-sky-100 transition hover:bg-sky-700"
+                  className="inline-flex items-center justify-center rounded-full bg-[var(--sun-sky)] px-6 py-3 text-sm font-black text-white shadow-lg shadow-[#7ecae1]/20 transition hover:bg-[var(--sun-sky-dark)]"
                 >
                   View Similar
                 </Link>
               </div>
 
               <div className="mt-10 grid gap-4">
-                <h2 className="text-2xl font-black text-sky-800">Specifications</h2>
+                <h2 className="text-2xl font-black text-[var(--sun-ink)]">Specifications</h2>
                 {extraSpecs.length || details.length ? (
                   <div className="grid gap-3">
                     {extraSpecs.map(([key, value]) => (
-                      <div key={key} className="rounded-2xl bg-sky-50 p-4">
-                        <p className="text-xs font-black uppercase tracking-wide text-sky-500">{key}</p>
+                      <div key={key} className="rounded-2xl bg-[var(--sun-sky-soft)] p-4">
+                        <p className="text-xs font-black uppercase tracking-wide text-[var(--sun-sky-dark)]">{key}</p>
                         <p className="mt-1 font-bold text-slate-700">{Array.isArray(value) ? value.join(", ") : value}</p>
                       </div>
                     ))}
                     {details.length ? (
-                      <div className="rounded-2xl bg-[#fff8d8] p-4">
-                        <p className="text-xs font-black uppercase tracking-wide text-yellow-700">Dimensions, materials & features</p>
+                      <div className="rounded-2xl bg-[var(--sun-yellow-soft)] p-4">
+                        <p className="text-xs font-black uppercase tracking-wide text-[var(--sun-yellow)]">Dimensions, materials & features</p>
                         <ul className="mt-3 grid gap-2 text-sm font-semibold leading-6 text-slate-700">
                           {details.map((detail, index) => (
                             <li key={`${detail}-${index}`}>{detail}</li>
@@ -108,7 +105,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
                     ) : null}
                   </div>
                 ) : (
-                  <p className="rounded-2xl bg-sky-50 p-4 font-semibold text-slate-600">
+                  <p className="rounded-2xl bg-[var(--sun-sky-soft)] p-4 font-semibold text-slate-600">
                     Detailed specifications are available on request.
                   </p>
                 )}

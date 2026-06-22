@@ -2,8 +2,23 @@
 
 :root {
   color-scheme: light;
-  --background: #ffffff;
-  --foreground: #18213a;
+  --background: #fffdf6;
+  --foreground: #12394d;
+  --sun-yellow: #feb300;
+  --sun-yellow-soft: #fff4c7;
+  --sun-yellow-pale: #fff9e8;
+  --sun-coral: #fd9aa0;
+  --sun-coral-strong: #f36c78;
+  --sun-coral-soft: #fff0f1;
+  --sun-mint: #a6e5cd;
+  --sun-mint-strong: #62c9a7;
+  --sun-mint-soft: #edfbf5;
+  --sun-sky: #7ecae1;
+  --sun-sky-dark: #288db0;
+  --sun-sky-soft: #eaf8fc;
+  --sun-ink: #0b4a68;
+  --sun-line: #cdeff7;
+  --sun-shadow: rgba(126, 202, 225, 0.24);
 }
 
 * {
@@ -31,20 +46,119 @@ a {
 }
 
 .kid-pattern {
-  background-color: #fff1f5;
+  background-color: var(--sun-yellow-pale);
   background-image:
-    radial-gradient(circle at 18px 18px, rgba(255, 193, 7, 0.18) 0 2px, transparent 2px),
-    radial-gradient(circle at 72px 42px, rgba(37, 99, 235, 0.12) 0 2px, transparent 2px),
-    radial-gradient(circle at 42px 78px, rgba(20, 184, 166, 0.12) 0 2px, transparent 2px);
+    radial-gradient(circle at 18px 18px, rgba(254, 179, 0, 0.2) 0 2px, transparent 2px),
+    radial-gradient(circle at 72px 42px, rgba(253, 154, 160, 0.18) 0 2px, transparent 2px),
+    radial-gradient(circle at 42px 78px, rgba(166, 229, 205, 0.2) 0 2px, transparent 2px);
   background-size: 110px 110px;
 }
 
+.sky-kid-pattern {
+  background-color: var(--sun-sky-soft);
+  background-image:
+    radial-gradient(circle at 18px 18px, rgba(40, 141, 176, 0.14) 0 2px, transparent 2px),
+    radial-gradient(circle at 72px 42px, rgba(98, 201, 167, 0.18) 0 2px, transparent 2px),
+    radial-gradient(circle at 42px 78px, rgba(254, 179, 0, 0.16) 0 2px, transparent 2px),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.72), rgba(166, 229, 205, 0.2));
+  background-size: 110px 110px, 110px 110px, 110px 110px, 100% 100%;
+}
+
 .paper-shadow {
-  box-shadow: 0 24px 70px rgba(42, 54, 94, 0.16);
+  box-shadow: 0 24px 70px var(--sun-shadow);
 }
 
 .hero-product-cutout {
-  filter: saturate(1.08) contrast(1.08) drop-shadow(0 34px 30px rgba(31, 87, 140, 0.25));
+  filter: saturate(1.08) contrast(1.08) drop-shadow(0 34px 30px rgba(40, 141, 176, 0.23));
+}
+
+.hero-scene-coral {
+  background: radial-gradient(circle at 68% 42%, rgba(255, 255, 255, 0.78) 0 18%, transparent 34%),
+    linear-gradient(135deg, #93e4f2 0%, #dff9ff 50%, #fff0f1 100%);
+}
+
+.hero-scene-yellow {
+  background: radial-gradient(circle at 68% 42%, rgba(255, 255, 255, 0.74) 0 18%, transparent 34%),
+    linear-gradient(135deg, #93e4f2 0%, #effcff 48%, #fff4c7 100%);
+}
+
+.hero-scene-sky {
+  background: radial-gradient(circle at 68% 42%, rgba(255, 255, 255, 0.76) 0 18%, transparent 34%),
+    linear-gradient(135deg, #79d7eb 0%, #ddf8ff 55%, #edfbf5 100%);
+}
+
+.hero-scene-mint {
+  background: radial-gradient(circle at 68% 42%, rgba(255, 255, 255, 0.76) 0 18%, transparent 34%),
+    linear-gradient(135deg, #8ee6dc 0%, #e9fbfb 54%, #fff4c7 100%);
+}
+
+.hero-sign {
+  position: relative;
+  border: 3px solid rgba(11, 74, 104, 0.1);
+  border-radius: 36px 44px 34px 42px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 22px 45px rgba(40, 141, 176, 0.18);
+}
+
+.hero-sign::after {
+  position: absolute;
+  right: 16%;
+  bottom: -26px;
+  width: 64px;
+  height: 38px;
+  content: "";
+  background: rgba(255, 255, 255, 0.92);
+  clip-path: polygon(0 0, 100% 0, 42% 100%);
+}
+
+.cloud-bank {
+  background-image:
+    radial-gradient(circle at 3% 78%, rgba(255, 255, 255, 0.96) 0 38px, transparent 39px),
+    radial-gradient(circle at 13% 82%, rgba(255, 255, 255, 0.96) 0 60px, transparent 61px),
+    radial-gradient(circle at 25% 78%, rgba(255, 255, 255, 0.96) 0 46px, transparent 47px),
+    radial-gradient(circle at 41% 83%, rgba(255, 255, 255, 0.96) 0 68px, transparent 69px),
+    radial-gradient(circle at 58% 78%, rgba(255, 255, 255, 0.96) 0 46px, transparent 47px),
+    radial-gradient(circle at 74% 82%, rgba(255, 255, 255, 0.96) 0 62px, transparent 63px),
+    radial-gradient(circle at 91% 78%, rgba(255, 255, 255, 0.96) 0 48px, transparent 49px),
+    linear-gradient(to top, rgba(255, 255, 255, 0.96) 0 48%, transparent 49%);
+  background-repeat: no-repeat;
+}
+
+.banner-moon {
+  position: relative;
+  border-radius: 9999px;
+  isolation: isolate;
+}
+
+.banner-moon::before,
+.banner-moon::after {
+  position: absolute;
+  content: "";
+  pointer-events: none;
+}
+
+.banner-moon::before {
+  inset: -22px;
+  z-index: 0;
+  border-radius: 9999px;
+  background: repeating-conic-gradient(
+    from 8deg,
+    rgba(254, 179, 0, 0.86) 0deg 10deg,
+    transparent 10deg 25deg
+  );
+  transform: rotate(-8deg);
+}
+
+.banner-moon::after {
+  inset: 0;
+  z-index: 1;
+  border-radius: 9999px;
+  background:
+    radial-gradient(circle at 38% 32%, #ffe58a 0 13%, transparent 14%),
+    radial-gradient(circle at 50% 50%, #ffc21a 0 58%, #f6a900 59% 100%);
+  box-shadow:
+    0 0 0 10px rgba(254, 179, 0, 0.1),
+    0 16px 26px rgba(246, 169, 0, 0.22);
 }
 
 .wave-footer {
