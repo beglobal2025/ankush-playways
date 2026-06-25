@@ -45,8 +45,8 @@ export default function AdminHeader({
     <div className="min-h-screen bg-[#f6f9fc] text-slate-950 lg:flex">
       <aside className="border-b border-sky-100 bg-[var(--sun-ink)] text-white lg:sticky lg:top-0 lg:flex lg:h-screen lg:w-72 lg:shrink-0 lg:flex-col lg:border-b-0 lg:border-r lg:border-sky-200">
         <div className="flex items-center gap-3 px-5 py-5 lg:px-6">
-          <div className="grid h-11 w-11 shrink-0 place-items-center rounded-lg bg-white text-lg font-black text-[var(--sun-sky-dark)] shadow-sm">
-            A
+          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-white shadow-sm">
+            <img src="/assets/sunshine-logo.png" alt="ANKUSH Playways" className="h-10 w-auto object-contain" />
           </div>
           <div className="min-w-0">
             <Link href="/admin" className="block text-lg font-black leading-tight tracking-tight">

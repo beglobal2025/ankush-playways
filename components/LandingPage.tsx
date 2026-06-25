@@ -158,10 +158,28 @@ const heroSlides = [
     toySide: "center",
     decorClass: "bg-[var(--sun-yellow)]/55",
   },
+  {
+    eyebrow: "Outdoor Play",
+    title: "outdoor playway",
+    accent: "equipments",
+    description:
+      "Durable outdoor play equipment designed for bright, active, and engaging playground spaces.",
+    image: "/catalogue/outdoor/outdoor.png",
+    alt: "Outdoor playway equipments from the ANKUSH Playways catalog",
+    background: "hero-scene-sky",
+    accentColor: "text-[var(--sun-coral-strong)]",
+    ctaColor: "bg-[var(--sun-sky)] hover:bg-[var(--sun-sky-dark)] shadow-[#7ecae1]/25",
+    cta: "View Outdoor",
+    toySide: "center",
+    decorClass: "bg-[var(--sun-mint)]/55",
+    imageClass: "w-[140%] max-w-none sm:w-[135%] lg:w-[150%] xl:w-[165%]",
+  },
 ];
 
 type HeroSlide = (typeof heroSlides)[number] & {
+  ctaHref?: string;
   customBanner?: boolean;
+  imageClass?: string;
 };
 
 function fadeUp(delay = 0): MotionProps {
@@ -269,30 +287,25 @@ function SectionTitle({
   );
 }
 
-function Hero({ bannerImageSrc }: { bannerImageSrc?: string }) {
+function Hero({ bannerCtaHrefs = [], bannerImageSrcs = [] }: { bannerCtaHrefs?: string[]; bannerImageSrcs?: string[] }) {
   const [activeSlide, setActiveSlide] = useState(0);
   const reduce = useReducedMotion();
-  const slides: HeroSlide[] = bannerImageSrc
-    ? [
-        {
-          eyebrow: "ANKUSH Playways",
-          title: "Bright Play",
-          accent: "Starts Here",
-          description:
-            "Explore colourful play equipment, classroom products, ride-ons, and activity toys for joyful learning spaces.",
+  const slides: HeroSlide[] = heroSlides.map((slide, index) => {
+    const bannerImageSrc = bannerImageSrcs[index];
+
+    return bannerImageSrc
+      ? {
+          ...slide,
+          ctaHref: bannerCtaHrefs[index],
           image: bannerImageSrc,
-          alt: "ANKUSH Playways homepage banner",
-          background: "hero-scene-sky",
-          accentColor: "text-[var(--sun-coral-strong)]",
-          ctaColor: "bg-[var(--sun-coral-strong)] hover:bg-[var(--sun-sky-dark)] shadow-[#fd9aa0]/30",
-          cta: "Explore Products",
-          toySide: "center",
-          decorClass: "bg-[var(--sun-sky)]/35",
-          customBanner: true,
-        },
-        ...heroSlides,
-      ]
-    : heroSlides;
+          alt: `ANKUSH Playways homepage banner ${index + 1}`,
+          customBanner: !slide.imageClass,
+        }
+      : {
+          ...slide,
+          ctaHref: bannerCtaHrefs[index],
+        };
+  });
   const slideCount = slides.length;
 
   useEffect(() => {
@@ -364,7 +377,7 @@ function Hero({ bannerImageSrc }: { bannerImageSrc?: string }) {
                       {slide.description}
                     </p>
                     <a
-                      href="#products"
+                      href={slide.ctaHref || "/products"}
                       className={`relative z-10 mt-6 inline-flex rounded-full px-7 py-3.5 text-sm font-black text-white shadow-xl transition hover:-translate-y-1 ${slide.ctaColor}`}
                     >
                       {slide.cta}
@@ -389,10 +402,10 @@ function Hero({ bannerImageSrc }: { bannerImageSrc?: string }) {
                     animate={{ y: reduce ? 0 : [0, -16, 0] }}
                     transition={{ duration: 4.2, repeat: reduce ? 0 : Infinity, ease: "easeInOut" }}
                     className={[
-                      "relative w-full max-w-[780px] drop-shadow-[0_34px_30px_rgba(40,141,176,0.23)]",
+                      "relative drop-shadow-[0_34px_30px_rgba(40,141,176,0.23)]",
                       slide.customBanner
-                        ? "h-[22rem] rounded-[28px] border-[12px] border-white object-cover sm:h-[30rem]"
-                        : "hero-product-cutout object-contain",
+                        ? "h-[22rem] w-full max-w-[780px] rounded-[28px] object-cover sm:h-[30rem]"
+                        : `${slide.imageClass ?? "w-full max-w-[780px]"} hero-product-cutout object-contain`,
                     ].join(" ")}
                   />
                 </motion.div>
@@ -456,7 +469,7 @@ function About() {
 
         <motion.div {...fadeUp(0.08)}>
           <h2 className="text-4xl font-black leading-tight text-[var(--sun-sky-dark)] sm:text-5xl">
-            Welcome to <span className="text-[var(--sun-coral-strong)]">ANKUSH Playways Products</span>
+            Creating Happy <span className="text-[var(--sun-coral-strong)]">Spaces for Little Learners</span>
           </h2>
           <div className="mt-5 h-1.5 w-24 rounded-full bg-gradient-to-r from-[var(--sun-coral)] via-[var(--sun-yellow)] to-[var(--sun-mint)]" />
           <div className="mt-8 border-l-4 border-[var(--sun-line)] pl-7 text-base font-medium leading-8 text-slate-700">
@@ -913,20 +926,21 @@ function WhatsAppButton() {
 }
 
 interface LandingPageProps {
-  bannerImageSrc?: string;
+  bannerCtaHrefs?: string[];
+  bannerImageSrcs?: string[];
   categories: Category[];
   featuredProducts?: Product[];
   products: Product[];
 }
 
-export default function LandingPage({ bannerImageSrc, categories, featuredProducts = [], products }: LandingPageProps) {
+export default function LandingPage({ bannerCtaHrefs, bannerImageSrcs, categories, featuredProducts = [], products }: LandingPageProps) {
   const homepageFeaturedProducts = featuredProducts.length ? featuredProducts : products.slice(0, 8);
 
   return (
     <main>
       <SiteHeader overlayUntilScroll />
       <FloatingDecor />
-      <Hero bannerImageSrc={bannerImageSrc} />
+      <Hero bannerCtaHrefs={bannerCtaHrefs} bannerImageSrcs={bannerImageSrcs} />
       <About />
       <ProductCategories categories={categories} />
       <RockerRange products={products} />

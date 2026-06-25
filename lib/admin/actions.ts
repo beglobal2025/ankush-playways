@@ -4,6 +4,7 @@ import { mkdir, writeFile } from "fs/promises";
 import { extname, join } from "path";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
+import { HOME_BANNER_CATEGORY_SETTING_KEYS, HOME_BANNER_LEGACY_KEY, HOME_BANNER_SETTING_KEYS } from "@/lib/banner-settings";
 import { prisma } from "@/lib/prisma";
 import { signInAdmin, signOutAdmin, requireAdmin } from "./auth";
 import { slugify } from "./slug";
@@ -245,20 +246,43 @@ export async function logoutAction() {
 export async function updateBannerImageAction(formData: FormData) {
   await requireAdmin();
 
-  const uploadedImageSrc = await saveOptionalImage(formData, "bannerImage", "banners", "home-banner");
+  const updates = await Promise.all(
+    HOME_BANNER_SETTING_KEYS.map(async (key, index) => {
+      const uploadedImageSrc = await saveOptionalImage(formData, `bannerImage_${index}`, "banners", `home-banner-${index + 1}`);
+      return uploadedImageSrc ? { key, value: uploadedImageSrc, index } : null;
+    }),
+  );
+  const uploadedBannerUpdates = updates.filter((update): update is NonNullable<(typeof updates)[number]> => update !== null);
+  const categoryUpdates = HOME_BANNER_CATEGORY_SETTING_KEYS.map((key, index) => ({
+    key,
+    value: optionalString(formData, `bannerCategory_${index}`),
+  }));
 
-  if (!uploadedImageSrc) {
-    throw new Error("Banner image is required");
+  await Promise.all(
+    [...uploadedBannerUpdates, ...categoryUpdates].map((update) =>
+      prisma.siteSetting.upsert({
+        where: { key: update.key },
+        update: { value: update.value },
+        create: {
+          key: update.key,
+          value: update.value,
+        },
+      }),
+    ),
+  );
+
+  const firstBannerUpdate = uploadedBannerUpdates.find((update) => update.index === 0);
+
+  if (firstBannerUpdate) {
+    await prisma.siteSetting.upsert({
+      where: { key: HOME_BANNER_LEGACY_KEY },
+      update: { value: firstBannerUpdate.value },
+      create: {
+        key: HOME_BANNER_LEGACY_KEY,
+        value: firstBannerUpdate.value,
+      },
+    });
   }
-
-  await prisma.siteSetting.upsert({
-    where: { key: "home_banner_image" },
-    update: { value: uploadedImageSrc },
-    create: {
-      key: "home_banner_image",
-      value: uploadedImageSrc,
-    },
-  });
 
   revalidatePath("/");
   revalidatePath("/admin");
