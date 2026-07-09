@@ -33,6 +33,7 @@ function hashPassword(password) {
 async function main() {
   const adminEmail = process.env.ADMIN_EMAIL;
   const adminPassword = process.env.ADMIN_PASSWORD;
+  const categoryCovers = new Map();
 
   if (adminEmail && adminPassword) {
     await prisma.adminUser.upsert({
@@ -54,6 +55,12 @@ async function main() {
     const code = formatProductCode(id);
     const slug = productSlug({ id, name });
     const images = Array.isArray(item.images) ? item.images.filter(Boolean) : [];
+    if (images[0] && !categoryCovers.has(categorySlug)) {
+      categoryCovers.set(categorySlug, {
+        imageSrc: images[0],
+        imageAlt: `${categoryName} product category`,
+      });
+    }
 
     const category = await prisma.category.upsert({
       where: { slug: categorySlug },
@@ -93,6 +100,13 @@ async function main() {
         alt: `${code} - ${name}`,
         sortOrder: index,
       })),
+    });
+  }
+
+  for (const [slug, cover] of categoryCovers.entries()) {
+    await prisma.category.update({
+      where: { slug },
+      data: cover,
     });
   }
 }

@@ -4068,9 +4068,9 @@
   },
   {
     "id": "lft-013",
-    "name": "Shape Sorting Baby Toy",
+    "name": "Roll Ball",
     "category": "Toys",
-    "price": 599.0,
+    "price": 599,
     "specifications": {
       "details": [
         "Set of 4 Pcs"
@@ -4082,9 +4082,9 @@
   },
   {
     "id": "lft-012",
-    "name": "Roll Ball",
+    "name": "Baby's First Blocks",
     "category": "Toys",
-    "price": 499.0,
+    "price": 499,
     "specifications": {},
     "images": [
       "/catalogue/toys/lft-012/cover.jpg"
@@ -4094,7 +4094,7 @@
     "id": "lft-014",
     "name": "Shape Sorting Baby Toy",
     "category": "Toys",
-    "price": 899.0,
+    "price": 899,
     "specifications": {},
     "images": [
       "/catalogue/toys/lft-014/cover.jpg"
@@ -4104,7 +4104,7 @@
     "id": "lft-011",
     "name": "Shape Sorter",
     "category": "Toys",
-    "price": 699.0,
+    "price": 699,
     "specifications": {},
     "images": [
       "/catalogue/toys/lft-011/cover.jpg"
@@ -4112,12 +4112,16 @@
   },
   {
     "id": "lft-015",
-    "name": "LFT-015",
+    "name": "Fun Inertia Animal Car",
     "category": "Toys",
-    "price": 1196.0,
+    "price": 1196,
     "specifications": {
-      "details": [
-        "Set of 4 Pcs"
+      "set": "4 Pcs.",
+      "models": [
+        "Horse",
+        "Zebra",
+        "Sheep",
+        "Lion"
       ]
     },
     "images": [
@@ -4126,12 +4130,16 @@
   },
   {
     "id": "lft-016",
-    "name": "LFT-016",
+    "name": "My First Car",
     "category": "Toys",
-    "price": 1196.0,
+    "price": 1196,
     "specifications": {
-      "details": [
-        "Set of 4 Pcs"
+      "set": "4 Pcs.",
+      "models": [
+        "Police",
+        "Ambulance",
+        "Taxi",
+        "Bus"
       ]
     },
     "images": [
@@ -4142,7 +4150,7 @@
     "id": "lft-1251",
     "name": "Alphabet",
     "category": "Flash Cards",
-    "price": 299.0,
+    "price": 299,
     "specifications": {},
     "images": [
       "/catalogue/flash-cards/lft-1251/cover.jpg"
@@ -4152,7 +4160,7 @@
     "id": "lft-1252",
     "name": "Numbers",
     "category": "Flash Cards",
-    "price": 299.0,
+    "price": 299,
     "specifications": {},
     "images": [
       "/catalogue/flash-cards/lft-1252/cover.jpg"
@@ -4162,7 +4170,7 @@
     "id": "lft-1253",
     "name": "Colours & Shapes",
     "category": "Flash Cards",
-    "price": 299.0,
+    "price": 299,
     "specifications": {},
     "images": [
       "/catalogue/flash-cards/lft-1253/cover.jpg"
@@ -4170,9 +4178,9 @@
   },
   {
     "id": "lft-1254",
-    "name": "Colours & Shapes",
+    "name": "Vegetables",
     "category": "Flash Cards",
-    "price": 299.0,
+    "price": 299,
     "specifications": {},
     "images": [
       "/catalogue/flash-cards/lft-1254/cover.jpg"
@@ -4182,7 +4190,7 @@
     "id": "lft-1255",
     "name": "Fruits",
     "category": "Flash Cards",
-    "price": 299.0,
+    "price": 299,
     "specifications": {},
     "images": [
       "/catalogue/flash-cards/lft-1255/cover.jpg"
@@ -4192,7 +4200,7 @@
     "id": "lft-1256",
     "name": "Birds",
     "category": "Flash Cards",
-    "price": 299.0,
+    "price": 299,
     "specifications": {},
     "images": [
       "/catalogue/flash-cards/lft-1256/cover.jpg"
@@ -4202,7 +4210,7 @@
     "id": "lft-1257",
     "name": "Animals",
     "category": "Flash Cards",
-    "price": 299.0,
+    "price": 299,
     "specifications": {},
     "images": [
       "/catalogue/flash-cards/lft-1257/cover.jpg"
@@ -4210,9 +4218,9 @@
   },
   {
     "id": "lft-1258",
-    "name": "Animals",
+    "name": "Parts Of The Body",
     "category": "Flash Cards",
-    "price": 299.0,
+    "price": 299,
     "specifications": {},
     "images": [
       "/catalogue/flash-cards/lft-1258/cover.jpg"
@@ -4222,7 +4230,7 @@
     "id": "lft-1259",
     "name": "Vechicles",
     "category": "Flash Cards",
-    "price": 299.0,
+    "price": 299,
     "specifications": {},
     "images": [
       "/catalogue/flash-cards/lft-1259/cover.jpg"
@@ -4232,7 +4240,7 @@
     "id": "lft-1260",
     "name": "Community Helpers",
     "category": "Flash Cards",
-    "price": 299.0,
+    "price": 299,
     "specifications": {},
     "images": [
       "/catalogue/flash-cards/lft-1260/cover.jpg"
@@ -4242,7 +4250,7 @@
     "id": "lft-1261",
     "name": "Opposites",
     "category": "Flash Cards",
-    "price": 299.0,
+    "price": 299,
     "specifications": {},
     "images": [
       "/catalogue/flash-cards/lft-1261/cover.jpg"
@@ -4252,7 +4260,7 @@
     "id": "lft-054",
     "name": "Stack-o-Cubes",
     "category": "Toys",
-    "price": 249.0,
+    "price": 249,
     "specifications": {},
     "images": [
       "/catalogue/toys/lft-054/cover.jpg"
@@ -4262,7 +4270,7 @@
     "id": "lft-052",
     "name": "Stack-o-Egg",
     "category": "Toys",
-    "price": 239.0,
+    "price": 239,
     "specifications": {},
     "images": [
       "/catalogue/toys/lft-052/cover.jpg"
@@ -4270,9 +4278,9 @@
   },
   {
     "id": "lft-053",
-    "name": "Stack-o-Cubes",
+    "name": "Stack-o-Cups",
     "category": "Toys",
-    "price": 199.0,
+    "price": 199,
     "specifications": {},
     "images": [
       "/catalogue/toys/lft-053/cover.jpg"
@@ -4280,9 +4288,9 @@
   },
   {
     "id": "lft-051",
-    "name": "Stack-o-Egg",
+    "name": "Stack-o-Barrel",
     "category": "Toys",
-    "price": 179.0,
+    "price": 179,
     "specifications": {},
     "images": [
       "/catalogue/toys/lft-051/cover.jpg"
@@ -4290,9 +4298,9 @@
   },
   {
     "id": "lft-97c",
-    "name": "Bowling Set Jumbo",
+    "name": "Toddler Ring",
     "category": "Toys",
-    "price": 499.0,
+    "price": 499,
     "specifications": {},
     "images": [
       "/catalogue/toys/lft-97c/cover.jpg"
@@ -4302,7 +4310,7 @@
     "id": "lft-98",
     "name": "Bowling Set Jumbo",
     "category": "Toys",
-    "price": 1395.0,
+    "price": 1395,
     "specifications": {},
     "images": [
       "/catalogue/toys/lft-98/cover.jpg"
@@ -4312,7 +4320,7 @@
     "id": "lft-92",
     "name": "Sand Toys",
     "category": "Toys",
-    "price": 299.0,
+    "price": 299,
     "specifications": {},
     "images": [
       "/catalogue/toys/lft-92/cover.jpg"
@@ -4322,7 +4330,7 @@
     "id": "lft-1203",
     "name": "FruitsCutting",
     "category": "Toys",
-    "price": 699.0,
+    "price": 699,
     "specifications": {},
     "images": [
       "/catalogue/toys/lft-1203/cover.jpg"
@@ -4332,7 +4340,7 @@
     "id": "lft-99",
     "name": "Bowling Set",
     "category": "Toys",
-    "price": 995.0,
+    "price": 995,
     "specifications": {},
     "images": [
       "/catalogue/toys/lft-99/cover.jpg"
@@ -4342,7 +4350,7 @@
     "id": "lft-1204",
     "name": "Vegetables Cutting",
     "category": "Toys",
-    "price": 699.0,
+    "price": 699,
     "specifications": {
       "details": [
         "Per Pcs"
@@ -4356,11 +4364,9 @@
     "id": "pu6cm1",
     "name": "Fun PU Balls",
     "category": "Toys",
-    "price": 249.0,
+    "price": 249,
     "specifications": {
-      "details": [
-        "Per Pcs"
-      ]
+      "unit": "Per Pcs"
     },
     "images": [
       "/catalogue/toys/pu6cm1/cover.jpg"
@@ -4370,7 +4376,7 @@
     "id": "fb3cm1",
     "name": "Football",
     "category": "Toys",
-    "price": 799.0,
+    "price": 799,
     "specifications": {},
     "images": [
       "/catalogue/toys/fb3cm1/cover.jpg"
@@ -4380,7 +4386,7 @@
     "id": "bb3cm1",
     "name": "Basketball",
     "category": "Toys",
-    "price": 549.0,
+    "price": 549,
     "specifications": {},
     "images": [
       "/catalogue/toys/bb3cm1/cover.jpg"
@@ -4390,7 +4396,7 @@
     "id": "lft-1201",
     "name": "Fruits Cutting",
     "category": "Toys",
-    "price": 399.0,
+    "price": 399,
     "specifications": {},
     "images": [
       "/catalogue/toys/lft-1201/cover.jpg"
@@ -4400,7 +4406,7 @@
     "id": "lft-1202",
     "name": "Vegetables Cutting",
     "category": "Toys",
-    "price": 399.0,
+    "price": 399,
     "specifications": {},
     "images": [
       "/catalogue/toys/lft-1202/cover.jpg"
@@ -4410,7 +4416,7 @@
     "id": "lft-1210",
     "name": "Vegetables",
     "category": "Toys",
-    "price": 499.0,
+    "price": 499,
     "specifications": {},
     "images": [
       "/catalogue/toys/lft-1210/cover.jpg"
@@ -4418,9 +4424,9 @@
   },
   {
     "id": "lft-1209",
-    "name": "Vegetables",
+    "name": "Fruits",
     "category": "Toys",
-    "price": 499.0,
+    "price": 499,
     "specifications": {},
     "images": [
       "/catalogue/toys/lft-1209/cover.jpg"
@@ -4430,7 +4436,7 @@
     "id": "lft-90d",
     "name": "Hopscotch",
     "category": "Toys",
-    "price": 1199.0,
+    "price": 1199,
     "specifications": {},
     "images": [
       "/catalogue/toys/lft-90d/cover.jpg"
@@ -4438,9 +4444,9 @@
   },
   {
     "id": "lft-1241",
-    "name": "Digital",
+    "name": "Digital Ice Lolly",
     "category": "Toys",
-    "price": 1199.0,
+    "price": 1199,
     "specifications": {},
     "images": [
       "/catalogue/toys/lft-1241/cover.jpg"
@@ -4450,7 +4456,7 @@
     "id": "lft-1151",
     "name": "Xylophone",
     "category": "Toys",
-    "price": 599.0,
+    "price": 599,
     "specifications": {},
     "images": [
       "/catalogue/toys/lft-1151/cover.jpg"
@@ -4460,7 +4466,7 @@
     "id": "lft-1152",
     "name": "Xylophone Big",
     "category": "Toys",
-    "price": 899.0,
+    "price": 899,
     "specifications": {},
     "images": [
       "/catalogue/toys/lft-1152/cover.jpg"
@@ -4470,7 +4476,7 @@
     "id": "lft-1243",
     "name": "Bin Buddy",
     "category": "Toys",
-    "price": 499.0,
+    "price": 499,
     "specifications": {},
     "images": [
       "/catalogue/toys/lft-1243/cover.jpg"
@@ -4480,7 +4486,7 @@
     "id": "lft-1234",
     "name": "Beauty set",
     "category": "Toys",
-    "price": 899.0,
+    "price": 899,
     "specifications": {},
     "images": [
       "/catalogue/toys/lft-1234/cover.jpg"
@@ -4488,9 +4494,9 @@
   },
   {
     "id": "lft-1233",
-    "name": "Beauty set",
+    "name": "Tool kit",
     "category": "Toys",
-    "price": 899.0,
+    "price": 899,
     "specifications": {},
     "images": [
       "/catalogue/toys/lft-1233/cover.jpg"
@@ -4500,7 +4506,7 @@
     "id": "lft-1231",
     "name": "Doctor set",
     "category": "Toys",
-    "price": 899.0,
+    "price": 899,
     "specifications": {},
     "images": [
       "/catalogue/toys/lft-1231/cover.jpg"
@@ -4508,9 +4514,9 @@
   },
   {
     "id": "lft-1232",
-    "name": "Tool kit",
+    "name": "Kitchen set",
     "category": "Toys",
-    "price": 899.0,
+    "price": 899,
     "specifications": {},
     "images": [
       "/catalogue/toys/lft-1232/cover.jpg"
@@ -4518,9 +4524,9 @@
   },
   {
     "id": "lft-1223",
-    "name": "Ocean",
+    "name": "Ocean Animal Set",
     "category": "Toys",
-    "price": 599.0,
+    "price": 599,
     "specifications": {},
     "images": [
       "/catalogue/toys/lft-1223/cover.jpg"
@@ -4528,9 +4534,9 @@
   },
   {
     "id": "lft-1221",
-    "name": "Farm Set",
+    "name": "Wild Animal Set",
     "category": "Toys",
-    "price": 499.0,
+    "price": 499,
     "specifications": {},
     "images": [
       "/catalogue/toys/lft-1221/cover.jpg"
@@ -4538,9 +4544,9 @@
   },
   {
     "id": "lft-1222",
-    "name": "Ocean",
+    "name": "Farm Set",
     "category": "Toys",
-    "price": 499.0,
+    "price": 499,
     "specifications": {},
     "images": [
       "/catalogue/toys/lft-1222/cover.jpg"
@@ -4550,10 +4556,271 @@
     "id": "lft-1224",
     "name": "Insects Set",
     "category": "Toys",
-    "price": 499.0,
+    "price": 499,
     "specifications": {},
     "images": [
       "/catalogue/toys/lft-1224/cover.jpg"
+    ]
+  },
+  {
+    "id": "puzzle-alphabet",
+    "name": "Alphabet",
+    "category": "Puzzles",
+    "price": 305,
+    "specifications": {},
+    "images": [
+      "/catalogue/puzzles/puzzle-alphabet/cover.jpg"
+    ]
+  },
+  {
+    "id": "puzzle-numbers",
+    "name": "Numbers",
+    "category": "Puzzles",
+    "price": 305,
+    "specifications": {},
+    "images": [
+      "/catalogue/puzzles/puzzle-numbers/cover.jpg"
+    ]
+  },
+  {
+    "id": "puzzle-opposites",
+    "name": "Opposites",
+    "category": "Puzzles",
+    "price": 305,
+    "specifications": {},
+    "images": [
+      "/catalogue/puzzles/puzzle-opposites/cover.jpg"
+    ]
+  },
+  {
+    "id": "puzzle-where-am-i",
+    "name": "Where Am I",
+    "category": "Puzzles",
+    "price": 305,
+    "specifications": {},
+    "images": [
+      "/catalogue/puzzles/puzzle-where-am-i/cover.jpg"
+    ]
+  },
+  {
+    "id": "puzzle-size-it-up",
+    "name": "Size it up",
+    "category": "Puzzles",
+    "price": 305,
+    "specifications": {},
+    "images": [
+      "/catalogue/puzzles/puzzle-size-it-up/cover.jpg"
+    ]
+  },
+  {
+    "id": "puzzle-things-i-can-do",
+    "name": "Things I Can Do",
+    "category": "Puzzles",
+    "price": 305,
+    "specifications": {},
+    "images": [
+      "/catalogue/puzzles/puzzle-things-i-can-do/cover.jpg"
+    ]
+  },
+  {
+    "id": "puzzle-whats-wrong",
+    "name": "What's Wrong",
+    "category": "Puzzles",
+    "price": 305,
+    "specifications": {},
+    "images": [
+      "/catalogue/puzzles/puzzle-whats-wrong/cover.jpg"
+    ]
+  },
+  {
+    "id": "puzzle-parts-of-the-body",
+    "name": "Parts Of The Body",
+    "category": "Puzzles",
+    "price": 305,
+    "specifications": {},
+    "images": [
+      "/catalogue/puzzles/puzzle-parts-of-the-body/cover.jpg"
+    ]
+  },
+  {
+    "id": "mat-eva-numbers",
+    "name": "Eva Mat Numbers",
+    "category": "Mats",
+    "price": 990,
+    "specifications": {},
+    "images": [
+      "/catalogue/mats/mat-eva-numbers/cover.jpg"
+    ]
+  },
+  {
+    "id": "mat-eva-alphabets",
+    "name": "Eva Mat Alphabets",
+    "category": "Mats",
+    "price": 2490,
+    "specifications": {},
+    "images": [
+      "/catalogue/mats/mat-eva-alphabets/cover.jpg"
+    ]
+  },
+  {
+    "id": "mat-folding-xpe-size-l",
+    "name": "Folding Mat XPE - Size L",
+    "category": "Mats",
+    "price": 1990,
+    "specifications": {
+      "size": "L"
+    },
+    "images": [
+      "/catalogue/mats/mat-folding-xpe-size-l/cover.jpg"
+    ]
+  },
+  {
+    "id": "mat-folding-xpe-size-xl",
+    "name": "Folding Mat XPE - Size XL",
+    "category": "Mats",
+    "price": 2490,
+    "specifications": {
+      "size": "XL"
+    },
+    "images": [
+      "/catalogue/mats/mat-folding-xpe-size-xl/cover.jpg"
+    ]
+  },
+  {
+    "id": "mat-rolling-carpet",
+    "name": "Rolling Carpet",
+    "category": "Mats",
+    "price": 1190,
+    "specifications": {
+      "variants": [
+        {
+          "size": "S",
+          "price": 1190
+        },
+        {
+          "size": "M",
+          "price": 1390
+        },
+        {
+          "size": "L",
+          "price": 1690
+        },
+        {
+          "size": "XL",
+          "price": 1990
+        }
+      ]
+    },
+    "images": [
+      "/catalogue/mats/mat-rolling-carpet/cover.jpg"
+    ]
+  },
+  {
+    "id": "mat-eva-1mx1m-25mm",
+    "name": "Eva Mat 1Mx1M - 25mm",
+    "category": "Mats",
+    "price": 1690,
+    "specifications": {
+      "size": "1Mx1M",
+      "thickness": "25mm"
+    },
+    "images": [
+      "/catalogue/mats/mat-eva-1mx1m-25mm/cover.jpg"
+    ]
+  },
+  {
+    "id": "mat-eva-1mx1m-20mm",
+    "name": "Eva Mat 1Mx1M - 20mm",
+    "category": "Mats",
+    "price": 1290,
+    "specifications": {
+      "size": "1Mx1M",
+      "thickness": "20mm"
+    },
+    "images": [
+      "/catalogue/mats/mat-eva-1mx1m-20mm/cover.jpg"
+    ]
+  },
+  {
+    "id": "mat-eva-1mx1m-20mm-2",
+    "name": "Eva Mat 1Mx1M - 20mm",
+    "category": "Mats",
+    "price": 1290,
+    "specifications": {
+      "size": "1Mx1M",
+      "thickness": "20mm"
+    },
+    "images": [
+      "/catalogue/mats/mat-eva-1mx1m-20mm-2/cover.jpg"
+    ]
+  },
+  {
+    "id": "mat-eva-2ft-2ft",
+    "name": "Eva Mat 2ft x 2ft",
+    "category": "Mats",
+    "price": 1290,
+    "specifications": {
+      "size": "2ft x 2ft",
+      "variants": [
+        {
+          "thickness": "12mm",
+          "set": "4 Pcs.",
+          "price": 1290
+        },
+        {
+          "thickness": "20mm",
+          "set": "4 Pcs.",
+          "price": 1990
+        }
+      ]
+    },
+    "images": [
+      "/catalogue/mats/mat-eva-2ft-2ft/cover.jpg"
+    ]
+  },
+  {
+    "id": "mat-eva-2ft-2ft-black",
+    "name": "Eva Mat 2ft x 2ft Black",
+    "category": "Mats",
+    "price": 1290,
+    "specifications": {
+      "size": "2ft x 2ft",
+      "color": "Black",
+      "thickness": "12mm",
+      "set": "4 Pcs."
+    },
+    "images": [
+      "/catalogue/mats/mat-eva-2ft-2ft-black/cover.jpg"
+    ]
+  },
+  {
+    "id": "mat-eva-2ft-2ft-blue",
+    "name": "Eva Mat 2ft x 2ft Blue",
+    "category": "Mats",
+    "price": 1290,
+    "specifications": {
+      "size": "2ft x 2ft",
+      "color": "Blue",
+      "thickness": "12mm",
+      "set": "4 Pcs."
+    },
+    "images": [
+      "/catalogue/mats/mat-eva-2ft-2ft-blue/cover.jpg"
+    ]
+  },
+  {
+    "id": "mat-eva-2ft-2ft-grey",
+    "name": "Eva Mat 2ft x 2ft Grey",
+    "category": "Mats",
+    "price": 1290,
+    "specifications": {
+      "size": "2ft x 2ft",
+      "color": "Grey",
+      "thickness": "12mm",
+      "set": "4 Pcs."
+    },
+    "images": [
+      "/catalogue/mats/mat-eva-2ft-2ft-grey/cover.jpg"
     ]
   }
 ]

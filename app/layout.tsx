@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
+import { Suspense } from "react";
+import RouteChangeLoader from "@/components/RouteChangeLoader";
 import "./globals.css";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://ankushplayways.com";
@@ -21,7 +23,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <Suspense fallback={null}>
+          <RouteChangeLoader />
+        </Suspense>
+        {children}
+      </body>
     </html>
   );
 }

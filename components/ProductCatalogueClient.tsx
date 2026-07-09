@@ -28,7 +28,7 @@ export default function ProductCatalogueClient({
         if (!query) {
           return true;
         }
-        return `${product.code} ${product.name}`.toLowerCase().includes(query);
+        return `${product.code} ${product.name} ${product.colorOptions.map((option) => option.color).join(" ")}`.toLowerCase().includes(query);
       });
 
     return result.sort((a, b) => {

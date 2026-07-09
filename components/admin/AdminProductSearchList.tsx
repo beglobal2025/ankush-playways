@@ -6,6 +6,7 @@ import { useMemo, useState } from "react";
 export interface AdminProductListItem {
   categoryName: string;
   code: string;
+  colorOptions: string[];
   id: string;
   imageSrc: string;
   name: string;
@@ -28,7 +29,7 @@ export default function AdminProductSearchList({ deleteAction, products }: Admin
     }
 
     return products.filter((product) => {
-      return `${product.name} ${product.code} ${product.categoryName}`.toLowerCase().includes(normalizedQuery);
+      return `${product.name} ${product.code} ${product.categoryName} ${product.colorOptions.join(" ")}`.toLowerCase().includes(normalizedQuery);
     });
   }, [normalizedQuery, products]);
 
@@ -79,7 +80,10 @@ export default function AdminProductSearchList({ deleteAction, products }: Admin
                       </div>
                       <div className="min-w-0">
                         <p className="font-black text-slate-900">{product.name}</p>
-                        <p className="text-xs font-bold text-slate-500">{product.code}</p>
+                        <p className="text-xs font-bold text-slate-500">
+                          {product.code}
+                          {product.colorOptions.length ? ` - ${product.colorOptions.join(", ")}` : ""}
+                        </p>
                       </div>
                     </div>
                   </td>

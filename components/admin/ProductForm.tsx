@@ -1,7 +1,9 @@
-import type { Category, Product, ProductImage } from "@prisma/client";
+import type { Category, Product, ProductColorOption, ProductImage } from "@prisma/client";
+import ProductColorOptionsField from "@/components/admin/ProductColorOptionsField";
 
 type ProductWithImagesAndCategory = Product & {
   category: Category;
+  colorOptions: ProductColorOption[];
   images: ProductImage[];
 };
 
@@ -24,6 +26,12 @@ export default function ProductForm({ action, categories, product }: ProductForm
 
   const specifications = product ? specsToLines(product.specifications ?? {}) : "";
   const currentImages = product?.images ?? [];
+  const colorOptionRows = (product?.colorOptions ?? []).map((option) => ({
+    id: option.id,
+    color: option.color,
+    imageSrc: option.imageSrc,
+    imageAlt: option.imageAlt,
+  }));
 
   return (
     <form action={action} className="grid gap-6">
@@ -102,6 +110,8 @@ export default function ProductForm({ action, categories, product }: ProductForm
           </label>
         </div>
       </div>
+
+      <ProductColorOptionsField options={colorOptionRows} />
 
       <div className="grid gap-4 rounded-lg border border-slate-200 bg-white p-5 text-sm font-bold text-slate-700 shadow-sm">
         <div>

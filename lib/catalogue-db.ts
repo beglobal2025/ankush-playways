@@ -7,6 +7,7 @@ const fallbackImage = "/assets/catalog/play-slide.jpg";
 type DbProduct = Prisma.ProductGetPayload<{
   include: {
     category: true;
+    colorOptions: true;
     images: true;
   };
 }>;
@@ -15,6 +16,7 @@ type DbCategory = Prisma.CategoryGetPayload<{
   include: {
     products: {
       include: {
+        colorOptions: true;
         images: true;
       };
     };
@@ -31,6 +33,14 @@ export function toCatalogueProduct(product: DbProduct): Product {
     code: product.code,
     slug: product.slug,
     name: product.name,
+    colorOptions: product.colorOptions.map((option) => ({
+      id: option.id,
+      color: option.color,
+      image: {
+        src: option.imageSrc,
+        alt: option.imageAlt || `${product.code} - ${product.name} - ${option.color}`,
+      },
+    })),
     category: product.category.name,
     price: product.price,
     specifications: product.specifications as Specification,
@@ -47,6 +57,14 @@ function toCatalogueCategory(category: DbCategory): Category {
     code: product.code,
     slug: product.slug,
     name: product.name,
+    colorOptions: product.colorOptions.map((option) => ({
+      id: option.id,
+      color: option.color,
+      image: {
+        src: option.imageSrc,
+        alt: option.imageAlt || `${product.code} - ${product.name} - ${option.color}`,
+      },
+    })),
     category: category.name,
     price: product.price,
     specifications: product.specifications as Specification,
@@ -77,6 +95,7 @@ export async function getPublishedProducts(): Promise<Product[]> {
     where: { status: "PUBLISHED" },
     include: {
       category: true,
+      colorOptions: { orderBy: { sortOrder: "asc" } },
       images: { orderBy: { sortOrder: "asc" } },
     },
     orderBy: [{ sortOrder: "asc" }, { updatedAt: "desc" }],
@@ -93,6 +112,7 @@ export async function getFeaturedProducts(): Promise<Product[]> {
     },
     include: {
       category: true,
+      colorOptions: { orderBy: { sortOrder: "asc" } },
       images: { orderBy: { sortOrder: "asc" } },
     },
     orderBy: [{ updatedAt: "desc" }],
@@ -107,6 +127,7 @@ export async function getPublishedCategories(): Promise<Category[]> {
       products: {
         where: { status: "PUBLISHED" },
         include: {
+          colorOptions: { orderBy: { sortOrder: "asc" } },
           images: { orderBy: { sortOrder: "asc" } },
         },
         orderBy: [{ sortOrder: "asc" }, { updatedAt: "desc" }],
@@ -126,6 +147,7 @@ export async function getPublishedProductBySlug(slug: string): Promise<Product |
     },
     include: {
       category: true,
+      colorOptions: { orderBy: { sortOrder: "asc" } },
       images: { orderBy: { sortOrder: "asc" } },
     },
   });
@@ -144,6 +166,7 @@ export async function getRelatedProducts(product: Product, limit = 4): Promise<P
     },
     include: {
       category: true,
+      colorOptions: { orderBy: { sortOrder: "asc" } },
       images: { orderBy: { sortOrder: "asc" } },
     },
     orderBy: [{ sortOrder: "asc" }, { updatedAt: "desc" }],

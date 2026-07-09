@@ -20,6 +20,7 @@ export default async function EditProductPage({ params }: EditProductPageProps) 
       where: { id: params.id },
       include: {
         category: true,
+        colorOptions: { orderBy: { sortOrder: "asc" } },
         images: { orderBy: { sortOrder: "asc" } },
       },
     }),

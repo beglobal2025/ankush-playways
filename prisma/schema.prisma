@@ -59,6 +59,7 @@ model Product {
   categoryId     String
   category       Category       @relation(fields: [categoryId], references: [id])
   images         ProductImage[]
+  colorOptions   ProductColorOption[]
   createdAt      DateTime       @default(now())
   updatedAt      DateTime       @updatedAt
 
@@ -72,6 +73,19 @@ model ProductImage {
   product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
   src       String
   alt       String
+  sortOrder Int      @default(0)
+  createdAt DateTime @default(now())
+
+  @@index([productId])
+}
+
+model ProductColorOption {
+  id        String   @id @default(cuid())
+  productId String
+  product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  color     String
+  imageSrc  String
+  imageAlt  String
   sortOrder Int      @default(0)
   createdAt DateTime @default(now())
 

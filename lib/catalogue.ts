@@ -11,11 +11,18 @@ export interface ProductImage {
   alt: string;
 }
 
+export interface ProductColorOption {
+  id: string;
+  color: string;
+  image: ProductImage;
+}
+
 export interface Product {
   id: string;
   code: string;
   slug: string;
   name: string;
+  colorOptions: ProductColorOption[];
   category: string;
   price: number | null;
   specifications: Specification;
@@ -126,6 +133,7 @@ function normalizeRawProduct(item: RawProduct): Product {
     code,
     slug: "",
     name,
+    colorOptions: [],
     category,
     price: typeof item.price === "number" ? item.price : null,
     specifications: item.specifications ?? {},

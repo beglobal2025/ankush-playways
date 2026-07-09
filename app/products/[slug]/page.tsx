@@ -16,6 +16,9 @@ interface ProductPageProps {
   params: Promise<{
     slug: string;
   }>;
+  searchParams?: Promise<{
+    color?: string;
+  }>;
 }
 
 export async function generateMetadata({ params }: ProductPageProps): Promise<Metadata> {
@@ -39,8 +42,9 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
   };
 }
 
-export default async function ProductPage({ params }: ProductPageProps) {
+export default async function ProductPage({ params, searchParams }: ProductPageProps) {
   const { slug } = await params;
+  const selectedColor = (await searchParams)?.color ?? "";
   const product = await getPublishedProductBySlug(slug);
 
   if (!product) {
@@ -60,7 +64,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
             Back to catalogue
           </Link>
           <div className="mt-8 grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
-            <ProductGallery images={product.images} title={product.name} />
+            <ProductGallery colorOptions={product.colorOptions} images={product.images} initialColor={selectedColor} title={product.name} />
 
             <div className="rounded-[34px] bg-white p-7 shadow-2xl shadow-[#7ecae1]/20 sm:p-10">
               <div className="flex flex-wrap items-center gap-3">
@@ -73,6 +77,12 @@ export default async function ProductPage({ params }: ProductPageProps) {
                 Real catalogue product from ANKUSH Playways. Enquire for availability, finish options, dispatch, and
                 institutional supply details.
               </p>
+              {product.colorOptions.length ? (
+                <div className="mt-6 rounded-2xl bg-[var(--sun-yellow-soft)] p-4">
+                  <p className="text-xs font-black uppercase tracking-wide text-[var(--sun-yellow)]">Available colors</p>
+                  <p className="mt-1 font-bold text-slate-700">{product.colorOptions.map((option) => option.color).join(", ")}</p>
+                </div>
+              ) : null}
               <div className="mt-8 flex flex-wrap gap-3">
                 <WhatsAppButton product={product}>Enquire on WhatsApp</WhatsAppButton>
                 <Link

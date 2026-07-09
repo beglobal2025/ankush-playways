@@ -1,13 +1,12 @@
 "use server";
 
-import { mkdir, writeFile } from "fs/promises";
-import { extname, join } from "path";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { HOME_BANNER_CATEGORY_SETTING_KEYS, HOME_BANNER_LEGACY_KEY, HOME_BANNER_SETTING_KEYS } from "@/lib/banner-settings";
 import { prisma } from "@/lib/prisma";
 import { signInAdmin, signOutAdmin, requireAdmin } from "./auth";
 import { slugify } from "./slug";
+import { saveUploadedImage } from "./storage";
 
 function requiredString(formData: FormData, key: string): string {
   const value = formData.get(key);
@@ -93,39 +92,9 @@ function uploadedFiles(formData: FormData, key: string): File[] {
     .filter((value): value is File => value instanceof File && value.size > 0);
 }
 
-function safeExtension(file: File): string {
-  const extension = extname(file.name).toLowerCase();
-
-  if ([".jpg", ".jpeg", ".png", ".webp", ".gif", ".avif"].includes(extension)) {
-    return extension;
-  }
-
-  if (file.type === "image/png") {
-    return ".png";
-  }
-
-  if (file.type === "image/webp") {
-    return ".webp";
-  }
-
-  return ".jpg";
-}
-
-async function saveUploadedImage(file: File, folder: string, baseName: string, index = 0): Promise<string> {
-  if (!file.type.startsWith("image/")) {
-    throw new Error("Only image files can be uploaded");
-  }
-
-  const uploadDir = join(process.cwd(), "public", "uploads", folder);
-  await mkdir(uploadDir, { recursive: true });
-
-  const filename = `${slugify(baseName) || "image"}-${Date.now()}-${index}${safeExtension(file)}`;
-  const filepath = join(uploadDir, filename);
-  const buffer = Buffer.from(await file.arrayBuffer());
-
-  await writeFile(filepath, buffer);
-
-  return `/uploads/${folder}/${filename}`;
+function uploadedFileAt(formData: FormData, key: string, index: number): File | null {
+  const value = formData.getAll(key)[index];
+  return value instanceof File && value.size > 0 ? value : null;
 }
 
 async function saveOptionalImage(formData: FormData, key: string, folder: string, baseName: string): Promise<string | null> {
@@ -143,6 +112,41 @@ async function parseProductImages(formData: FormData, code: string, name: string
     alt: `${code} - ${name}`,
     sortOrder: index,
   }));
+}
+
+async function parseProductColorOptions(formData: FormData, code: string, name: string) {
+  const colors = formData.getAll("colorOptionColors");
+  const existingImages = formData.getAll("colorOptionExistingImages");
+  const options = [];
+
+  for (let index = 0; index < colors.length; index += 1) {
+    const colorValue = colors[index];
+    const existingImageValue = existingImages[index];
+    const color = typeof colorValue === "string" ? colorValue.trim() : "";
+
+    if (!color) {
+      continue;
+    }
+
+    const existingImage = typeof existingImageValue === "string" ? existingImageValue.trim() : "";
+    const uploadedImage = uploadedFileAt(formData, "colorOptionImages", index);
+    const imageSrc = uploadedImage
+      ? await saveUploadedImage(uploadedImage, "products", `${code}-${name}-${color}`, index)
+      : existingImage;
+
+    if (!imageSrc) {
+      continue;
+    }
+
+    options.push({
+      color,
+      imageSrc,
+      imageAlt: `${code} - ${name} - ${color}`,
+      sortOrder: options.length,
+    });
+  }
+
+  return options;
 }
 
 async function getOrCreateCategory(name: string) {
@@ -299,6 +303,7 @@ export async function createProductAction(formData: FormData) {
   const category = await getOrCreateCategory(categoryName);
   const slug = `${slugify(code)}-${slugify(name)}`;
   const images = await parseProductImages(formData, code, name, true);
+  const colorOptions = await parseProductColorOptions(formData, code, name);
 
   await prisma.product.create({
     data: {
@@ -310,6 +315,9 @@ export async function createProductAction(formData: FormData) {
       isFeatured: optionalString(formData, "isFeatured") === "on",
       status: optionalString(formData, "status") === "DRAFT" ? "DRAFT" : "PUBLISHED",
       categoryId: category.id,
+      colorOptions: {
+        create: colorOptions,
+      },
       images: {
         create: images,
       },
@@ -332,6 +340,7 @@ export async function updateProductAction(productId: string, formData: FormData)
   const category = await getOrCreateCategory(categoryName);
   const slug = `${slugify(code)}-${slugify(name)}`;
   const uploadedImages = await parseProductImages(formData, code, name, false);
+  const colorOptions = await parseProductColorOptions(formData, code, name);
 
   await prisma.product.update({
     where: { id: productId },
@@ -344,6 +353,10 @@ export async function updateProductAction(productId: string, formData: FormData)
       isFeatured: optionalString(formData, "isFeatured") === "on",
       status: optionalString(formData, "status") === "DRAFT" ? "DRAFT" : "PUBLISHED",
       categoryId: category.id,
+      colorOptions: {
+        deleteMany: {},
+        create: colorOptions,
+      },
       ...(uploadedImages.length
         ? {
             images: {

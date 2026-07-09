@@ -2,6 +2,8 @@ import { redirect } from "next/navigation";
 import { loginAction } from "@/lib/admin/actions";
 import { getCurrentAdmin } from "@/lib/admin/auth";
 
+export const dynamic = "force-dynamic";
+
 interface LoginPageProps {
   searchParams?: {
     error?: string;
