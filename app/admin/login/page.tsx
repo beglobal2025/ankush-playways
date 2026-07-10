@@ -5,13 +5,14 @@ import { getCurrentAdmin } from "@/lib/admin/auth";
 export const dynamic = "force-dynamic";
 
 interface LoginPageProps {
-  searchParams?: {
+  searchParams?: Promise<{
     error?: string;
-  };
+  }>;
 }
 
 export default async function LoginPage({ searchParams }: LoginPageProps) {
   const admin = await getCurrentAdmin();
+  const params = await searchParams;
 
   if (admin) {
     redirect("/admin");
@@ -26,7 +27,7 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
           Manage ANKUSH Playways catalogue content from one simple panel.
         </p>
 
-        {searchParams?.error === "invalid" ? (
+        {params?.error === "invalid" ? (
           <p className="mt-5 rounded-lg bg-red-50 px-4 py-3 text-sm font-bold text-red-700">
             Email or password is incorrect.
           </p>

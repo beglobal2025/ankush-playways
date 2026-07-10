@@ -76,7 +76,7 @@ export default function AdminCategorySearchList({ categories, deleteAction }: Ad
                 {category.productCount} products
               </span>
 
-              <form action={deleteAction} method="post">
+              <form action={deleteAction}>
                 <input type="hidden" name="categoryId" value={category.id} />
                 <button
                   type="submit"

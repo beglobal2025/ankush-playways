@@ -1,36 +1,39 @@
-import { createHash, randomBytes } from "crypto";
-import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
-import { prisma } from "@/lib/prisma";
-import { verifyPassword } from "./password";
+import type { JwtPayload } from "@supabase/supabase-js";
+import { createClient } from "@/lib/supabase/server";
 
-const sessionCookieName = "ankush_admin_session";
-const sessionDays = 7;
-
-function hashToken(token: string): string {
-  return createHash("sha256").update(token).digest("hex");
+export interface CurrentAdmin {
+  email: string;
+  id: string;
+  name: string;
 }
 
-export async function getCurrentAdmin() {
-  const token = cookies().get(sessionCookieName)?.value;
+export function isAdminClaims(claims: JwtPayload | undefined | null): claims is JwtPayload {
+  return claims?.app_metadata?.role === "admin";
+}
 
-  if (!token) {
-    return null;
-  }
+export async function getCurrentAdmin(): Promise<CurrentAdmin | null> {
+  try {
+    const supabase = await createClient();
+    const { data, error } = await supabase.auth.getClaims();
+    const claims = data?.claims;
 
-  const session = await prisma.adminSession.findUnique({
-    where: { tokenHash: hashToken(token) },
-    include: { adminUser: true },
-  });
-
-  if (!session || session.expiresAt <= new Date()) {
-    if (session) {
-      await prisma.adminSession.delete({ where: { id: session.id } });
+    if (error || !isAdminClaims(claims) || !claims.sub) {
+      return null;
     }
+
+    const email = typeof claims.email === "string" ? claims.email : "";
+    const metadata = claims.user_metadata as Record<string, unknown> | undefined;
+    const metadataName = metadata?.full_name ?? metadata?.name;
+    const name =
+      typeof metadataName === "string" && metadataName.trim()
+        ? metadataName.trim()
+        : email.split("@")[0] || "Admin";
+
+    return { email, id: claims.sub, name };
+  } catch {
     return null;
   }
-
-  return session.adminUser;
 }
 
 export async function requireAdmin() {
@@ -44,44 +47,33 @@ export async function requireAdmin() {
 }
 
 export async function signInAdmin(email: string, password: string) {
-  const admin = await prisma.adminUser.findUnique({
-    where: { email: email.trim().toLowerCase() },
-  });
+  try {
+    const supabase = await createClient();
+    const { data, error } = await supabase.auth.signInWithPassword({
+      email: email.trim().toLowerCase(),
+      password,
+    });
 
-  if (!admin || !verifyPassword(password, admin.passwordHash)) {
+    if (error || !data.session) {
+      return false;
+    }
+
+    const { data: claimsData, error: claimsError } = await supabase.auth.getClaims(
+      data.session.access_token,
+    );
+
+    if (claimsError || !isAdminClaims(claimsData?.claims)) {
+      await supabase.auth.signOut();
+      return false;
+    }
+
+    return true;
+  } catch {
     return false;
   }
-
-  const token = randomBytes(32).toString("hex");
-  const expiresAt = new Date(Date.now() + sessionDays * 24 * 60 * 60 * 1000);
-
-  await prisma.adminSession.create({
-    data: {
-      tokenHash: hashToken(token),
-      adminUserId: admin.id,
-      expiresAt,
-    },
-  });
-
-  cookies().set(sessionCookieName, token, {
-    httpOnly: true,
-    sameSite: "lax",
-    secure: process.env.NODE_ENV === "production",
-    path: "/",
-    expires: expiresAt,
-  });
-
-  return true;
 }
 
 export async function signOutAdmin() {
-  const token = cookies().get(sessionCookieName)?.value;
-
-  if (token) {
-    await prisma.adminSession.deleteMany({
-      where: { tokenHash: hashToken(token) },
-    });
-  }
-
-  cookies().delete(sessionCookieName);
+  const supabase = await createClient();
+  await supabase.auth.signOut();
 }

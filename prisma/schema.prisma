@@ -3,8 +3,9 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
 }
 
 enum ProductStatus {
@@ -12,59 +13,45 @@ enum ProductStatus {
   PUBLISHED
 }
 
-model AdminUser {
-  id           String         @id @default(cuid())
-  email        String         @unique
-  name         String
-  passwordHash String
-  sessions     AdminSession[]
-  createdAt    DateTime       @default(now())
-  updatedAt    DateTime       @updatedAt
-}
-
-model AdminSession {
-  id          String    @id @default(cuid())
-  tokenHash   String    @unique
-  adminUserId String
-  adminUser   AdminUser @relation(fields: [adminUserId], references: [id], onDelete: Cascade)
-  expiresAt   DateTime
-  createdAt   DateTime  @default(now())
-
-  @@index([adminUserId])
-  @@index([expiresAt])
-}
-
 model Category {
-  id          String    @id @default(cuid())
-  name        String    @unique
-  slug        String    @unique
-  description String    @default("")
-  imageSrc    String    @default("")
-  imageAlt    String    @default("")
-  products    Product[]
-  createdAt   DateTime  @default(now())
-  updatedAt   DateTime  @updatedAt
+  id             String    @id @default(cuid())
+  name           String    @unique
+  slug           String    @unique
+  description    String    @default("")
+  imageSrc       String    @default("")
+  imageAlt       String    @default("")
+  seoTitle       String?   @db.VarChar(60)
+  seoDescription String?   @db.VarChar(160)
+  products       Product[]
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+
+  @@index([updatedAt(sort: Desc)])
 }
 
 model Product {
-  id             String         @id @default(cuid())
-  code           String         @unique
-  slug           String         @unique
+  id             String               @id @default(cuid())
+  code           String               @unique
+  slug           String               @unique
   name           String
   price          Int?
-  specifications Json           @default("{}")
-  status         ProductStatus  @default(PUBLISHED)
-  isFeatured     Boolean        @default(false)
-  sortOrder      Int            @default(0)
+  specifications Json                 @default("{}")
+  status         ProductStatus        @default(PUBLISHED)
+  isFeatured     Boolean              @default(false)
+  sortOrder      Int                  @default(0)
+  seoTitle       String?              @db.VarChar(60)
+  seoDescription String?              @db.VarChar(160)
   categoryId     String
-  category       Category       @relation(fields: [categoryId], references: [id])
+  category       Category             @relation(fields: [categoryId], references: [id], onDelete: Restrict)
   images         ProductImage[]
   colorOptions   ProductColorOption[]
-  createdAt      DateTime       @default(now())
-  updatedAt      DateTime       @updatedAt
+  createdAt      DateTime             @default(now())
+  updatedAt      DateTime             @updatedAt
 
-  @@index([categoryId])
-  @@index([status])
+  @@index([updatedAt(sort: Desc)])
+  @@index([status, sortOrder, updatedAt(sort: Desc)])
+  @@index([status, isFeatured, updatedAt(sort: Desc)])
+  @@index([categoryId, status, sortOrder, updatedAt(sort: Desc)])
 }
 
 model ProductImage {
@@ -75,8 +62,9 @@ model ProductImage {
   alt       String
   sortOrder Int      @default(0)
   createdAt DateTime @default(now())
+  updatedAt DateTime @default(now()) @updatedAt
 
-  @@index([productId])
+  @@index([productId, sortOrder])
 }
 
 model ProductColorOption {
@@ -88,8 +76,9 @@ model ProductColorOption {
   imageAlt  String
   sortOrder Int      @default(0)
   createdAt DateTime @default(now())
+  updatedAt DateTime @default(now()) @updatedAt
 
-  @@index([productId])
+  @@index([productId, sortOrder])
 }
 
 model SiteSetting {

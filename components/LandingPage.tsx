@@ -164,7 +164,7 @@ const heroSlides = [
     accent: "equipments",
     description:
       "Durable outdoor play equipment designed for bright, active, and engaging playground spaces.",
-    image: "/catalogue/outdoor/outdoor.png",
+    image: "/catalogue/outdoor-playground-equipments/lfo-mps-04.jpg",
     alt: "Outdoor playway equipments from the ANKUSH Playways catalog",
     background: "hero-scene-sky",
     accentColor: "text-[var(--sun-coral-strong)]",

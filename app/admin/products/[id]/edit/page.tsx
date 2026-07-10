@@ -8,16 +8,17 @@ import { prisma } from "@/lib/prisma";
 export const dynamic = "force-dynamic";
 
 interface EditProductPageProps {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 }
 
 export default async function EditProductPage({ params }: EditProductPageProps) {
   const admin = await requireAdmin();
+  const { id } = await params;
   const [product, categories] = await Promise.all([
     prisma.product.findUnique({
-      where: { id: params.id },
+      where: { id },
       include: {
         category: true,
         colorOptions: { orderBy: { sortOrder: "asc" } },

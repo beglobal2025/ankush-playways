@@ -64,7 +64,7 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
             description="Start with a product family, or use the filters below for exact product-code searches."
           />
           <div className="mx-auto grid max-w-7xl gap-7 sm:grid-cols-2 lg:grid-cols-3">
-            {categories.slice(0, 6).map((category, index) => (
+            {categories.map((category, index) => (
               <CategoryCard key={category.id} category={category} index={index} />
             ))}
           </div>

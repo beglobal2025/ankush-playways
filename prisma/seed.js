@@ -1,5 +1,4 @@
 const { PrismaClient } = require("@prisma/client");
-const { randomBytes, scryptSync } = require("crypto");
 const products = require("../products.json");
 
 const prisma = new PrismaClient();
@@ -24,28 +23,8 @@ function productSlug(product) {
   return `${product.id}-${slugify(product.name)}`;
 }
 
-function hashPassword(password) {
-  const salt = randomBytes(16).toString("hex");
-  const hash = scryptSync(password, salt, 64).toString("hex");
-  return `scrypt:${salt}:${hash}`;
-}
-
 async function main() {
-  const adminEmail = process.env.ADMIN_EMAIL;
-  const adminPassword = process.env.ADMIN_PASSWORD;
   const categoryCovers = new Map();
-
-  if (adminEmail && adminPassword) {
-    await prisma.adminUser.upsert({
-      where: { email: adminEmail },
-      update: {},
-      create: {
-        email: adminEmail,
-        name: "Admin",
-        passwordHash: hashPassword(adminPassword),
-      },
-    });
-  }
 
   for (const item of products) {
     const id = slugify(item.id || item.name || "product");

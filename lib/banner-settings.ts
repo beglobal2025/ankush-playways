@@ -35,7 +35,7 @@ export const HOME_BANNER_SLOTS = [
     key: "home_banner_image_6",
     label: "Outdoor Playway Equipments",
     description: "Outdoor Play",
-    defaultImageSrc: "/catalogue/outdoor/outdoor.png",
+    defaultImageSrc: "/catalogue/outdoor-playground-equipments/lfo-mps-04.jpg",
   },
 ] as const;
 
