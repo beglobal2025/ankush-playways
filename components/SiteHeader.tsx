@@ -8,8 +8,7 @@ const navItems = [
   ["About", "/#about"],
   ["Catalogue", "/products"],
   ["Categories", "/#products"],
-  ["Offers", "/#offer"],
-  ["Contact", "/#contact"],
+  ["Contact Us", "/contact"],
 ];
 
 interface SiteHeaderProps {

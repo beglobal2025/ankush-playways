@@ -15,9 +15,8 @@ const navItems = [
   ["Home", "#home"],
   ["About", "#about"],
   ["Products", "#products"],
-  ["Offer", "#offer"],
   ["Testimonials", "#testimonials"],
-  ["Contact", "#contact"],
+  ["Contact Us", "/contact"],
 ];
 
 const offers = [
@@ -158,22 +157,6 @@ const heroSlides = [
     toySide: "center",
     decorClass: "bg-[var(--sun-yellow)]/55",
   },
-  {
-    eyebrow: "Outdoor Play",
-    title: "outdoor playway",
-    accent: "equipments",
-    description:
-      "Durable outdoor play equipment designed for bright, active, and engaging playground spaces.",
-    image: "/catalogue/outdoor-playground-equipments/lfo-mps-04.jpg",
-    alt: "Outdoor playway equipments from the ANKUSH Playways catalog",
-    background: "hero-scene-sky",
-    accentColor: "text-[var(--sun-coral-strong)]",
-    ctaColor: "bg-[var(--sun-sky)] hover:bg-[var(--sun-sky-dark)] shadow-[#7ecae1]/25",
-    cta: "View Outdoor",
-    toySide: "center",
-    decorClass: "bg-[var(--sun-mint)]/55",
-    imageClass: "w-[140%] max-w-none sm:w-[135%] lg:w-[150%] xl:w-[165%]",
-  },
 ];
 
 type HeroSlide = (typeof heroSlides)[number] & {
@@ -299,7 +282,7 @@ function Hero({ bannerCtaHrefs = [], bannerImageSrcs = [] }: { bannerCtaHrefs?: 
           ctaHref: bannerCtaHrefs[index],
           image: bannerImageSrc,
           alt: `ANKUSH Playways homepage banner ${index + 1}`,
-          customBanner: !slide.imageClass,
+          customBanner: true,
         }
       : {
           ...slide,
@@ -486,6 +469,64 @@ function About() {
   );
 }
 
+function OutdoorPlaygroundFeature() {
+  const reduceMotion = useReducedMotion();
+  const outdoorProductsHref = `/products?category=${encodeURIComponent("Outdoor Playground Equipment")}`;
+
+  return (
+    <section className="relative overflow-hidden bg-[var(--sun-mint-soft)] px-5 py-10 sm:px-8 lg:py-14">
+      <div className="absolute -left-24 top-16 size-72 rounded-full bg-[var(--sun-yellow)]/25 blur-3xl" />
+      <div className="absolute -right-24 bottom-8 size-80 rounded-full bg-[var(--sun-sky)]/25 blur-3xl" />
+
+      <div className="relative mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[1.08fr_0.92fr]">
+        <motion.div {...fadeUp()} className="relative">
+          <div className="absolute -inset-3 rotate-[-1.5deg] rounded-[36px] bg-[var(--sun-yellow)]/45" />
+          <Link
+            href={outdoorProductsHref}
+            aria-label="View outdoor playground products"
+            className="group relative block overflow-hidden rounded-[30px] border-[8px] border-white bg-slate-900 shadow-[0_28px_80px_rgba(40,141,176,0.28)]"
+          >
+            <video
+              src="/uploads/banners/ankush-outdoor-playground.mp4"
+              aria-hidden="true"
+              autoPlay={!reduceMotion}
+              className="aspect-video w-full object-cover transition duration-700 group-hover:scale-[1.025]"
+              loop
+              muted
+              playsInline
+              preload="metadata"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[var(--sun-ink)]/55 via-transparent to-transparent" />
+            <span className="absolute bottom-5 left-5 inline-flex items-center gap-2 rounded-full bg-white/95 px-5 py-3 text-sm font-black text-[var(--sun-sky-dark)] shadow-lg transition group-hover:-translate-y-1 sm:bottom-7 sm:left-7">
+              Explore our outdoor products <span aria-hidden="true">→</span>
+            </span>
+          </Link>
+        </motion.div>
+
+        <motion.div {...fadeUp(0.1)}>
+          <h2 className="text-[1.875rem] font-black leading-tight text-[var(--sun-sky-dark)] sm:text-5xl">
+            <span className="block whitespace-nowrap">Turn open spaces into</span>
+            <span className="block">joyful playgrounds</span>
+          </h2>
+          <p className="mt-6 text-base font-semibold leading-8 text-slate-700">
+            Discover colourful multiplay stations designed for schools, parks, housing societies, resorts, and play zones. Our outdoor range brings climbing, sliding, and active play together in one inviting space.
+          </p>
+
+          <div className="mt-7 grid gap-3 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+            {["Bright, engaging designs", "Built for active play", "Multiple station options", "Ideal for large spaces"].map((item) => (
+              <div key={item} className="flex items-center gap-3 rounded-2xl bg-white/80 px-4 py-3 text-sm font-bold text-[var(--sun-ink)] shadow-sm">
+                <span className="grid size-7 shrink-0 place-items-center rounded-full bg-[var(--sun-mint-strong)] text-xs text-white" aria-hidden="true">✓</span>
+                {item}
+              </div>
+            ))}
+          </div>
+
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
 function ProductCategories({ categories }: { categories: Category[] }) {
   const catalogueCategories = categories.filter((category) => category.name !== "Role Play Costumes");
 
@@ -494,7 +535,7 @@ function ProductCategories({ categories }: { categories: Category[] }) {
   }
 
   return (
-    <section id="products" className="bg-white pb-16 pt-12">
+    <section id="products" className="scroll-mt-24 bg-white pb-16 pt-12">
       <SectionHeading
         eyebrow="Browse by range"
         title="All Catalogue"
@@ -944,6 +985,7 @@ export default function LandingPage({ bannerCtaHrefs, bannerImageSrcs, categorie
       <About />
       <ProductCategories categories={categories} />
       <RockerRange products={products} />
+      <OutdoorPlaygroundFeature />
       <PopularProducts featuredProducts={homepageFeaturedProducts} />
       <RolePlayCostumes products={products} />
       <Offer />

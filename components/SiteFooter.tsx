@@ -5,7 +5,7 @@ const footerLinks = [
   ["Catalogue", "/products"],
   ["Categories", "/#products"],
   ["Offers", "/#offer"],
-  ["Contact", "/#contact"],
+  ["Contact", "/contact"],
 ];
 
 export default function SiteFooter() {
