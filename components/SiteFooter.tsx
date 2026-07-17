@@ -33,9 +33,9 @@ export default function SiteFooter() {
           <div>
             <h3 className="text-3xl font-black">Contact Us</h3>
             <div className="mt-6 grid gap-4 text-sm font-semibold leading-7 text-white/90">
-              <p>Phone: +91-9811148225</p>
-              <p>Email: contact@gmail.com</p>
-              <p>Address: Sector 3, Bawana Industrial Area, Delhi 110039, India.</p>
+              <p>Phone: 7814511770</p>
+              <p>Email: ankushplayways@gmail.com</p>
+              <p>Address: E-110, Phase-7, Industrial Area, Mohali, Punjab, 160059, India</p>
             </div>
           </div>
         </div>

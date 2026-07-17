@@ -107,7 +107,7 @@ export function slugify(value: string): string {
 
 export function formatProductCode(id: string): string {
   const upper = id.toUpperCase();
-  if (/^(LF|LFT|LFP|LFO)-/.test(upper)) {
+  if (/^(AP|APT|APP|APO)-/.test(upper)) {
     return upper.replace("-", "");
   }
   return upper;
@@ -178,7 +178,7 @@ export const categories: Category[] = Object.values(
 
 export const featuredCategories = categories.slice(0, 6);
 
-const featuredProductIds = ["lf-802", "lf-155", "lf-916", "lf-101-5", "lf-55", "lf-135", "lf-936", "lft-1251"];
+const featuredProductIds = ["ap-802", "ap-155", "ap-916", "ap-101-5", "ap-55", "ap-135", "ap-936", "apt-1251"];
 
 export const popularProducts = featuredProductIds
   .map((id) => products.find((product) => product.id === id))
@@ -211,5 +211,5 @@ export function getWhatsAppUrl(product?: Pick<Product, "code" | "name">): string
     ? `Hi, I am interested in ${product.code} - ${product.name}. Please share details.`
     : "Hi, I would like to know more about ANKUSH Playways products.";
 
-  return `https://wa.me/919811148225?text=${encodeURIComponent(message)}`;
+  return `https://wa.me/917814511770?text=${encodeURIComponent(message)}`;
 }

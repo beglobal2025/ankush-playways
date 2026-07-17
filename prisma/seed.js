@@ -13,7 +13,7 @@ function slugify(value) {
 
 function formatProductCode(id) {
   const upper = String(id).toUpperCase();
-  if (/^(LF|LFT|LFP|LFO)-/.test(upper)) {
+  if (/^(AP|APT|APP|APO)-/.test(upper)) {
     return upper.replace("-", "");
   }
   return upper;

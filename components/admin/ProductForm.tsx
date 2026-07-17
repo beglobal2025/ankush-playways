@@ -48,7 +48,7 @@ export default function ProductForm({ action, categories, product }: ProductForm
               required
               defaultValue={product?.code}
               className="rounded-lg border border-slate-200 bg-white px-4 py-3 font-semibold outline-none transition focus:border-[var(--sun-sky-dark)] focus:ring-4 focus:ring-[var(--sun-sky-soft)]"
-              placeholder="LF802"
+              placeholder="AP802"
             />
           </label>
           <label className="grid gap-2 text-sm font-bold text-slate-700">

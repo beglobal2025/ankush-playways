@@ -1,9 +1,9 @@
 [
   {
-    "id": "lf-7021",
+    "id": "ap-7021",
     "name": "ARC Shape Table",
     "category": "Premium",
-    "price": 18990.0,
+    "price": 18990,
     "specifications": {
       "details": [
         "Dimensions & Materials",
@@ -18,10 +18,10 @@
     ]
   },
   {
-    "id": "lf-7022",
+    "id": "ap-7022",
     "name": "Rectangular Shape Table",
     "category": "Premium",
-    "price": 13990.0,
+    "price": 13990,
     "specifications": {
       "details": [
         "Dimensions & Materials",
@@ -36,10 +36,10 @@
     ]
   },
   {
-    "id": "lf-7023",
+    "id": "ap-7023",
     "name": "Triangle Shape Table",
     "category": "Premium",
-    "price": 13990.0,
+    "price": 13990,
     "specifications": {
       "details": [
         "Dimensions & Materials",
@@ -54,10 +54,10 @@
     ]
   },
   {
-    "id": "lf-0431",
+    "id": "ap-0431",
     "name": "Dual Seating Desk",
     "category": "Primary , Middle & High Classes",
-    "price": 9990.0,
+    "price": 9990,
     "specifications": {
       "details": [
         "Dimensions & Materials",
@@ -81,10 +81,10 @@
     ]
   },
   {
-    "id": "lf-0447",
+    "id": "ap-0447",
     "name": "Dual Seating Desk",
     "category": "Primary , Middle & High Classes",
-    "price": 10990.0,
+    "price": 10990,
     "specifications": {
       "details": [
         "Dimensions & Materials",
@@ -108,10 +108,10 @@
     ]
   },
   {
-    "id": "lf-0448",
+    "id": "ap-0448",
     "name": "Single Seating Desk",
     "category": "Primary , Middle & High Classes",
-    "price": 6490.0,
+    "price": 6490,
     "specifications": {
       "details": [
         "Dimensions & Materials",
@@ -135,10 +135,10 @@
     ]
   },
   {
-    "id": "lf-0429",
+    "id": "ap-0429",
     "name": "Dual Seater Desk",
     "category": "Middle & High Classes",
-    "price": 16990.0,
+    "price": 16990,
     "specifications": {
       "details": [
         "Dimensions & Materials",
@@ -160,10 +160,10 @@
     ]
   },
   {
-    "id": "lf-0235",
+    "id": "ap-0235",
     "name": "Single Desk",
     "category": "Middle & High Classes",
-    "price": 8490.0,
+    "price": 8490,
     "specifications": {
       "details": [
         "Single-Seater Desk with Wire Storage &",
@@ -187,10 +187,10 @@
     ]
   },
   {
-    "id": "lf-0405",
+    "id": "ap-0405",
     "name": "Dual Seating Desk (Adjustable)",
     "category": "Middle & High Classes",
-    "price": 9490.0,
+    "price": 9490,
     "specifications": {
       "details": [
         "Dimensions & Materials",
@@ -213,10 +213,10 @@
     ]
   },
   {
-    "id": "lf-0406",
+    "id": "ap-0406",
     "name": "Dual Seating Desk (Adjustable)",
     "category": "Middle & High Classes",
-    "price": 9490.0,
+    "price": 9490,
     "specifications": {
       "details": [
         "Dimensions & Materials",
@@ -239,10 +239,10 @@
     ]
   },
   {
-    "id": "lf-0407",
+    "id": "ap-0407",
     "name": "Dual Seating Desk",
     "category": "Middle & High Classes",
-    "price": 11990.0,
+    "price": 11990,
     "specifications": {
       "details": [
         "Dimensions With Adjustable Height & Materials",
@@ -266,10 +266,10 @@
     ]
   },
   {
-    "id": "lf-081",
+    "id": "ap-081",
     "name": "Dual Seating Desk (Adjustable)",
     "category": "Middle & High Classes",
-    "price": 15990.0,
+    "price": 15990,
     "specifications": {
       "details": [
         "Dimensions & Materials",
@@ -292,10 +292,10 @@
     ]
   },
   {
-    "id": "lf-082",
+    "id": "ap-082",
     "name": "Single Seater Desk (Adjustable)",
     "category": "Middle & High Classes",
-    "price": 8990.0,
+    "price": 8990,
     "specifications": {
       "details": [
         "Dimensions & Materials",
@@ -319,10 +319,10 @@
     ]
   },
   {
-    "id": "lf-029",
+    "id": "ap-029",
     "name": "Pentagon Study Desk",
     "category": "Middle & High Classes",
-    "price": 7990.0,
+    "price": 7990,
     "specifications": {
       "details": [
         "Dimensions & Materials",
@@ -345,10 +345,10 @@
     ]
   },
   {
-    "id": "lf-028",
+    "id": "ap-028",
     "name": "Single Seater Desk",
     "category": "Middle & High Classes",
-    "price": 7990.0,
+    "price": 7990,
     "specifications": {
       "details": [
         "Dimensions & Materials",
@@ -372,10 +372,10 @@
     ]
   },
   {
-    "id": "lf-0331",
+    "id": "ap-0331",
     "name": "Single Seater Desk (Adjustable)",
     "category": "Middle & High Classes",
-    "price": 6490.0,
+    "price": 6490,
     "specifications": {
       "details": [
         "Dimensions & Materials",
@@ -399,10 +399,10 @@
     ]
   },
   {
-    "id": "lf-035",
+    "id": "ap-035",
     "name": "Dual Seater Desk",
     "category": "Middle Classes",
-    "price": 16990.0,
+    "price": 16990,
     "specifications": {
       "details": [
         "with Wire Book Rack + Cantilever Frame",
@@ -426,10 +426,10 @@
     ]
   },
   {
-    "id": "lf-025",
+    "id": "ap-025",
     "name": "Single Seater Desk",
     "category": "Middle Classes",
-    "price": 8990.0,
+    "price": 8990,
     "specifications": {
       "details": [
         "Dimensions & Materials",
@@ -452,10 +452,10 @@
     ]
   },
   {
-    "id": "lf-155",
+    "id": "ap-155",
     "name": "Dual Seating Desk (Adjustable)",
     "category": "Primary Classes",
-    "price": 9490.0,
+    "price": 9490,
     "specifications": {
       "details": [
         "Dimensions & Materials",
@@ -478,10 +478,10 @@
     ]
   },
   {
-    "id": "lf-157",
+    "id": "ap-157",
     "name": "Dual Seater Desk",
     "category": "Primary Classes",
-    "price": 7490.0,
+    "price": 7490,
     "specifications": {
       "details": [
         "Dimensions & Materials",
@@ -503,7 +503,7 @@
     ]
   },
   {
-    "id": "lf-158",
+    "id": "ap-158",
     "name": "Dual Seating Desk (Adjustable)",
     "category": "Primary Classes",
     "price": null,
@@ -530,10 +530,10 @@
     ]
   },
   {
-    "id": "lf-159",
+    "id": "ap-159",
     "name": "Dual Seating Desk (Adjustable)",
     "category": "Primary Classes",
-    "price": 11990.0,
+    "price": 11990,
     "specifications": {
       "details": [
         "Dimensions & Materials",
@@ -556,10 +556,10 @@
     ]
   },
   {
-    "id": "lf-0504",
+    "id": "ap-0504",
     "name": "Rectangular Dual-Seater Desk",
     "category": "Pre Classes",
-    "price": 8990.0,
+    "price": 8990,
     "specifications": {
       "details": [
         "with Twin metal Storage Compartments",
@@ -582,10 +582,10 @@
     ]
   },
   {
-    "id": "lf-0512",
+    "id": "ap-0512",
     "name": "Trapezium Shaped Desk",
     "category": "Pre Classes",
-    "price": 4290.0,
+    "price": 4290,
     "specifications": {
       "details": [
         "with Wire Storage & Cantilever Frame",
@@ -608,10 +608,10 @@
     ]
   },
   {
-    "id": "lf-0513",
+    "id": "ap-0513",
     "name": "Desk & Chair (Adjustable)",
     "category": "Pre Classes",
-    "price": 7990.0,
+    "price": 7990,
     "specifications": {
       "details": [
         "Set of 1 Table & 2 Chairs",
@@ -634,10 +634,10 @@
     ]
   },
   {
-    "id": "lf-311",
+    "id": "ap-311",
     "name": "Moon Table (Adjustable)",
     "category": "Pre Classes",
-    "price": 9990.0,
+    "price": 9990,
     "specifications": {
       "details": [
         "Dimensions & Materials",
@@ -656,10 +656,10 @@
     ]
   },
   {
-    "id": "lf-314",
+    "id": "ap-314",
     "name": "Round Table (Adjustable)",
     "category": "Pre Classes",
-    "price": 9990.0,
+    "price": 9990,
     "specifications": {
       "details": [
         "Dimensions & Materials",
@@ -678,10 +678,10 @@
     ]
   },
   {
-    "id": "lf-315",
+    "id": "ap-315",
     "name": "Rectangle Table (Adjustable)",
     "category": "Pre Classes",
-    "price": 7990.0,
+    "price": 7990,
     "specifications": {
       "details": [
         "Dimensions & Materials",
@@ -700,10 +700,10 @@
     ]
   },
   {
-    "id": "lf-211",
+    "id": "ap-211",
     "name": "Moon Table (Adjustable)",
     "category": "Pre Classes",
-    "price": 9990.0,
+    "price": 9990,
     "specifications": {
       "details": [
         "Dimensions & Materials",
@@ -722,10 +722,10 @@
     ]
   },
   {
-    "id": "lf-214",
+    "id": "ap-214",
     "name": "Round Table (Adjustable)",
     "category": "Pre Classes",
-    "price": 9990.0,
+    "price": 9990,
     "specifications": {
       "details": [
         "Dimensions & Materials",
@@ -744,10 +744,10 @@
     ]
   },
   {
-    "id": "lf-215",
+    "id": "ap-215",
     "name": "Rectangle Table (Adjustable)",
     "category": "Pre Classes",
-    "price": 7990.0,
+    "price": 7990,
     "specifications": {
       "details": [
         "Dimensions & Materials",
@@ -766,10 +766,10 @@
     ]
   },
   {
-    "id": "lf-110",
+    "id": "ap-110",
     "name": "Rectangle Table",
     "category": "Pre Classes",
-    "price": 7990.0,
+    "price": 7990,
     "specifications": {
       "details": [
         "Dimensions & Materials",
@@ -787,10 +787,10 @@
     ]
   },
   {
-    "id": "lf-111",
+    "id": "ap-111",
     "name": "Moon Table",
     "category": "Pre Classes",
-    "price": 6990.0,
+    "price": 6990,
     "specifications": {
       "details": [
         "Dimensions & Materials",
@@ -808,10 +808,10 @@
     ]
   },
   {
-    "id": "lf-113",
+    "id": "ap-113",
     "name": "Square Table",
     "category": "Pre Classes",
-    "price": 3990.0,
+    "price": 3990,
     "specifications": {
       "details": [
         "Dimensions & Materials",
@@ -829,10 +829,10 @@
     ]
   },
   {
-    "id": "lf-114",
+    "id": "ap-114",
     "name": "Round Table",
     "category": "Pre Classes",
-    "price": 6990.0,
+    "price": 6990,
     "specifications": {
       "details": [
         "Dimensions & Materials",
@@ -850,10 +850,10 @@
     ]
   },
   {
-    "id": "lf-114s",
+    "id": "ap-114s",
     "name": "Round Table",
     "category": "Pre Classes",
-    "price": 5990.0,
+    "price": 5990,
     "specifications": {
       "details": [
         "Dimensions & Materials",
@@ -871,10 +871,10 @@
     ]
   },
   {
-    "id": "lf-115",
+    "id": "ap-115",
     "name": "Rectangle Table",
     "category": "Pre Classes",
-    "price": 5490.0,
+    "price": 5490,
     "specifications": {
       "details": [
         "Dimensions & Materials",
@@ -892,10 +892,10 @@
     ]
   },
   {
-    "id": "lf-115s",
+    "id": "ap-115s",
     "name": "Rectangle Table (small)",
     "category": "Pre Classes",
-    "price": 3490.0,
+    "price": 3490,
     "specifications": {
       "details": [
         "Dimensions & Materials",
@@ -913,10 +913,10 @@
     ]
   },
   {
-    "id": "lf-206",
+    "id": "ap-206",
     "name": "without chairs",
     "category": "Pre Classes",
-    "price": 14990.0,
+    "price": 14990,
     "specifications": {
       "size": "DiaxH53 CM"
     },
@@ -925,10 +925,10 @@
     ]
   },
   {
-    "id": "lf-205",
-    "name": "LF-205",
+    "id": "ap-205",
+    "name": "AP-205",
     "category": "Pre Classes",
-    "price": 17990.0,
+    "price": 17990,
     "specifications": {
       "size": "L120xW60xH53 CM"
     },
@@ -937,10 +937,10 @@
     ]
   },
   {
-    "id": "lf-201",
+    "id": "ap-201",
     "name": "without chairs",
     "category": "Pre Classes",
-    "price": 4990.0,
+    "price": 4990,
     "specifications": {
       "size": "DiaxH53 CM"
     },
@@ -949,10 +949,10 @@
     ]
   },
   {
-    "id": "lf-207",
+    "id": "ap-207",
     "name": "without chairs",
     "category": "Pre Classes",
-    "price": 24990.0,
+    "price": 24990,
     "specifications": {
       "size": "L120xW105xH50 CM"
     },
@@ -961,10 +961,10 @@
     ]
   },
   {
-    "id": "lf-202",
-    "name": "LF-202",
+    "id": "ap-202",
+    "name": "AP-202",
     "category": "Pre Classes",
-    "price": 4990.0,
+    "price": 4990,
     "specifications": {
       "size": "H56 CM"
     },
@@ -973,10 +973,10 @@
     ]
   },
   {
-    "id": "lf-1421",
-    "name": "LF-1421",
+    "id": "ap-1421",
+    "name": "AP-1421",
     "category": "Pre Classes",
-    "price": 15990.0,
+    "price": 15990,
     "specifications": {
       "size": "L36xW27.8xH25 CM"
     },
@@ -985,10 +985,10 @@
     ]
   },
   {
-    "id": "lf-1422",
-    "name": "LF-1422",
+    "id": "ap-1422",
+    "name": "AP-1422",
     "category": "Pre Classes",
-    "price": 15990.0,
+    "price": 15990,
     "specifications": {
       "size": "L44xW35xH50 CM"
     },
@@ -997,10 +997,10 @@
     ]
   },
   {
-    "id": "lf-1423",
-    "name": "LF-1423",
+    "id": "ap-1423",
+    "name": "AP-1423",
     "category": "Pre Classes",
-    "price": 15990.0,
+    "price": 15990,
     "specifications": {
       "size": "L44xW35xH50 CM"
     },
@@ -1009,10 +1009,10 @@
     ]
   },
   {
-    "id": "lf-1425",
-    "name": "LF-1425",
+    "id": "ap-1425",
+    "name": "AP-1425",
     "category": "Pre Classes",
-    "price": 21990.0,
+    "price": 21990,
     "specifications": {
       "size": "L44xW35xH82 CM"
     },
@@ -1021,10 +1021,10 @@
     ]
   },
   {
-    "id": "lf-1424",
-    "name": "LF-1424",
+    "id": "ap-1424",
+    "name": "AP-1424",
     "category": "Pre Classes",
-    "price": 9990.0,
+    "price": 9990,
     "specifications": {
       "size": "L36xW27.8xH25 CM"
     },
@@ -1033,10 +1033,10 @@
     ]
   },
   {
-    "id": "lf-1426",
+    "id": "ap-1426",
     "name": "A modern pretend play kitchen with stove, oven",
     "category": "Pre Classes",
-    "price": 16990.0,
+    "price": 16990,
     "specifications": {
       "size": "L120xW29.5xH98 CM",
       "details": [
@@ -1051,10 +1051,10 @@
     ]
   },
   {
-    "id": "lf-1427",
+    "id": "ap-1427",
     "name": "A stylish and durable wooden play kitchen with realistic",
     "category": "Pre Classes",
-    "price": 24990.0,
+    "price": 24990,
     "specifications": {
       "size": "L122xW30xH109.5 CM",
       "details": [
@@ -1069,10 +1069,10 @@
     ]
   },
   {
-    "id": "lf-1428",
+    "id": "ap-1428",
     "name": "A fun and educational wooden workbench designed to",
     "category": "Pre Classes",
-    "price": 14990.0,
+    "price": 14990,
     "specifications": {
       "size": "L68xW30xH88 CM",
       "details": [
@@ -1088,8 +1088,8 @@
     ]
   },
   {
-    "id": "lf-1451",
-    "name": "LF-1451",
+    "id": "ap-1451",
+    "name": "AP-1451",
     "category": "Pre Classes",
     "price": null,
     "specifications": {
@@ -1100,7 +1100,7 @@
     ]
   },
   {
-    "id": "lf-1452",
+    "id": "ap-1452",
     "name": "............",
     "category": "Pre Classes",
     "price": null,
@@ -1112,7 +1112,7 @@
     ]
   },
   {
-    "id": "lf-1453",
+    "id": "ap-1453",
     "name": "............",
     "category": "Pre Classes",
     "price": null,
@@ -1124,7 +1124,7 @@
     ]
   },
   {
-    "id": "lf-1454",
+    "id": "ap-1454",
     "name": "............",
     "category": "Pre Classes",
     "price": null,
@@ -1136,7 +1136,7 @@
     ]
   },
   {
-    "id": "lf-1455",
+    "id": "ap-1455",
     "name": "............",
     "category": "Pre Classes",
     "price": null,
@@ -1148,7 +1148,7 @@
     ]
   },
   {
-    "id": "lf-1456",
+    "id": "ap-1456",
     "name": "............",
     "category": "Pre Classes",
     "price": null,
@@ -1160,10 +1160,10 @@
     ]
   },
   {
-    "id": "lf-1458",
+    "id": "ap-1458",
     "name": "............",
     "category": "Pre Classes",
-    "price": 9990.0,
+    "price": 9990,
     "specifications": {
       "size": "L124xW40xH50 CM"
     },
@@ -1172,10 +1172,10 @@
     ]
   },
   {
-    "id": "lf-1457",
+    "id": "ap-1457",
     "name": "............",
     "category": "Pre Classes",
-    "price": 9990.0,
+    "price": 9990,
     "specifications": {
       "size": "L124xW30xH80 CM"
     },
@@ -1184,10 +1184,10 @@
     ]
   },
   {
-    "id": "lf-1459",
+    "id": "ap-1459",
     "name": "............",
     "category": "Pre Classes",
-    "price": 9990.0,
+    "price": 9990,
     "specifications": {
       "size": "L298xW30xH116 CM"
     },
@@ -1196,10 +1196,10 @@
     ]
   },
   {
-    "id": "lf-1501",
-    "name": "LF-1501",
+    "id": "ap-1501",
+    "name": "AP-1501",
     "category": "Pre Classes",
-    "price": 9990.0,
+    "price": 9990,
     "specifications": {
       "size": "L90xW20xH58 CM"
     },
@@ -1208,10 +1208,10 @@
     ]
   },
   {
-    "id": "lf-1502",
-    "name": "LF-1502",
+    "id": "ap-1502",
+    "name": "AP-1502",
     "category": "Pre Classes",
-    "price": 9990.0,
+    "price": 9990,
     "specifications": {
       "size": "L90xW20xH58 CM"
     },
@@ -1220,10 +1220,10 @@
     ]
   },
   {
-    "id": "lf-1503",
-    "name": "LF-1503",
+    "id": "ap-1503",
+    "name": "AP-1503",
     "category": "Pre Classes",
-    "price": 9990.0,
+    "price": 9990,
     "specifications": {
       "size": "L90xW20xH58 CM"
     },
@@ -1232,10 +1232,10 @@
     ]
   },
   {
-    "id": "lf-1504",
-    "name": "LF-1504",
+    "id": "ap-1504",
+    "name": "AP-1504",
     "category": "Pre Classes",
-    "price": 9990.0,
+    "price": 9990,
     "specifications": {
       "size": "L90xW20xH92 CM"
     },
@@ -1244,10 +1244,10 @@
     ]
   },
   {
-    "id": "lf-0701",
+    "id": "ap-0701",
     "name": "Sports Activity Carpets",
     "category": "Pre Classes",
-    "price": 24990.0,
+    "price": 24990,
     "specifications": {
       "size": "L220xW180 CM"
     },
@@ -1256,10 +1256,10 @@
     ]
   },
   {
-    "id": "lf-0702",
+    "id": "ap-0702",
     "name": "Alphabet Activity Carpets",
     "category": "Pre Classes",
-    "price": 24990.0,
+    "price": 24990,
     "specifications": {
       "size": "L220xW180 CM"
     },
@@ -1268,10 +1268,10 @@
     ]
   },
   {
-    "id": "lf-0703",
+    "id": "ap-0703",
     "name": "Space Activity Carpets",
     "category": "Pre Classes",
-    "price": 24990.0,
+    "price": 24990,
     "specifications": {
       "size": "L200xW200 CM"
     },
@@ -1280,10 +1280,10 @@
     ]
   },
   {
-    "id": "lf-0704",
+    "id": "ap-0704",
     "name": "Numbers Activity Carpets",
     "category": "Pre Classes",
-    "price": 24990.0,
+    "price": 24990,
     "specifications": {
       "size": "L200xW200 CM"
     },
@@ -1292,10 +1292,10 @@
     ]
   },
   {
-    "id": "lf-0705",
+    "id": "ap-0705",
     "name": "Shapes Activity Carpets",
     "category": "Pre Classes",
-    "price": 24990.0,
+    "price": 24990,
     "specifications": {
       "size": "L230xW160 CM"
     },
@@ -1304,10 +1304,10 @@
     ]
   },
   {
-    "id": "lf-401",
+    "id": "ap-401",
     "name": "Single Seater Dolphin Desk",
     "category": "Pre Classes",
-    "price": 3790.0,
+    "price": 3790,
     "specifications": {
       "details": [
         "Dimensions & Materials",
@@ -1322,10 +1322,10 @@
     ]
   },
   {
-    "id": "lf-402",
+    "id": "ap-402",
     "name": "Single Seater Giraffe Desk",
     "category": "Pre Classes",
-    "price": 3790.0,
+    "price": 3790,
     "specifications": {
       "details": [
         "Dimensions & Materials",
@@ -1340,10 +1340,10 @@
     ]
   },
   {
-    "id": "lf-411",
+    "id": "ap-411",
     "name": "Double Seater Dolphin Desk",
     "category": "Pre Classes",
-    "price": 5990.0,
+    "price": 5990,
     "specifications": {
       "details": [
         "Dimensions & Materials",
@@ -1358,10 +1358,10 @@
     ]
   },
   {
-    "id": "lf-412",
+    "id": "ap-412",
     "name": "Double Seater Giraffe Desk",
     "category": "Pre Classes",
-    "price": 5990.0,
+    "price": 5990,
     "specifications": {
       "details": [
         "Dimensions & Materials",
@@ -1376,7 +1376,7 @@
     ]
   },
   {
-    "id": "lf-1481",
+    "id": "ap-1481",
     "name": "L120 × W60 cm",
     "category": "Soft Seating",
     "price": null,
@@ -1386,7 +1386,7 @@
     ]
   },
   {
-    "id": "lf-1482",
+    "id": "ap-1482",
     "name": "L120 × W60 cm",
     "category": "Soft Seating",
     "price": null,
@@ -1400,7 +1400,7 @@
     ]
   },
   {
-    "id": "lf-1483",
+    "id": "ap-1483",
     "name": "L60 × W51 cm",
     "category": "Soft Seating",
     "price": null,
@@ -1414,7 +1414,7 @@
     ]
   },
   {
-    "id": "lf-1484",
+    "id": "ap-1484",
     "name": "L60 × W60 cm",
     "category": "Soft Seating",
     "price": null,
@@ -1424,7 +1424,7 @@
     ]
   },
   {
-    "id": "lf-1485",
+    "id": "ap-1485",
     "name": "L60 × W60 cm",
     "category": "Soft Seating",
     "price": null,
@@ -1434,7 +1434,7 @@
     ]
   },
   {
-    "id": "lf-1486",
+    "id": "ap-1486",
     "name": "L60 × W60 cm",
     "category": "Soft Seating",
     "price": null,
@@ -1448,10 +1448,10 @@
     ]
   },
   {
-    "id": "lf-0421",
+    "id": "ap-0421",
     "name": "Play Animal Seating",
     "category": "Soft Play Seating",
-    "price": 24990.0,
+    "price": 24990,
     "specifications": {
       "size": "L242xW44xH50 CM"
     },
@@ -1460,10 +1460,10 @@
     ]
   },
   {
-    "id": "lf-0422",
+    "id": "ap-0422",
     "name": "Play Crocodile Seating",
     "category": "Soft Play Seating",
-    "price": 79990.0,
+    "price": 79990,
     "specifications": {
       "size": "L260xW44xH52 CM"
     },
@@ -1472,10 +1472,10 @@
     ]
   },
   {
-    "id": "lf-0423",
+    "id": "ap-0423",
     "name": "Play Slark Seating",
     "category": "Soft Play Seating",
-    "price": 24990.0,
+    "price": 24990,
     "specifications": {
       "size": "L100xW22xH27 CM"
     },
@@ -1484,10 +1484,10 @@
     ]
   },
   {
-    "id": "lf-960",
+    "id": "ap-960",
     "name": "Y-Connect Seat",
     "category": "Bench",
-    "price": 6990.0,
+    "price": 6990,
     "specifications": {
       "details": [
         "Dimensions",
@@ -1500,10 +1500,10 @@
     ]
   },
   {
-    "id": "lf-136",
+    "id": "ap-136",
     "name": "Plastic Bench",
     "category": "Pre Classes",
-    "price": 4190.0,
+    "price": 4190,
     "specifications": {
       "details": [
         "Dimensions",
@@ -1518,10 +1518,10 @@
     ]
   },
   {
-    "id": "lf-507",
+    "id": "ap-507",
     "name": "Children Bed",
     "category": "Pre Classes",
-    "price": 3490.0,
+    "price": 3490,
     "specifications": {
       "details": [
         "Dimensions",
@@ -1536,117 +1536,117 @@
     ]
   },
   {
-    "id": "lf-106",
+    "id": "ap-106",
     "name": "Plastic Chair",
     "category": "For All Category Classes",
-    "price": 390.0,
+    "price": 390,
     "specifications": {},
     "images": [
       "/catalogue/for-all-category-classes/lf-106/cover.jpg"
     ]
   },
   {
-    "id": "lf-116",
+    "id": "ap-116",
     "name": "Adj Plastic Chair",
     "category": "For All Category Classes",
-    "price": 590.0,
+    "price": 590,
     "specifications": {},
     "images": [
       "/catalogue/for-all-category-classes/lf-116/cover.jpg"
     ]
   },
   {
-    "id": "lf-186",
+    "id": "ap-186",
     "name": "Adj Plastic Chair",
     "category": "For All Category Classes",
-    "price": 1090.0,
+    "price": 1090,
     "specifications": {},
     "images": [
       "/catalogue/for-all-category-classes/lf-186/cover.jpg"
     ]
   },
   {
-    "id": "lf-146",
+    "id": "ap-146",
     "name": "Adj Plastic Chair",
     "category": "For All Category Classes",
-    "price": 990.0,
+    "price": 990,
     "specifications": {},
     "images": [
       "/catalogue/for-all-category-classes/lf-146/cover.jpg"
     ]
   },
   {
-    "id": "lf-176",
+    "id": "ap-176",
     "name": "Metal Chair",
     "category": "For All Category Classes",
-    "price": 1790.0,
+    "price": 1790,
     "specifications": {},
     "images": [
       "/catalogue/for-all-category-classes/lf-176/cover.jpg"
     ]
   },
   {
-    "id": "lf-156",
+    "id": "ap-156",
     "name": "Metal Handle Chair",
     "category": "For All Category Classes",
-    "price": 1890.0,
+    "price": 1890,
     "specifications": {},
     "images": [
       "/catalogue/for-all-category-classes/lf-156/cover.jpg"
     ]
   },
   {
-    "id": "lf-126",
+    "id": "ap-126",
     "name": "Metal Chair",
     "category": "For All Category Classes",
-    "price": 690.0,
+    "price": 690,
     "specifications": {},
     "images": [
       "/catalogue/for-all-category-classes/lf-126/cover.jpg"
     ]
   },
   {
-    "id": "lf-127",
+    "id": "ap-127",
     "name": "Metal Handle Chair",
     "category": "For All Category Classes",
-    "price": 890.0,
+    "price": 890,
     "specifications": {},
     "images": [
       "/catalogue/for-all-category-classes/lf-127/cover.jpg"
     ]
   },
   {
-    "id": "lf-166",
+    "id": "ap-166",
     "name": "Metal Handle Chair",
     "category": "For All Category Classes",
-    "price": 2090.0,
+    "price": 2090,
     "specifications": {},
     "images": [
       "/catalogue/for-all-category-classes/lf-166/cover.jpg"
     ]
   },
   {
-    "id": "lf-128",
+    "id": "ap-128",
     "name": "Metal Handle Chair",
     "category": "For All Category Classes",
-    "price": 1290.0,
+    "price": 1290,
     "specifications": {},
     "images": [
       "/catalogue/for-all-category-classes/lf-128/cover.jpg"
     ]
   },
   {
-    "id": "lf-129",
+    "id": "ap-129",
     "name": "Plastic Chair",
     "category": "For All Category Classes",
-    "price": 1590.0,
+    "price": 1590,
     "specifications": {},
     "images": [
       "/catalogue/for-all-category-classes/lf-129/cover.jpg"
     ]
   },
   {
-    "id": "lf-801",
+    "id": "ap-801",
     "name": "Mini Home & Kitchen Playhouse",
     "category": "Play Equipment",
     "price": null,
@@ -1658,7 +1658,7 @@
     ]
   },
   {
-    "id": "lf-802",
+    "id": "ap-802",
     "name": "Junior Living House",
     "category": "Play Equipment",
     "price": null,
@@ -1670,10 +1670,10 @@
     ]
   },
   {
-    "id": "lf-901",
+    "id": "ap-901",
     "name": "Chocolate Playhouse",
     "category": "Play Equipment",
-    "price": 49990.0,
+    "price": 49990,
     "specifications": {
       "size": "L125xW135xH143 CM"
     },
@@ -1682,10 +1682,10 @@
     ]
   },
   {
-    "id": "lf-902",
+    "id": "ap-902",
     "name": "Playhouse",
     "category": "Play Equipment",
-    "price": 29990.0,
+    "price": 29990,
     "specifications": {
       "size": "L103xW109xH131 CM"
     },
@@ -1694,7 +1694,7 @@
     ]
   },
   {
-    "id": "lf-903",
+    "id": "ap-903",
     "name": "Royal Cottage",
     "category": "Play Equipment",
     "price": null,
@@ -1709,7 +1709,7 @@
     ]
   },
   {
-    "id": "lf-904",
+    "id": "ap-904",
     "name": "Classic Cottage",
     "category": "Play Equipment",
     "price": null,
@@ -1721,10 +1721,10 @@
     ]
   },
   {
-    "id": "lf-102",
+    "id": "ap-102",
     "name": "Slide",
     "category": "Play Equipment",
-    "price": 39990.0,
+    "price": 39990,
     "specifications": {
       "size": "L204xW220xH180 CM"
     },
@@ -1733,10 +1733,10 @@
     ]
   },
   {
-    "id": "lf-103",
+    "id": "ap-103",
     "name": "Slide",
     "category": "Play Equipment",
-    "price": 29990.0,
+    "price": 29990,
     "specifications": {
       "size": "L274xW116xH134 CM"
     },
@@ -1745,10 +1745,10 @@
     ]
   },
   {
-    "id": "lf-105",
+    "id": "ap-105",
     "name": "Slide",
     "category": "Play Equipment",
-    "price": 44990.0,
+    "price": 44990,
     "specifications": {
       "size": "L274xW213xH152 CM"
     },
@@ -1757,10 +1757,10 @@
     ]
   },
   {
-    "id": "lf-101",
+    "id": "ap-101",
     "name": "Multi Colour Gambola",
     "category": "Play Equipment",
-    "price": 79990.0,
+    "price": 79990,
     "specifications": {
       "size": "L308xW175xH170 CM"
     },
@@ -1769,10 +1769,10 @@
     ]
   },
   {
-    "id": "lf-101-2",
+    "id": "ap-101-2",
     "name": "Chocolate Colour Gambola",
     "category": "Play Equipment",
-    "price": 79990.0,
+    "price": 79990,
     "specifications": {
       "size": "L308xW175xH170 CM"
     },
@@ -1781,10 +1781,10 @@
     ]
   },
   {
-    "id": "lf-911",
+    "id": "ap-911",
     "name": "Junior Slide",
     "category": "Slides",
-    "price": 2790.0,
+    "price": 2790,
     "specifications": {
       "size": "L110xW50xH70 CM"
     },
@@ -1793,10 +1793,10 @@
     ]
   },
   {
-    "id": "lf-912",
+    "id": "ap-912",
     "name": "Rabbit Slide",
     "category": "Slides",
-    "price": 2990.0,
+    "price": 2990,
     "specifications": {
       "size": "L110xW70xH80 CM"
     },
@@ -1805,10 +1805,10 @@
     ]
   },
   {
-    "id": "lf-912a",
+    "id": "ap-912a",
     "name": "Rabbit Slide Big",
     "category": "Slides",
-    "price": 4790.0,
+    "price": 4790,
     "specifications": {
       "size": "L176xW74xH84 CM"
     },
@@ -1817,10 +1817,10 @@
     ]
   },
   {
-    "id": "lf-915",
+    "id": "ap-915",
     "name": "Castle Slide",
     "category": "Slides",
-    "price": 5990.0,
+    "price": 5990,
     "specifications": {
       "size": "L150xW76xH94 CM"
     },
@@ -1829,10 +1829,10 @@
     ]
   },
   {
-    "id": "lf-916",
+    "id": "ap-916",
     "name": "Dolphin Slide",
     "category": "Slides",
-    "price": 5990.0,
+    "price": 5990,
     "specifications": {
       "size": "L150xW76xH94 CM"
     },
@@ -1841,10 +1841,10 @@
     ]
   },
   {
-    "id": "lf-917",
+    "id": "ap-917",
     "name": "Space Slide",
     "category": "Slides",
-    "price": 5990.0,
+    "price": 5990,
     "specifications": {
       "size": "L150xW76xH94 CM"
     },
@@ -1853,10 +1853,10 @@
     ]
   },
   {
-    "id": "lf-919",
+    "id": "ap-919",
     "name": "Castle Swing",
     "category": "Slides & Swings",
-    "price": 6490.0,
+    "price": 6490,
     "specifications": {
       "size": "L78xW94xH113 CM"
     },
@@ -1865,10 +1865,10 @@
     ]
   },
   {
-    "id": "lf-922",
+    "id": "ap-922",
     "name": "Castle Slide with Swing",
     "category": "Slides & Swings",
-    "price": 11990.0,
+    "price": 11990,
     "specifications": {
       "size": "L177xW156xH113 CM"
     },
@@ -1877,10 +1877,10 @@
     ]
   },
   {
-    "id": "lf-920",
+    "id": "ap-920",
     "name": "Dolphin",
     "category": "Slides & Swings",
-    "price": 6490.0,
+    "price": 6490,
     "specifications": {
       "size": "L78xW94xH113 CM"
     },
@@ -1889,10 +1889,10 @@
     ]
   },
   {
-    "id": "lf-923",
+    "id": "ap-923",
     "name": "Dolphin",
     "category": "Slides & Swings",
-    "price": 11990.0,
+    "price": 11990,
     "specifications": {
       "size": "L177xW156xH113 CM"
     },
@@ -1901,10 +1901,10 @@
     ]
   },
   {
-    "id": "lf-921",
+    "id": "ap-921",
     "name": "Space",
     "category": "Slides & Swings",
-    "price": 6490.0,
+    "price": 6490,
     "specifications": {
       "size": "L78xW94xH113 CM"
     },
@@ -1913,10 +1913,10 @@
     ]
   },
   {
-    "id": "lf-924",
+    "id": "ap-924",
     "name": "Space",
     "category": "Slides & Swings",
-    "price": 11990.0,
+    "price": 11990,
     "specifications": {
       "size": "L177xW156xH113 CM"
     },
@@ -1925,10 +1925,10 @@
     ]
   },
   {
-    "id": "lf-990",
+    "id": "ap-990",
     "name": "Slide",
     "category": "Slides",
-    "price": 8990.0,
+    "price": 8990,
     "specifications": {
       "size": "L162xW73xH96 CM"
     },
@@ -1937,10 +1937,10 @@
     ]
   },
   {
-    "id": "lf-970",
+    "id": "ap-970",
     "name": "Elephant Slide",
     "category": "Slides",
-    "price": 9990.0,
+    "price": 9990,
     "specifications": {
       "size": "L168xW86xH108 CM"
     },
@@ -1949,10 +1949,10 @@
     ]
   },
   {
-    "id": "lf-971",
+    "id": "ap-971",
     "name": "Bear Slide",
     "category": "Slides",
-    "price": 9990.0,
+    "price": 9990,
     "specifications": {
       "size": "L168xW86xH114 CM"
     },
@@ -1961,10 +1961,10 @@
     ]
   },
   {
-    "id": "lf-972",
+    "id": "ap-972",
     "name": "Slide",
     "category": "Slides",
-    "price": 8990.0,
+    "price": 8990,
     "specifications": {
       "size": "L160xW85xH110 CM"
     },
@@ -1973,10 +1973,10 @@
     ]
   },
   {
-    "id": "lf-973",
+    "id": "ap-973",
     "name": "Elephant Swing",
     "category": "Slides & Swings",
-    "price": 9990.0,
+    "price": 9990,
     "specifications": {
       "size": "L90XW60xH123 CM"
     },
@@ -1985,10 +1985,10 @@
     ]
   },
   {
-    "id": "lf-976",
+    "id": "ap-976",
     "name": "Elephant Slide with Swing",
     "category": "Slides & Swings",
-    "price": 16990.0,
+    "price": 16990,
     "specifications": {
       "size": "L160XW170xH114 CM"
     },
@@ -1997,10 +1997,10 @@
     ]
   },
   {
-    "id": "lf-974",
+    "id": "ap-974",
     "name": "Bear Swing",
     "category": "Slides & Swings",
-    "price": 9990.0,
+    "price": 9990,
     "specifications": {
       "size": "L90xW60x123H CM"
     },
@@ -2009,10 +2009,10 @@
     ]
   },
   {
-    "id": "lf-977",
+    "id": "ap-977",
     "name": "Bear Slide with Swing",
     "category": "Slides & Swings",
-    "price": 16990.0,
+    "price": 16990,
     "specifications": {
       "size": "L160XW170xH114 CM"
     },
@@ -2021,10 +2021,10 @@
     ]
   },
   {
-    "id": "lf-975",
+    "id": "ap-975",
     "name": "Multicolour Swing",
     "category": "Slides & Swings",
-    "price": 8990.0,
+    "price": 8990,
     "specifications": {
       "size": "L90XW60xH123 CM"
     },
@@ -2033,10 +2033,10 @@
     ]
   },
   {
-    "id": "lf-978",
+    "id": "ap-978",
     "name": "Multicolour Slide with Swing",
     "category": "Slides & Swings",
-    "price": 15990.0,
+    "price": 15990,
     "specifications": {
       "size": "L160xW170xH114 CM"
     },
@@ -2045,10 +2045,10 @@
     ]
   },
   {
-    "id": "lf-999",
+    "id": "ap-999",
     "name": "L33xW33xH73 CM",
     "category": "Shelf & Pencil Dustbin",
-    "price": 2490.0,
+    "price": 2490,
     "specifications": {
       "size": "",
       "details": [
@@ -2060,10 +2060,10 @@
     ]
   },
   {
-    "id": "lf-999b",
+    "id": "ap-999b",
     "name": "L33xW33xH73 CM",
     "category": "Shelf & Pencil Dustbin",
-    "price": 2990.0,
+    "price": 2990,
     "specifications": {
       "size": "",
       "details": [
@@ -2075,10 +2075,10 @@
     ]
   },
   {
-    "id": "lf-998",
+    "id": "ap-998",
     "name": "Dolphin Dustbin",
     "category": "Shelf & Pencil Dustbin",
-    "price": 6990.0,
+    "price": 6990,
     "specifications": {
       "size": "L52xW66xH87 CM"
     },
@@ -2087,10 +2087,10 @@
     ]
   },
   {
-    "id": "lf-9053-2",
+    "id": "ap-9053-2",
     "name": "Book Shelf",
     "category": "Shelf & Pencil Dustbin",
-    "price": 4490.0,
+    "price": 4490,
     "specifications": {
       "size": "L80xW39xH78 CM"
     },
@@ -2099,10 +2099,10 @@
     ]
   },
   {
-    "id": "lf-934-a",
+    "id": "ap-934-a",
     "name": "Toy Shelf",
     "category": "Shelf & Pencil Dustbin",
-    "price": 6990.0,
+    "price": 6990,
     "specifications": {
       "size": "L91xW43xH81 CM"
     },
@@ -2111,10 +2111,10 @@
     ]
   },
   {
-    "id": "lf-9130-5",
+    "id": "ap-9130-5",
     "name": "Plastic Shoe Rack",
     "category": "Shelf & Pencil Dustbin",
-    "price": 6490.0,
+    "price": 6490,
     "specifications": {
       "size": "L120xW24xH40 CM"
     },
@@ -2123,10 +2123,10 @@
     ]
   },
   {
-    "id": "lf-932a",
+    "id": "ap-932a",
     "name": "Multicolor Tunnel",
     "category": "Play Equipment",
-    "price": 19990.0,
+    "price": 19990,
     "specifications": {
       "size": "L215xW100xH103 CM"
     },
@@ -2135,10 +2135,10 @@
     ]
   },
   {
-    "id": "lf-932b",
+    "id": "ap-932b",
     "name": "Caterpillar Tunnel",
     "category": "Play Equipment",
-    "price": 19990.0,
+    "price": 19990,
     "specifications": {
       "size": "L190xW110xH122 CM"
     },
@@ -2147,10 +2147,10 @@
     ]
   },
   {
-    "id": "lf-450",
+    "id": "ap-450",
     "name": "Roller Coaster Rideon",
     "category": "Play Equipment",
-    "price": 14990.0,
+    "price": 14990,
     "specifications": {
       "size": "310x76x35 CM"
     },
@@ -2159,10 +2159,10 @@
     ]
   },
   {
-    "id": "lf-9052-a",
+    "id": "ap-9052-a",
     "name": "Quarter Round",
     "category": "Play Equipment",
-    "price": 13990.0,
+    "price": 13990,
     "specifications": {
       "size": "133x42 cm"
     },
@@ -2171,10 +2171,10 @@
     ]
   },
   {
-    "id": "lf-9126",
+    "id": "ap-9126",
     "name": "Bull Tunnel",
     "category": "Play Equipment",
-    "price": 8490.0,
+    "price": 8490,
     "specifications": {
       "details": [
         "Set of 4 Pcs"
@@ -2185,10 +2185,10 @@
     ]
   },
   {
-    "id": "lf-629",
+    "id": "ap-629",
     "name": "Rocking Horse",
     "category": "Rockers",
-    "price": 2690.0,
+    "price": 2690,
     "specifications": {
       "size": "L85xW30.5xH44 CM"
     },
@@ -2197,10 +2197,10 @@
     ]
   },
   {
-    "id": "lf-624",
+    "id": "ap-624",
     "name": "Pony Rocking Rideon",
     "category": "Rockers",
-    "price": 2690.0,
+    "price": 2690,
     "specifications": {
       "size": "L88xW29xH53 CM"
     },
@@ -2209,10 +2209,10 @@
     ]
   },
   {
-    "id": "lf-925a",
+    "id": "ap-925a",
     "name": "Hen Rocker",
     "category": "Rockers",
-    "price": 1990.0,
+    "price": 1990,
     "specifications": {
       "size": "L75xW30xH48 CM"
     },
@@ -2221,10 +2221,10 @@
     ]
   },
   {
-    "id": "lf-925c",
+    "id": "ap-925c",
     "name": "Elephant Rocker",
     "category": "Rockers",
-    "price": 1990.0,
+    "price": 1990,
     "specifications": {
       "size": "L78xW30xH44 CM"
     },
@@ -2233,10 +2233,10 @@
     ]
   },
   {
-    "id": "lf-925d",
+    "id": "ap-925d",
     "name": "Dolphin Rocker",
     "category": "Rockers",
-    "price": 1990.0,
+    "price": 1990,
     "specifications": {
       "size": "L75xW29xH55 CM"
     },
@@ -2245,10 +2245,10 @@
     ]
   },
   {
-    "id": "lf-925b",
+    "id": "ap-925b",
     "name": "Fish Rocker",
     "category": "Rockers",
-    "price": 1990.0,
+    "price": 1990,
     "specifications": {
       "size": "L75xW30xH44 CM"
     },
@@ -2257,10 +2257,10 @@
     ]
   },
   {
-    "id": "lf-627",
+    "id": "ap-627",
     "name": "Horse Rideon/",
     "category": "Rockers",
-    "price": 2390.0,
+    "price": 2390,
     "specifications": {
       "size": "L70xW34xH51 CM"
     },
@@ -2269,10 +2269,10 @@
     ]
   },
   {
-    "id": "lf-628",
+    "id": "ap-628",
     "name": "Smiley wagon",
     "category": "Rockers",
-    "price": 2390.0,
+    "price": 2390,
     "specifications": {
       "size": "L70xW34xH48 CM"
     },
@@ -2281,10 +2281,10 @@
     ]
   },
   {
-    "id": "lf-627a",
+    "id": "ap-627a",
     "name": "Horse Rideon/",
     "category": "Rockers",
-    "price": 2790.0,
+    "price": 2790,
     "specifications": {
       "size": "L70xW34xH106 CM"
     },
@@ -2293,10 +2293,10 @@
     ]
   },
   {
-    "id": "lf-108b",
+    "id": "ap-108b",
     "name": "Crab See-Saw",
     "category": "Rockers & See-Saw",
-    "price": 4290.0,
+    "price": 4290,
     "specifications": {
       "size": "L110xW39xH45 CM",
       "details": [
@@ -2308,10 +2308,10 @@
     ]
   },
   {
-    "id": "lf-417",
+    "id": "ap-417",
     "name": "Pony 3 Way Rocker",
     "category": "Rockers & See-Saw",
-    "price": 3990.0,
+    "price": 3990,
     "specifications": {
       "size": "L106xW11xH42 CM"
     },
@@ -2320,10 +2320,10 @@
     ]
   },
   {
-    "id": "lf-416",
+    "id": "ap-416",
     "name": "Dolphin 3 Way Rocker",
     "category": "Rockers & See-Saw",
-    "price": 3990.0,
+    "price": 3990,
     "specifications": {
       "size": "L149xW49xH40 CM"
     },
@@ -2332,10 +2332,10 @@
     ]
   },
   {
-    "id": "lf-9122-3",
+    "id": "ap-9122-3",
     "name": "Fish Rocker",
     "category": "Rockers & See-Saw",
-    "price": 4990.0,
+    "price": 4990,
     "specifications": {
       "size": "L91xW27xH89 CM",
       "details": [
@@ -2347,10 +2347,10 @@
     ]
   },
   {
-    "id": "lf-419",
+    "id": "ap-419",
     "name": "See-Saw",
     "category": "Rockers & See-Saw",
-    "price": 5990.0,
+    "price": 5990,
     "specifications": {
       "size": "L150xW32xH60 CM",
       "details": [
@@ -2362,10 +2362,10 @@
     ]
   },
   {
-    "id": "lf-440",
+    "id": "ap-440",
     "name": "Car",
     "category": "Rideon",
-    "price": 6490.0,
+    "price": 6490,
     "specifications": {
       "size": "L86xW50xH50 CM"
     },
@@ -2374,10 +2374,10 @@
     ]
   },
   {
-    "id": "lf-830",
+    "id": "ap-830",
     "name": "Police Car",
     "category": "Rideon",
-    "price": 9490.0,
+    "price": 9490,
     "specifications": {
       "size": "L90xW50xH95 CM"
     },
@@ -2386,10 +2386,10 @@
     ]
   },
   {
-    "id": "lf-418",
+    "id": "ap-418",
     "name": "Coupe Car",
     "category": "Rideon",
-    "price": 9490.0,
+    "price": 9490,
     "specifications": {
       "size": "L76xW48xH89 CM"
     },
@@ -2398,30 +2398,30 @@
     ]
   },
   {
-    "id": "lf-926a",
+    "id": "ap-926a",
     "name": "Swing Car",
     "category": "Rideon",
-    "price": 2690.0,
+    "price": 2690,
     "specifications": {},
     "images": [
       "/catalogue/rideon/lf-926a/cover.jpg"
     ]
   },
   {
-    "id": "lf-928b",
+    "id": "ap-928b",
     "name": "Motorcycle",
     "category": "Rideon",
-    "price": 2690.0,
+    "price": 2690,
     "specifications": {},
     "images": [
       "/catalogue/rideon/lf-928b/cover.jpg"
     ]
   },
   {
-    "id": "lf-927b",
+    "id": "ap-927b",
     "name": "Dog Rideon",
     "category": "Rideon",
-    "price": 2290.0,
+    "price": 2290,
     "specifications": {
       "size": "L55xW32xH45 CM"
     },
@@ -2430,10 +2430,10 @@
     ]
   },
   {
-    "id": "lf-927c",
+    "id": "ap-927c",
     "name": "Horse Rideon",
     "category": "Rideon",
-    "price": 2290.0,
+    "price": 2290,
     "specifications": {
       "size": "L52xW26xH51 CM"
     },
@@ -2442,10 +2442,10 @@
     ]
   },
   {
-    "id": "lf-927-d",
+    "id": "ap-927-d",
     "name": "Plane Rideon",
     "category": "Rideon",
-    "price": 2290.0,
+    "price": 2290,
     "specifications": {
       "size": "L58xW40xH37 CM"
     },
@@ -2454,10 +2454,10 @@
     ]
   },
   {
-    "id": "lf-927f",
+    "id": "ap-927f",
     "name": "Smiley wagon Rideon",
     "category": "Rideon",
-    "price": 1790.0,
+    "price": 1790,
     "specifications": {
       "size": "L58xW26xH41 CM"
     },
@@ -2466,10 +2466,10 @@
     ]
   },
   {
-    "id": "lf-929a",
+    "id": "ap-929a",
     "name": "Tricycle",
     "category": "Rideon",
-    "price": 2690.0,
+    "price": 2690,
     "specifications": {
       "size": "L62xW34xH42 CM"
     },
@@ -2478,10 +2478,10 @@
     ]
   },
   {
-    "id": "lf-927e",
+    "id": "ap-927e",
     "name": "Horse Rideon",
     "category": "Rideon",
-    "price": 1790.0,
+    "price": 1790,
     "specifications": {
       "size": "L57xW29xH46 CM"
     },
@@ -2490,10 +2490,10 @@
     ]
   },
   {
-    "id": "lf-929b",
+    "id": "ap-929b",
     "name": "Tricycle",
     "category": "Rideon",
-    "price": 3190.0,
+    "price": 3190,
     "specifications": {
       "size": "L66xW36xH45 CM"
     },
@@ -2502,10 +2502,10 @@
     ]
   },
   {
-    "id": "lf-929c",
+    "id": "ap-929c",
     "name": "Tricycle",
     "category": "Rideon",
-    "price": 3190.0,
+    "price": 3190,
     "specifications": {
       "size": "L56xW34xH45 CM"
     },
@@ -2514,10 +2514,10 @@
     ]
   },
   {
-    "id": "lf-933",
+    "id": "ap-933",
     "name": "Sport",
     "category": "Rideon & Balls",
-    "price": 3790.0,
+    "price": 3790,
     "specifications": {
       "size": "L67xW38xH53 CM"
     },
@@ -2526,10 +2526,10 @@
     ]
   },
   {
-    "id": "lft-333",
+    "id": "apt-333",
     "name": "Kitti Rideon",
     "category": "Rideon & Balls",
-    "price": 1499.0,
+    "price": 1499,
     "specifications": {
       "details": [
         "Master CTN : 9 pcs"
@@ -2540,10 +2540,10 @@
     ]
   },
   {
-    "id": "lft-444",
+    "id": "apt-444",
     "name": "Horse Rideon",
     "category": "Rideon & Balls",
-    "price": 1799.0,
+    "price": 1799,
     "specifications": {
       "details": [
         "Master CTN : 12 pcs"
@@ -2554,10 +2554,10 @@
     ]
   },
   {
-    "id": "lft-344",
+    "id": "apt-344",
     "name": "Elephant Rideon",
     "category": "Rideon & Balls",
-    "price": 1499.0,
+    "price": 1499,
     "specifications": {
       "details": [
         "Master CTN : 9 pcs",
@@ -2569,10 +2569,10 @@
     ]
   },
   {
-    "id": "lft-200p-d",
+    "id": "apt-200p-d",
     "name": "Plastic Balls",
     "category": "Rideon & Balls",
-    "price": 2299.0,
+    "price": 2299,
     "specifications": {
       "details": [
         "(200 pcs)"
@@ -2583,10 +2583,10 @@
     ]
   },
   {
-    "id": "lft-100",
+    "id": "apt-100",
     "name": "Plastic Balls",
     "category": "Rideon & Balls",
-    "price": 1299.0,
+    "price": 1299,
     "specifications": {
       "details": [
         "(100 pcs)"
@@ -2597,10 +2597,10 @@
     ]
   },
   {
-    "id": "lf-101-5",
+    "id": "ap-101-5",
     "name": "Ball Pool",
     "category": "Ball Pool",
-    "price": 5990.0,
+    "price": 5990,
     "specifications": {
       "size": "80x60x2.5 CM",
       "details": [
@@ -2612,10 +2612,10 @@
     ]
   },
   {
-    "id": "lf-961a",
+    "id": "ap-961a",
     "name": "Ball Pool",
     "category": "Ball Pool",
-    "price": 9490.0,
+    "price": 9490,
     "specifications": {
       "size": "128x128x78 CM",
       "details": [
@@ -2627,10 +2627,10 @@
     ]
   },
   {
-    "id": "lf-962",
+    "id": "ap-962",
     "name": "Ball Pool",
     "category": "Ball Pool",
-    "price": 9990.0,
+    "price": 9990,
     "specifications": {
       "details": [
         "(Without Ball) 6 pcs",
@@ -2642,30 +2642,30 @@
     ]
   },
   {
-    "id": "lf-963",
+    "id": "ap-963",
     "name": "Ball Pool 2.7m2",
     "category": "Ball Pool",
-    "price": 17990.0,
+    "price": 17990,
     "specifications": {},
     "images": [
       "/catalogue/ball-pool/lf-963/cover.jpg"
     ]
   },
   {
-    "id": "lf-964",
+    "id": "ap-964",
     "name": "Ball Pool 4.64m2",
     "category": "Ball Pool",
-    "price": 21990.0,
+    "price": 21990,
     "specifications": {},
     "images": [
       "/catalogue/ball-pool/lf-964/cover.jpg"
     ]
   },
   {
-    "id": "lf-135",
+    "id": "ap-135",
     "name": "Play Junction",
     "category": "Fence",
-    "price": 9990.0,
+    "price": 9990,
     "specifications": {
       "size": "105x75 CM (set of 4 pcs)"
     },
@@ -2674,10 +2674,10 @@
     ]
   },
   {
-    "id": "lf-135b",
+    "id": "ap-135b",
     "name": "Play Junction",
     "category": "Fence",
-    "price": 9990.0,
+    "price": 9990,
     "specifications": {
       "size": "105x75 CM (set of 4 pcs)"
     },
@@ -2686,10 +2686,10 @@
     ]
   },
   {
-    "id": "lf-135w",
+    "id": "ap-135w",
     "name": "Play Junction",
     "category": "Fence",
-    "price": 9990.0,
+    "price": 9990,
     "specifications": {
       "size": "105x75 CM (set of 4 pcs)"
     },
@@ -2698,10 +2698,10 @@
     ]
   },
   {
-    "id": "lf-376",
+    "id": "ap-376",
     "name": "Turtle Sandpit",
     "category": "Sand pit",
-    "price": 4490.0,
+    "price": 4490,
     "specifications": {
       "size": "L92xW70xH17 CM"
     },
@@ -2710,10 +2710,10 @@
     ]
   },
   {
-    "id": "lf-375",
+    "id": "ap-375",
     "name": "Water Sand Deluxe Set",
     "category": "Sand pit",
-    "price": 4490.0,
+    "price": 4490,
     "specifications": {
       "size": "L76xW66xH43 CM"
     },
@@ -2722,10 +2722,10 @@
     ]
   },
   {
-    "id": "lf-378",
+    "id": "ap-378",
     "name": "Pumkin Sandpit",
     "category": "Sand pit",
-    "price": 7990.0,
+    "price": 7990,
     "specifications": {
       "size": "L96xW96xH30 CM"
     },
@@ -2734,10 +2734,10 @@
     ]
   },
   {
-    "id": "lf-377",
+    "id": "ap-377",
     "name": "Crab Sandpit",
     "category": "Sand pit",
-    "price": 6990.0,
+    "price": 6990,
     "specifications": {
       "size": "L81xW94xH30 CM"
     },
@@ -2746,10 +2746,10 @@
     ]
   },
   {
-    "id": "lf-379",
+    "id": "ap-379",
     "name": "Turtle Sandpit",
     "category": "Sand pit",
-    "price": 7990.0,
+    "price": 7990,
     "specifications": {
       "size": "L101xW101xH30 CM"
     },
@@ -2758,10 +2758,10 @@
     ]
   },
   {
-    "id": "lf-380",
+    "id": "ap-380",
     "name": "Frog Sandpit",
     "category": "Sand pit",
-    "price": 8490.0,
+    "price": 8490,
     "specifications": {
       "size": "L104xW110xH35 CM"
     },
@@ -2770,10 +2770,10 @@
     ]
   },
   {
-    "id": "lf-549",
+    "id": "ap-549",
     "name": "Elephant Ring Toss",
     "category": "Play Equipment",
-    "price": 899.0,
+    "price": 899,
     "specifications": {
       "size": "L22.5xW12xH39.5 CM"
     },
@@ -2782,10 +2782,10 @@
     ]
   },
   {
-    "id": "lf-9126-6",
+    "id": "ap-9126-6",
     "name": "Toy Trolly",
     "category": "Play Equipment",
-    "price": 2690.0,
+    "price": 2690,
     "specifications": {
       "size": "L33.5 x H107 CM"
     },
@@ -2794,10 +2794,10 @@
     ]
   },
   {
-    "id": "lf-141",
+    "id": "ap-141",
     "name": "Hit Me (2 in 1)",
     "category": "Play Equipment",
-    "price": 5490.0,
+    "price": 5490,
     "specifications": {
       "size": "L33.5 x H107 CM"
     },
@@ -2806,30 +2806,30 @@
     ]
   },
   {
-    "id": "lf-930c",
+    "id": "ap-930c",
     "name": "Wall Basketball",
     "category": "Play Equipment",
-    "price": 1990.0,
+    "price": 1990,
     "specifications": {},
     "images": [
       "/catalogue/play-equipment/lf-930c/cover.jpg"
     ]
   },
   {
-    "id": "lf-930d",
+    "id": "ap-930d",
     "name": "Wall Basketball",
     "category": "Play Equipment",
-    "price": 2490.0,
+    "price": 2490,
     "specifications": {},
     "images": [
       "/catalogue/play-equipment/lf-930d/cover.jpg"
     ]
   },
   {
-    "id": "lf-142",
+    "id": "ap-142",
     "name": "Balancing Bridge",
     "category": "Play Equipment",
-    "price": 4490.0,
+    "price": 4490,
     "specifications": {
       "details": [
         "Set of 4 Pcs"
@@ -2840,10 +2840,10 @@
     ]
   },
   {
-    "id": "lf-9177-2",
+    "id": "ap-9177-2",
     "name": "Plastic Building Blocks",
     "category": "Play Equipment",
-    "price": 7990.0,
+    "price": 7990,
     "specifications": {
       "details": [
         "Set of 45 Pcs",
@@ -2857,10 +2857,10 @@
     ]
   },
   {
-    "id": "lf-118-2",
+    "id": "ap-118-2",
     "name": "Plastic Blocks",
     "category": "Play Equipment",
-    "price": 3490.0,
+    "price": 3490,
     "specifications": {
       "details": [
         "Set of 50 Pcs"
@@ -2871,30 +2871,30 @@
     ]
   },
   {
-    "id": "lft-3992d-p",
+    "id": "apt-3992d-p",
     "name": "Blocks 16 Pcs",
     "category": "Play Equipment",
-    "price": 1399.0,
+    "price": 1399,
     "specifications": {},
     "images": [
       "/catalogue/play-equipment/lft-3992d-p/cover.jpg"
     ]
   },
   {
-    "id": "lft-3994p-d",
+    "id": "apt-3994p-d",
     "name": "Blocks 32 Pcs",
     "category": "Play Equipment",
-    "price": 2599.0,
+    "price": 2599,
     "specifications": {},
     "images": [
       "/catalogue/play-equipment/lft-3994p-d/cover.jpg"
     ]
   },
   {
-    "id": "lf-13-6",
+    "id": "ap-13-6",
     "name": "Tray",
     "category": "Play Equipment",
-    "price": 299.0,
+    "price": 299,
     "specifications": {
       "size": "L26xW35xH11 CM"
     },
@@ -2903,10 +2903,10 @@
     ]
   },
   {
-    "id": "lf-13-5",
+    "id": "ap-13-5",
     "name": "Tray",
     "category": "Play Equipment",
-    "price": 349.0,
+    "price": 349,
     "specifications": {
       "size": "L31xW42xH10 CM"
     },
@@ -2915,10 +2915,10 @@
     ]
   },
   {
-    "id": "lf-931",
+    "id": "ap-931",
     "name": "3-in-1 Magnetic Easel",
     "category": "Play Equipment",
-    "price": 4990.0,
+    "price": 4990,
     "specifications": {
       "size": "D20 x W10 x H70H cm"
     },
@@ -2927,10 +2927,10 @@
     ]
   },
   {
-    "id": "lf-930",
+    "id": "ap-930",
     "name": "Basketball",
     "category": "Play Equipment",
-    "price": 3190.0,
+    "price": 3190,
     "specifications": {
       "size": "D20 x W10 x H70H cm"
     },
@@ -2939,10 +2939,10 @@
     ]
   },
   {
-    "id": "lf-930b",
+    "id": "ap-930b",
     "name": "Big Basketball",
     "category": "Play Equipment",
-    "price": 4990.0,
+    "price": 4990,
     "specifications": {
       "size": "L70 × W58 × H159-215cm"
     },
@@ -2951,20 +2951,20 @@
     ]
   },
   {
-    "id": "lfo-tr",
+    "id": "apo-tr",
     "name": "Trampoline",
     "category": "Trampoline",
-    "price": 20990.0,
+    "price": 20990,
     "specifications": {},
     "images": [
       "/catalogue/trampoline/lfo-tr/cover.jpg"
     ]
   },
   {
-    "id": "lf-72",
-    "name": "LF-72",
+    "id": "ap-72",
+    "name": "AP-72",
     "category": "Trampoline",
-    "price": 20990.0,
+    "price": 20990,
     "specifications": {
       "details": [
         "D 72\""
@@ -2975,10 +2975,10 @@
     ]
   },
   {
-    "id": "lf-96",
-    "name": "LF-96",
+    "id": "ap-96",
+    "name": "AP-96",
     "category": "Trampoline",
-    "price": 20990.0,
+    "price": 20990,
     "specifications": {
       "details": [
         "D 96\""
@@ -2989,10 +2989,10 @@
     ]
   },
   {
-    "id": "lf-120",
-    "name": "LF-120",
+    "id": "ap-120",
+    "name": "AP-120",
     "category": "Trampoline",
-    "price": 24990.0,
+    "price": 24990,
     "specifications": {
       "details": [
         "D 120\""
@@ -3003,10 +3003,10 @@
     ]
   },
   {
-    "id": "lf-144",
-    "name": "LF-144",
+    "id": "ap-144",
+    "name": "AP-144",
     "category": "Trampoline",
-    "price": 31990.0,
+    "price": 31990,
     "specifications": {
       "details": [
         "D 144\""
@@ -3017,10 +3017,10 @@
     ]
   },
   {
-    "id": "lf-168",
-    "name": "LF-168",
+    "id": "ap-168",
+    "name": "AP-168",
     "category": "Trampoline",
-    "price": 39990.0,
+    "price": 39990,
     "specifications": {
       "details": [
         "D 168\""
@@ -3031,10 +3031,10 @@
     ]
   },
   {
-    "id": "lf-55",
-    "name": "LF-55",
+    "id": "ap-55",
+    "name": "AP-55",
     "category": "Trampoline",
-    "price": 11990.0,
+    "price": 11990,
     "specifications": {
       "details": [
         "D 55\""
@@ -3045,20 +3045,20 @@
     ]
   },
   {
-    "id": "lf-536d",
+    "id": "ap-536d",
     "name": "36\"",
     "category": "Trampoline",
-    "price": 545.0,
+    "price": 545,
     "specifications": {},
     "images": [
       "/catalogue/trampoline/lf-536d/cover.jpg"
     ]
   },
   {
-    "id": "lf-602",
+    "id": "ap-602",
     "name": "Flexer",
     "category": "Gym Equipment",
-    "price": 11990.0,
+    "price": 11990,
     "specifications": {
       "size": "L78xW38xH99 CM"
     },
@@ -3067,10 +3067,10 @@
     ]
   },
   {
-    "id": "lf-601",
+    "id": "ap-601",
     "name": "Balancer",
     "category": "Gym Equipment",
-    "price": 11990.0,
+    "price": 11990,
     "specifications": {
       "size": "L66xW43xH86 CM"
     },
@@ -3079,10 +3079,10 @@
     ]
   },
   {
-    "id": "lf-603",
+    "id": "ap-603",
     "name": "Rowing",
     "category": "Gym Equipment",
-    "price": 11490.0,
+    "price": 11490,
     "specifications": {
       "size": "L86xW33xH45 CM"
     },
@@ -3091,10 +3091,10 @@
     ]
   },
   {
-    "id": "lf-604",
+    "id": "ap-604",
     "name": "Treadmill",
     "category": "Gym Equipment",
-    "price": 14990.0,
+    "price": 14990,
     "specifications": {
       "size": "L86xW35xH99 CM"
     },
@@ -3103,10 +3103,10 @@
     ]
   },
   {
-    "id": "lf-605",
+    "id": "ap-605",
     "name": "Twister",
     "category": "Gym Equipment",
-    "price": 8490.0,
+    "price": 8490,
     "specifications": {
       "size": "L43xW30xH99 CM"
     },
@@ -3115,10 +3115,10 @@
     ]
   },
   {
-    "id": "lf-606",
+    "id": "ap-606",
     "name": "Cycling",
     "category": "Gym Equipment",
-    "price": 11990.0,
+    "price": 11990,
     "specifications": {
       "size": "L48xW35xH71 CM"
     },
@@ -3127,10 +3127,10 @@
     ]
   },
   {
-    "id": "lf-936",
-    "name": "LF-936",
+    "id": "ap-936",
+    "name": "AP-936",
     "category": "Toy Shelf",
-    "price": 8990.0,
+    "price": 8990,
     "specifications": {
       "size": "L98xW35xH81 CM"
     },
@@ -3139,10 +3139,10 @@
     ]
   },
   {
-    "id": "lf-935",
-    "name": "LF-935",
+    "id": "ap-935",
+    "name": "AP-935",
     "category": "Toy Shelf",
-    "price": 8990.0,
+    "price": 8990,
     "specifications": {
       "size": "L142xW35xH81 CM"
     },
@@ -3151,10 +3151,10 @@
     ]
   },
   {
-    "id": "lf-937",
-    "name": "LF-937",
+    "id": "ap-937",
+    "name": "AP-937",
     "category": "Toy Shelf",
-    "price": 12990.0,
+    "price": 12990,
     "specifications": {
       "size": "L142xW35xH81 CM"
     },
@@ -3163,10 +3163,10 @@
     ]
   },
   {
-    "id": "lf-5012",
+    "id": "ap-5012",
     "name": "Tunnel",
     "category": "Tent House",
-    "price": 1490.0,
+    "price": 1490,
     "specifications": {
       "size": "L45xW45xH105 CM"
     },
@@ -3175,10 +3175,10 @@
     ]
   },
   {
-    "id": "lf-1101c",
+    "id": "ap-1101c",
     "name": "Tunnel Tent",
     "category": "Tent House",
-    "price": 1990.0,
+    "price": 1990,
     "specifications": {
       "size": "L176xW89xH89 CM"
     },
@@ -3187,10 +3187,10 @@
     ]
   },
   {
-    "id": "lf-5052",
-    "name": "LF-5052",
+    "id": "ap-5052",
+    "name": "AP-5052",
     "category": "Tent House",
-    "price": 2990.0,
+    "price": 2990,
     "specifications": {
       "size": "L176xW89xH89 CM"
     },
@@ -3199,10 +3199,10 @@
     ]
   },
   {
-    "id": "lf-5532",
+    "id": "ap-5532",
     "name": "Tent House",
     "category": "Tent House",
-    "price": 2490.0,
+    "price": 2490,
     "specifications": {
       "size": "",
       "details": [
@@ -3214,10 +3214,10 @@
     ]
   },
   {
-    "id": "lft-1102c",
+    "id": "apt-1102c",
     "name": "Tent House",
     "category": "Tent House",
-    "price": 2490.0,
+    "price": 2490,
     "specifications": {
       "size": "",
       "details": [
@@ -3229,10 +3229,10 @@
     ]
   },
   {
-    "id": "lf-1103c",
+    "id": "ap-1103c",
     "name": "Pop-Up Tent",
     "category": "Tent House",
-    "price": 2790.0,
+    "price": 2790,
     "specifications": {
       "size": "",
       "details": [
@@ -3244,10 +3244,10 @@
     ]
   },
   {
-    "id": "lft-1104c",
+    "id": "apt-1104c",
     "name": "TUNNEL TENT HOUSE",
     "category": "Tent House",
-    "price": 5990.0,
+    "price": 5990,
     "specifications": {
       "size": "L 248.92 X W 72.39 X H 90.17 CM"
     },
@@ -3256,50 +3256,50 @@
     ]
   },
   {
-    "id": "lf-51",
+    "id": "ap-51",
     "name": "Hurdle",
     "category": "Sports",
-    "price": 290.0,
+    "price": 290,
     "specifications": {},
     "images": [
       "/catalogue/sports/lf-51/cover.jpg"
     ]
   },
   {
-    "id": "lf-56",
+    "id": "ap-56",
     "name": "Ring (40 dia)",
     "category": "Sports",
-    "price": 1190.0,
+    "price": 1190,
     "specifications": {},
     "images": [
       "/catalogue/sports/lf-56/cover.jpg"
     ]
   },
   {
-    "id": "lf-57",
+    "id": "ap-57",
     "name": "Ring (50 dia)",
     "category": "Sports",
-    "price": 1790.0,
+    "price": 1790,
     "specifications": {},
     "images": [
       "/catalogue/sports/lf-57/cover.jpg"
     ]
   },
   {
-    "id": "lf-52",
+    "id": "ap-52",
     "name": "Divider 10 pcs",
     "category": "Sports",
-    "price": 990.0,
+    "price": 990,
     "specifications": {},
     "images": [
       "/catalogue/sports/lf-52/cover.jpg"
     ]
   },
   {
-    "id": "lf-53",
+    "id": "ap-53",
     "name": "Divider 25 pcs",
     "category": "Sports",
-    "price": 750.0,
+    "price": 750,
     "specifications": {
       "details": [
         "LF 53 Divider 25 pcs"
@@ -3310,10 +3310,10 @@
     ]
   },
   {
-    "id": "lf-58",
+    "id": "ap-58",
     "name": "Agility Ladde",
     "category": "Sports",
-    "price": 990.0,
+    "price": 990,
     "specifications": {},
     "images": [
       "/catalogue/sports/lf-58/cover.jpg"
@@ -3323,27 +3323,27 @@
     "id": "f-3",
     "name": "Rope Ladder",
     "category": "Sports",
-    "price": 1790.0,
+    "price": 1790,
     "specifications": {},
     "images": [
       "/catalogue/sports/f-3/cover.jpg"
     ]
   },
   {
-    "id": "lf-414a",
+    "id": "ap-414a",
     "name": "Swing",
     "category": "Sports",
-    "price": 1190.0,
+    "price": 1190,
     "specifications": {},
     "images": [
       "/catalogue/sports/lf-414a/cover.jpg"
     ]
   },
   {
-    "id": "lf-143",
+    "id": "ap-143",
     "name": "Balancer 8 Pcs",
     "category": "Play Equipment",
-    "price": 4490.0,
+    "price": 4490,
     "specifications": {
       "size": "L50.8xW15.2xH8.8 CM",
       "details": [
@@ -3357,10 +3357,10 @@
     ]
   },
   {
-    "id": "lf-144-2",
+    "id": "ap-144-2",
     "name": "Balancer 6 pcs",
     "category": "Play Equipment",
-    "price": 4490.0,
+    "price": 4490,
     "specifications": {
       "details": [
         "Fun and engaging balance stones designed to improve kids’ coordination, balance, and motor skills.",
@@ -3373,10 +3373,10 @@
     ]
   },
   {
-    "id": "lf-145",
+    "id": "ap-145",
     "name": "Balance Path Set",
     "category": "Play Equipment",
-    "price": 5990.0,
+    "price": 5990,
     "specifications": {
       "details": [
         "12pcs &1 Blindfolds",
@@ -3393,10 +3393,10 @@
     ]
   },
   {
-    "id": "lf-147",
+    "id": "ap-147",
     "name": "Whale Riverstone Play Set",
     "category": "Play Equipment",
-    "price": 5990.0,
+    "price": 5990,
     "specifications": {
       "details": [
         "L32xW22xH10.5cm, Diameter 10cm ,12pcs &1 Blindfolds",
@@ -3410,10 +3410,10 @@
     ]
   },
   {
-    "id": "lf-148",
+    "id": "ap-148",
     "name": "Textured Stepping Stones Set",
     "category": "Play Equipment",
-    "price": 13990.0,
+    "price": 13990,
     "specifications": {
       "details": [
         "A set of colorful, textured stepping pods designed to develop",
@@ -3426,10 +3426,10 @@
     ]
   },
   {
-    "id": "lf-149",
+    "id": "ap-149",
     "name": "Balance Path",
     "category": "Play Equipment",
-    "price": 4490.0,
+    "price": 4490,
     "specifications": {
       "details": [
         "A fun and colourful set of balance stepping stones designed to help children improve coordination, balance,",
@@ -3442,10 +3442,10 @@
     ]
   },
   {
-    "id": "lf-150",
+    "id": "ap-150",
     "name": "Makarci Stepping Balance Stones",
     "category": "Play Equipment",
-    "price": 2990.0,
+    "price": 2990,
     "specifications": {
       "details": [
         "Extra Large - 35 x 26.5 cm Blue",
@@ -3461,10 +3461,10 @@
     ]
   },
   {
-    "id": "lf-151",
+    "id": "ap-151",
     "name": "Balance Wave",
     "category": "Play Equipment",
-    "price": 10990.0,
+    "price": 10990,
     "specifications": {
       "details": [
         "52x14x10cm,8pcs",
@@ -3480,10 +3480,10 @@
     ]
   },
   {
-    "id": "lf-152",
+    "id": "ap-152",
     "name": "FunStep Balance Builder",
     "category": "Play Equipment",
-    "price": 14990.0,
+    "price": 14990,
     "specifications": {
       "size": "Circular Pier Size : 32x32x15cm",
       "details": [
@@ -3500,10 +3500,10 @@
     ]
   },
   {
-    "id": "lf-153",
+    "id": "ap-153",
     "name": "Balance Rocker",
     "category": "Play Equipment",
-    "price": 1490.0,
+    "price": 1490,
     "specifications": {
       "details": [
         "70x28cm",
@@ -3518,10 +3518,10 @@
     ]
   },
   {
-    "id": "lf-161",
+    "id": "ap-161",
     "name": "Hover Spin Seat",
     "category": "Play Equipment",
-    "price": 4990.0,
+    "price": 4990,
     "specifications": {
       "details": [
         "L54 x W43 x H28 cm"
@@ -3532,10 +3532,10 @@
     ]
   },
   {
-    "id": "lf-162",
+    "id": "ap-162",
     "name": "Fish Hover Spin Seat",
     "category": "Play Equipment",
-    "price": 4990.0,
+    "price": 4990,
     "specifications": {
       "details": [
         "L54 x W58 x H27 cm",
@@ -3549,10 +3549,10 @@
     ]
   },
   {
-    "id": "lf-164",
+    "id": "ap-164",
     "name": "Kids Unity Stretch Band",
     "category": "Play Equipment",
-    "price": 2990.0,
+    "price": 2990,
     "specifications": {
       "details": [
         "A colorful elastic play band designed for group",
@@ -3566,10 +3566,10 @@
     ]
   },
   {
-    "id": "lf-165",
+    "id": "ap-165",
     "name": "Jump•Toss•Balance Activity Kit",
     "category": "Play Equipment",
-    "price": 2990.0,
+    "price": 2990,
     "specifications": {
       "size": "15x12.5x15cm",
       "details": [
@@ -3584,10 +3584,10 @@
     ]
   },
   {
-    "id": "lf-167",
+    "id": "ap-167",
     "name": "wooden trafc sign",
     "category": "Play Equipment",
-    "price": 17990.0,
+    "price": 17990,
     "specifications": {
       "details": [
         "Specications: 18 pieces/set"
@@ -3598,10 +3598,10 @@
     ]
   },
   {
-    "id": "lf-169",
+    "id": "ap-169",
     "name": "Single layer jump bag",
     "category": "Play Equipment",
-    "price": 490.0,
+    "price": 490,
     "specifications": {
       "size": "50x70cm"
     },
@@ -3610,10 +3610,10 @@
     ]
   },
   {
-    "id": "lf-170",
+    "id": "ap-170",
     "name": "Flat Number Marker Plates",
     "category": "Play Equipment",
-    "price": 2990.0,
+    "price": 2990,
     "specifications": {
       "size": "23 cm Dia",
       "details": [
@@ -3625,20 +3625,20 @@
     ]
   },
   {
-    "id": "lf-62s",
+    "id": "ap-62s",
     "name": "6.5 ft Dia",
     "category": "Play Equipment",
-    "price": 1190.0,
+    "price": 1190,
     "specifications": {},
     "images": [
       "/catalogue/play-equipment/lf-62s/cover.jpg"
     ]
   },
   {
-    "id": "lf-62",
+    "id": "ap-62",
     "name": "9 ft Dia",
     "category": "Play Equipment",
-    "price": 1990.0,
+    "price": 1990,
     "specifications": {
       "details": [
         "A vibrant, multi-color play parachute designed for group activities, teamwork games, and fun outdoor exercises.",
@@ -3650,210 +3650,210 @@
     ]
   },
   {
-    "id": "lft-21a",
-    "name": "LFT-21A",
+    "id": "apt-21a",
+    "name": "APT-21A",
     "category": "Learning Toys",
-    "price": 450.0,
+    "price": 450,
     "specifications": {},
     "images": [
       "/catalogue/learning-toys/lft-21a/cover.jpg"
     ]
   },
   {
-    "id": "lft-22a",
-    "name": "LFT-22A",
+    "id": "apt-22a",
+    "name": "APT-22A",
     "category": "Learning Toys",
-    "price": 450.0,
+    "price": 450,
     "specifications": {},
     "images": [
       "/catalogue/learning-toys/lft-22a/cover.jpg"
     ]
   },
   {
-    "id": "lft-23a",
-    "name": "LFT-23A",
+    "id": "apt-23a",
+    "name": "APT-23A",
     "category": "Learning Toys",
-    "price": 450.0,
+    "price": 450,
     "specifications": {},
     "images": [
       "/catalogue/learning-toys/lft-23a/cover.jpg"
     ]
   },
   {
-    "id": "lft-25a",
-    "name": "LFT-25A",
+    "id": "apt-25a",
+    "name": "APT-25A",
     "category": "Learning Toys",
-    "price": 450.0,
+    "price": 450,
     "specifications": {},
     "images": [
       "/catalogue/learning-toys/lft-25a/cover.jpg"
     ]
   },
   {
-    "id": "lft-26a",
-    "name": "LFT-26A",
+    "id": "apt-26a",
+    "name": "APT-26A",
     "category": "Learning Toys",
-    "price": 450.0,
+    "price": 450,
     "specifications": {},
     "images": [
       "/catalogue/learning-toys/lft-26a/cover.jpg"
     ]
   },
   {
-    "id": "lft-24a",
-    "name": "LFT-24A",
+    "id": "apt-24a",
+    "name": "APT-24A",
     "category": "Learning Toys",
-    "price": 450.0,
+    "price": 450,
     "specifications": {},
     "images": [
       "/catalogue/learning-toys/lft-24a/cover.jpg"
     ]
   },
   {
-    "id": "lft-28a",
-    "name": "LFT-28A",
+    "id": "apt-28a",
+    "name": "APT-28A",
     "category": "Learning Toys",
-    "price": 450.0,
+    "price": 450,
     "specifications": {},
     "images": [
       "/catalogue/learning-toys/lft-28a/cover.jpg"
     ]
   },
   {
-    "id": "lft-29a",
-    "name": "LFT-29A",
+    "id": "apt-29a",
+    "name": "APT-29A",
     "category": "Learning Toys",
-    "price": 450.0,
+    "price": 450,
     "specifications": {},
     "images": [
       "/catalogue/learning-toys/lft-29a/cover.jpg"
     ]
   },
   {
-    "id": "lft-27a",
-    "name": "LFT-27A",
+    "id": "apt-27a",
+    "name": "APT-27A",
     "category": "Learning Toys",
-    "price": 450.0,
+    "price": 450,
     "specifications": {},
     "images": [
       "/catalogue/learning-toys/lft-27a/cover.jpg"
     ]
   },
   {
-    "id": "lft-30a",
-    "name": "LFT-30A",
+    "id": "apt-30a",
+    "name": "APT-30A",
     "category": "Learning Toys",
-    "price": 450.0,
+    "price": 450,
     "specifications": {},
     "images": [
       "/catalogue/learning-toys/lft-30a/cover.jpg"
     ]
   },
   {
-    "id": "lft-31a",
-    "name": "LFT-31A",
+    "id": "apt-31a",
+    "name": "APT-31A",
     "category": "Learning Toys",
-    "price": 450.0,
+    "price": 450,
     "specifications": {},
     "images": [
       "/catalogue/learning-toys/lft-31a/cover.jpg"
     ]
   },
   {
-    "id": "lft-32a",
-    "name": "LFT-32A",
+    "id": "apt-32a",
+    "name": "APT-32A",
     "category": "Learning Toys",
-    "price": 450.0,
+    "price": 450,
     "specifications": {},
     "images": [
       "/catalogue/learning-toys/lft-32a/cover.jpg"
     ]
   },
   {
-    "id": "lft-33a",
-    "name": "LFT-33A",
+    "id": "apt-33a",
+    "name": "APT-33A",
     "category": "Learning Toys",
-    "price": 450.0,
+    "price": 450,
     "specifications": {},
     "images": [
       "/catalogue/learning-toys/lft-33a/cover.jpg"
     ]
   },
   {
-    "id": "lft-35a",
-    "name": "LFT-35A",
+    "id": "apt-35a",
+    "name": "APT-35A",
     "category": "Learning Toys",
-    "price": 450.0,
+    "price": 450,
     "specifications": {},
     "images": [
       "/catalogue/learning-toys/lft-35a/cover.jpg"
     ]
   },
   {
-    "id": "lft-34a",
-    "name": "LFT-34A",
+    "id": "apt-34a",
+    "name": "APT-34A",
     "category": "Learning Toys",
-    "price": 450.0,
+    "price": 450,
     "specifications": {},
     "images": [
       "/catalogue/learning-toys/lft-34a/cover.jpg"
     ]
   },
   {
-    "id": "lft-37a",
+    "id": "apt-37a",
     "name": "450.00",
     "category": "Learning Toys",
-    "price": 450.0,
+    "price": 450,
     "specifications": {},
     "images": [
       "/catalogue/learning-toys/lft-37a/cover.jpg"
     ]
   },
   {
-    "id": "lft-36a",
+    "id": "apt-36a",
     "name": "450.00",
     "category": "Learning Toys",
-    "price": 450.0,
+    "price": 450,
     "specifications": {},
     "images": [
       "/catalogue/learning-toys/lft-36a/cover.jpg"
     ]
   },
   {
-    "id": "lft-38a",
-    "name": "LFT-38A",
+    "id": "apt-38a",
+    "name": "APT-38A",
     "category": "Learning Toys",
-    "price": 290.0,
+    "price": 290,
     "specifications": {},
     "images": [
       "/catalogue/learning-toys/lft-38a/cover.jpg"
     ]
   },
   {
-    "id": "lft-39a",
-    "name": "LFT-39A",
+    "id": "apt-39a",
+    "name": "APT-39A",
     "category": "Learning Toys",
-    "price": 290.0,
+    "price": 290,
     "specifications": {},
     "images": [
       "/catalogue/learning-toys/lft-39a/cover.jpg"
     ]
   },
   {
-    "id": "lft-40a",
-    "name": "LFT-40A",
+    "id": "apt-40a",
+    "name": "APT-40A",
     "category": "Learning Toys",
-    "price": 290.0,
+    "price": 290,
     "specifications": {},
     "images": [
       "/catalogue/learning-toys/lft-40a/cover.jpg"
     ]
   },
   {
-    "id": "lfp-4",
+    "id": "app-4",
     "name": "Finger Puppet",
     "category": "Puppets",
-    "price": 795.0,
+    "price": 795,
     "specifications": {
       "details": [
         "(Set of 10)"
@@ -3864,10 +3864,10 @@
     ]
   },
   {
-    "id": "lfp-5",
+    "id": "app-5",
     "name": "Domestic Animals Puppet",
     "category": "Puppets",
-    "price": 795.0,
+    "price": 795,
     "specifications": {
       "details": [
         "(Set of 10)",
@@ -3879,10 +3879,10 @@
     ]
   },
   {
-    "id": "lfp-6",
+    "id": "app-6",
     "name": "Wild Animals",
     "category": "Puppets",
-    "price": 795.0,
+    "price": 795,
     "specifications": {
       "details": [
         "Puppet (Set of 10)"
@@ -3893,7 +3893,7 @@
     ]
   },
   {
-    "id": "lfp-7",
+    "id": "app-7",
     "name": "Fruits/Vegitables Puppet (Set of 12)",
     "category": "Puppets",
     "price": null,
@@ -3907,7 +3907,7 @@
     ]
   },
   {
-    "id": "lfp-8",
+    "id": "app-8",
     "name": "Water Animals",
     "category": "Puppets",
     "price": null,
@@ -3921,7 +3921,7 @@
     ]
   },
   {
-    "id": "lfp-9",
+    "id": "app-9",
     "name": "Birds Puppet",
     "category": "Puppets",
     "price": null,
@@ -3935,7 +3935,7 @@
     ]
   },
   {
-    "id": "lfp-12",
+    "id": "app-12",
     "name": "Community Helpers",
     "category": "Puppets",
     "price": null,
@@ -3949,7 +3949,7 @@
     ]
   },
   {
-    "id": "lfp-10",
+    "id": "app-10",
     "name": "Insect Puppet",
     "category": "Puppets",
     "price": null,
@@ -3963,7 +3963,7 @@
     ]
   },
   {
-    "id": "lfp-11",
+    "id": "app-11",
     "name": "Family Puppet",
     "category": "Puppets",
     "price": null,
@@ -3977,97 +3977,97 @@
     ]
   },
   {
-    "id": "lft-1212",
+    "id": "apt-1212",
     "name": "Construction",
     "category": "Role Play Costumes",
-    "price": 1990.0,
+    "price": 1990,
     "specifications": {},
     "images": [
       "/catalogue/role-play-costumes/lft-1212/cover.jpg"
     ]
   },
   {
-    "id": "lft-1211",
+    "id": "apt-1211",
     "name": "Military Forces",
     "category": "Role Play Costumes",
-    "price": 1990.0,
+    "price": 1990,
     "specifications": {},
     "images": [
       "/catalogue/role-play-costumes/lft-1211/cover.jpg"
     ]
   },
   {
-    "id": "lft-1213",
+    "id": "apt-1213",
     "name": "Pilot",
     "category": "Role Play Costumes",
-    "price": 1990.0,
+    "price": 1990,
     "specifications": {},
     "images": [
       "/catalogue/role-play-costumes/lft-1213/cover.jpg"
     ]
   },
   {
-    "id": "lft-1214",
+    "id": "apt-1214",
     "name": "Lawyer",
     "category": "Role Play Costumes",
-    "price": 1990.0,
+    "price": 1990,
     "specifications": {},
     "images": [
       "/catalogue/role-play-costumes/lft-1214/cover.jpg"
     ]
   },
   {
-    "id": "lft-1216",
+    "id": "apt-1216",
     "name": "Lady Doctor",
     "category": "Role Play Costumes",
-    "price": 1990.0,
+    "price": 1990,
     "specifications": {},
     "images": [
       "/catalogue/role-play-costumes/lft-1216/cover.jpg"
     ]
   },
   {
-    "id": "lft-1215",
+    "id": "apt-1215",
     "name": "Doctor",
     "category": "Role Play Costumes",
-    "price": 1990.0,
+    "price": 1990,
     "specifications": {},
     "images": [
       "/catalogue/role-play-costumes/lft-1215/cover.jpg"
     ]
   },
   {
-    "id": "lft-1219",
+    "id": "apt-1219",
     "name": "Fireghter",
     "category": "Role Play Costumes",
-    "price": 1990.0,
+    "price": 1990,
     "specifications": {},
     "images": [
       "/catalogue/role-play-costumes/lft-1219/cover.jpg"
     ]
   },
   {
-    "id": "lft-1217",
+    "id": "apt-1217",
     "name": "Chef",
     "category": "Role Play Costumes",
-    "price": 1990.0,
+    "price": 1990,
     "specifications": {},
     "images": [
       "/catalogue/role-play-costumes/lft-1217/cover.jpg"
     ]
   },
   {
-    "id": "lft-1218",
+    "id": "apt-1218",
     "name": "Nurse",
     "category": "Role Play Costumes",
-    "price": 1990.0,
+    "price": 1990,
     "specifications": {},
     "images": [
       "/catalogue/role-play-costumes/lft-1218/cover.jpg"
     ]
   },
   {
-    "id": "lft-013",
+    "id": "apt-013",
     "name": "Roll Ball",
     "category": "Toys",
     "price": 599,
@@ -4081,7 +4081,7 @@
     ]
   },
   {
-    "id": "lft-012",
+    "id": "apt-012",
     "name": "Baby's First Blocks",
     "category": "Toys",
     "price": 499,
@@ -4091,7 +4091,7 @@
     ]
   },
   {
-    "id": "lft-014",
+    "id": "apt-014",
     "name": "Shape Sorting Baby Toy",
     "category": "Toys",
     "price": 899,
@@ -4101,7 +4101,7 @@
     ]
   },
   {
-    "id": "lft-011",
+    "id": "apt-011",
     "name": "Shape Sorter",
     "category": "Toys",
     "price": 699,
@@ -4111,7 +4111,7 @@
     ]
   },
   {
-    "id": "lft-015",
+    "id": "apt-015",
     "name": "Fun Inertia Animal Car",
     "category": "Toys",
     "price": 1196,
@@ -4129,7 +4129,7 @@
     ]
   },
   {
-    "id": "lft-016",
+    "id": "apt-016",
     "name": "My First Car",
     "category": "Toys",
     "price": 1196,
@@ -4147,7 +4147,7 @@
     ]
   },
   {
-    "id": "lft-1251",
+    "id": "apt-1251",
     "name": "Alphabet",
     "category": "Flash Cards",
     "price": 299,
@@ -4157,7 +4157,7 @@
     ]
   },
   {
-    "id": "lft-1252",
+    "id": "apt-1252",
     "name": "Numbers",
     "category": "Flash Cards",
     "price": 299,
@@ -4167,7 +4167,7 @@
     ]
   },
   {
-    "id": "lft-1253",
+    "id": "apt-1253",
     "name": "Colours & Shapes",
     "category": "Flash Cards",
     "price": 299,
@@ -4177,7 +4177,7 @@
     ]
   },
   {
-    "id": "lft-1254",
+    "id": "apt-1254",
     "name": "Vegetables",
     "category": "Flash Cards",
     "price": 299,
@@ -4187,7 +4187,7 @@
     ]
   },
   {
-    "id": "lft-1255",
+    "id": "apt-1255",
     "name": "Fruits",
     "category": "Flash Cards",
     "price": 299,
@@ -4197,7 +4197,7 @@
     ]
   },
   {
-    "id": "lft-1256",
+    "id": "apt-1256",
     "name": "Birds",
     "category": "Flash Cards",
     "price": 299,
@@ -4207,7 +4207,7 @@
     ]
   },
   {
-    "id": "lft-1257",
+    "id": "apt-1257",
     "name": "Animals",
     "category": "Flash Cards",
     "price": 299,
@@ -4217,7 +4217,7 @@
     ]
   },
   {
-    "id": "lft-1258",
+    "id": "apt-1258",
     "name": "Parts Of The Body",
     "category": "Flash Cards",
     "price": 299,
@@ -4227,7 +4227,7 @@
     ]
   },
   {
-    "id": "lft-1259",
+    "id": "apt-1259",
     "name": "Vechicles",
     "category": "Flash Cards",
     "price": 299,
@@ -4237,7 +4237,7 @@
     ]
   },
   {
-    "id": "lft-1260",
+    "id": "apt-1260",
     "name": "Community Helpers",
     "category": "Flash Cards",
     "price": 299,
@@ -4247,7 +4247,7 @@
     ]
   },
   {
-    "id": "lft-1261",
+    "id": "apt-1261",
     "name": "Opposites",
     "category": "Flash Cards",
     "price": 299,
@@ -4257,7 +4257,7 @@
     ]
   },
   {
-    "id": "lft-054",
+    "id": "apt-054",
     "name": "Stack-o-Cubes",
     "category": "Toys",
     "price": 249,
@@ -4267,7 +4267,7 @@
     ]
   },
   {
-    "id": "lft-052",
+    "id": "apt-052",
     "name": "Stack-o-Egg",
     "category": "Toys",
     "price": 239,
@@ -4277,7 +4277,7 @@
     ]
   },
   {
-    "id": "lft-053",
+    "id": "apt-053",
     "name": "Stack-o-Cups",
     "category": "Toys",
     "price": 199,
@@ -4287,7 +4287,7 @@
     ]
   },
   {
-    "id": "lft-051",
+    "id": "apt-051",
     "name": "Stack-o-Barrel",
     "category": "Toys",
     "price": 179,
@@ -4297,7 +4297,7 @@
     ]
   },
   {
-    "id": "lft-97c",
+    "id": "apt-97c",
     "name": "Toddler Ring",
     "category": "Toys",
     "price": 499,
@@ -4307,7 +4307,7 @@
     ]
   },
   {
-    "id": "lft-98",
+    "id": "apt-98",
     "name": "Bowling Set Jumbo",
     "category": "Toys",
     "price": 1395,
@@ -4317,7 +4317,7 @@
     ]
   },
   {
-    "id": "lft-92",
+    "id": "apt-92",
     "name": "Sand Toys",
     "category": "Toys",
     "price": 299,
@@ -4327,7 +4327,7 @@
     ]
   },
   {
-    "id": "lft-1203",
+    "id": "apt-1203",
     "name": "FruitsCutting",
     "category": "Toys",
     "price": 699,
@@ -4337,7 +4337,7 @@
     ]
   },
   {
-    "id": "lft-99",
+    "id": "apt-99",
     "name": "Bowling Set",
     "category": "Toys",
     "price": 995,
@@ -4347,7 +4347,7 @@
     ]
   },
   {
-    "id": "lft-1204",
+    "id": "apt-1204",
     "name": "Vegetables Cutting",
     "category": "Toys",
     "price": 699,
@@ -4393,7 +4393,7 @@
     ]
   },
   {
-    "id": "lft-1201",
+    "id": "apt-1201",
     "name": "Fruits Cutting",
     "category": "Toys",
     "price": 399,
@@ -4403,7 +4403,7 @@
     ]
   },
   {
-    "id": "lft-1202",
+    "id": "apt-1202",
     "name": "Vegetables Cutting",
     "category": "Toys",
     "price": 399,
@@ -4413,7 +4413,7 @@
     ]
   },
   {
-    "id": "lft-1210",
+    "id": "apt-1210",
     "name": "Vegetables",
     "category": "Toys",
     "price": 499,
@@ -4423,7 +4423,7 @@
     ]
   },
   {
-    "id": "lft-1209",
+    "id": "apt-1209",
     "name": "Fruits",
     "category": "Toys",
     "price": 499,
@@ -4433,7 +4433,7 @@
     ]
   },
   {
-    "id": "lft-90d",
+    "id": "apt-90d",
     "name": "Hopscotch",
     "category": "Toys",
     "price": 1199,
@@ -4443,7 +4443,7 @@
     ]
   },
   {
-    "id": "lft-1241",
+    "id": "apt-1241",
     "name": "Digital Ice Lolly",
     "category": "Toys",
     "price": 1199,
@@ -4453,7 +4453,7 @@
     ]
   },
   {
-    "id": "lft-1151",
+    "id": "apt-1151",
     "name": "Xylophone",
     "category": "Toys",
     "price": 599,
@@ -4463,7 +4463,7 @@
     ]
   },
   {
-    "id": "lft-1152",
+    "id": "apt-1152",
     "name": "Xylophone Big",
     "category": "Toys",
     "price": 899,
@@ -4473,7 +4473,7 @@
     ]
   },
   {
-    "id": "lft-1243",
+    "id": "apt-1243",
     "name": "Bin Buddy",
     "category": "Toys",
     "price": 499,
@@ -4483,7 +4483,7 @@
     ]
   },
   {
-    "id": "lft-1234",
+    "id": "apt-1234",
     "name": "Beauty set",
     "category": "Toys",
     "price": 899,
@@ -4493,7 +4493,7 @@
     ]
   },
   {
-    "id": "lft-1233",
+    "id": "apt-1233",
     "name": "Tool kit",
     "category": "Toys",
     "price": 899,
@@ -4503,7 +4503,7 @@
     ]
   },
   {
-    "id": "lft-1231",
+    "id": "apt-1231",
     "name": "Doctor set",
     "category": "Toys",
     "price": 899,
@@ -4513,7 +4513,7 @@
     ]
   },
   {
-    "id": "lft-1232",
+    "id": "apt-1232",
     "name": "Kitchen set",
     "category": "Toys",
     "price": 899,
@@ -4523,7 +4523,7 @@
     ]
   },
   {
-    "id": "lft-1223",
+    "id": "apt-1223",
     "name": "Ocean Animal Set",
     "category": "Toys",
     "price": 599,
@@ -4533,7 +4533,7 @@
     ]
   },
   {
-    "id": "lft-1221",
+    "id": "apt-1221",
     "name": "Wild Animal Set",
     "category": "Toys",
     "price": 499,
@@ -4543,7 +4543,7 @@
     ]
   },
   {
-    "id": "lft-1222",
+    "id": "apt-1222",
     "name": "Farm Set",
     "category": "Toys",
     "price": 499,
@@ -4553,7 +4553,7 @@
     ]
   },
   {
-    "id": "lft-1224",
+    "id": "apt-1224",
     "name": "Insects Set",
     "category": "Toys",
     "price": 499,

@@ -3,30 +3,41 @@
 import { useState, type FormEvent } from "react";
 
 export default function ContactEnquiryForm() {
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState("");
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    const form = new FormData(event.currentTarget);
+    const formElement = event.currentTarget;
+    const form = new FormData(formElement);
     const name = String(form.get("name") || "").trim();
     const phone = String(form.get("phone") || "").trim();
     const email = String(form.get("email") || "").trim();
     const requirement = String(form.get("requirement") || "").trim();
     const message = String(form.get("message") || "").trim();
-    const enquiry = [
-      "Hello Ankush Playways, I would like to make an enquiry.",
-      `Name: ${name}`,
-      `Phone: ${phone}`,
-      email ? `Email: ${email}` : "",
-      `Requirement: ${requirement}`,
-      `Message: ${message}`,
-    ]
-      .filter(Boolean)
-      .join("\n");
 
-    setSubmitted(true);
-    window.open(`https://wa.me/919811148225?text=${encodeURIComponent(enquiry)}`, "_blank", "noopener,noreferrer");
+    setStatus("sending");
+    setErrorMessage("");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, phone, email, requirement, message }),
+      });
+      const result = (await response.json()) as { error?: string };
+
+      if (!response.ok) {
+        throw new Error(result.error || "Unable to send your enquiry.");
+      }
+
+      formElement.reset();
+      setStatus("sent");
+    } catch (error) {
+      setErrorMessage(error instanceof Error ? error.message : "Unable to send your enquiry.");
+      setStatus("error");
+    }
   };
 
   const inputClass =
@@ -37,7 +48,7 @@ export default function ContactEnquiryForm() {
       <p className="text-sm font-black text-[var(--sun-coral-strong)]">Quick enquiry</p>
       <h2 className="mt-3 text-3xl font-black text-[var(--sun-ink)] sm:text-4xl">Tell us what you need</h2>
       <p className="mt-3 text-sm font-semibold leading-7 text-slate-600">
-        Complete the form and continue your enquiry securely on WhatsApp.
+        Complete the form and send your enquiry directly to our team.
       </p>
 
       <div className="mt-7 grid gap-5 sm:grid-cols-2">
@@ -72,10 +83,11 @@ export default function ContactEnquiryForm() {
         <textarea className={`${inputClass} min-h-32 resize-y`} name="message" placeholder="Tell us about the products, quantity, or project you have in mind" required />
       </label>
 
-      <button type="submit" className="mt-6 inline-flex w-full items-center justify-center rounded-full bg-[#25d366] px-7 py-4 text-sm font-black text-white shadow-xl shadow-[#25d366]/20 transition hover:-translate-y-0.5 hover:bg-[#1fbd5b] sm:w-auto">
-        Continue on WhatsApp
+      <button type="submit" disabled={status === "sending"} className="mt-6 inline-flex w-full items-center justify-center rounded-full bg-[var(--sun-coral-strong)] px-7 py-4 text-sm font-black text-white shadow-xl shadow-[var(--sun-coral)]/20 transition hover:-translate-y-0.5 hover:bg-[var(--sun-sky-dark)] disabled:cursor-wait disabled:opacity-60 sm:w-auto">
+        {status === "sending" ? "Sending…" : "Send Email"}
       </button>
-      {submitted ? <p className="mt-4 text-sm font-bold text-[#16835f]">Your WhatsApp enquiry has been prepared.</p> : null}
+      {status === "sent" ? <p className="mt-4 text-sm font-bold text-[#16835f]">Thank you! Your enquiry has been emailed successfully.</p> : null}
+      {status === "error" ? <p className="mt-4 text-sm font-bold text-[var(--sun-coral-strong)]">{errorMessage}</p> : null}
     </form>
   );
 }

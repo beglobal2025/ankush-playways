@@ -31,12 +31,6 @@ export const HOME_BANNER_SLOTS = [
     description: "Pretend Play Favourite",
     defaultImageSrc: "/assets/catalog/cutouts/junior-living-house.png",
   },
-  {
-    key: "home_banner_image_6",
-    label: "Outdoor Playway Equipments",
-    description: "Outdoor Play",
-    defaultImageSrc: "/catalogue/outdoor-playground-equipments/lfo-mps-04.jpg",
-  },
 ] as const;
 
 export const HOME_BANNER_SETTING_KEYS = HOME_BANNER_SLOTS.map((slot) => slot.key);

@@ -45,6 +45,24 @@ const testimonials = [
     name: "Anita Verma",
     tint: "bg-[var(--sun-yellow-pale)]",
   },
+  {
+    quote:
+      "The outdoor equipment arrived on time and the quality exceeded our expectations. Our students enjoy it every day.",
+    name: "Gurpreet Kaur",
+    tint: "bg-[var(--sun-mint-soft)]",
+  },
+  {
+    quote:
+      "From product selection to delivery, the team was responsive and helpful throughout our school playground project.",
+    name: "Amit Malhotra",
+    tint: "bg-[var(--sun-coral-soft)]",
+  },
+  {
+    quote:
+      "We received durable, vibrant products at a great value. Ankush Playways has become our trusted supplier.",
+    name: "Neha Kapoor",
+    tint: "bg-[var(--sun-sky-soft)]",
+  },
 ];
 
 const rolePlayAccents = [
@@ -309,8 +327,8 @@ function Hero({ bannerCtaHrefs = [], bannerImageSrcs = [] }: { bannerCtaHrefs?: 
 
   return (
     <section id="home" className="relative overflow-hidden bg-white">
-      <div className="relative min-h-screen overflow-hidden">
-        <div className="relative min-h-screen">
+      <div className="relative min-h-[max(100svh,760px)] overflow-hidden sm:min-h-[max(100svh,880px)] lg:min-h-screen">
+        <div className="relative min-h-[max(100svh,760px)] sm:min-h-[max(100svh,880px)] lg:min-h-screen">
           {slides.map((slide, index) => (
             <motion.article
               key={`${slide.accent}-${slide.image}`}
@@ -320,7 +338,7 @@ function Hero({ bannerCtaHrefs = [], bannerImageSrcs = [] }: { bannerCtaHrefs?: 
                 scale: activeSlide === index ? 1 : 1.015,
               }}
               transition={{ duration: reduce ? 0 : 1.15, ease: [0.45, 0, 0.15, 1] }}
-              className={`absolute inset-0 min-h-screen overflow-hidden ${slide.background} ${
+              className={`absolute inset-0 min-h-[max(100svh,760px)] overflow-hidden sm:min-h-[max(100svh,880px)] lg:min-h-screen ${slide.background} ${
                 activeSlide === index ? "pointer-events-auto z-10" : "pointer-events-none z-0"
               }`}
             >
@@ -331,14 +349,14 @@ function Hero({ bannerCtaHrefs = [], bannerImageSrcs = [] }: { bannerCtaHrefs?: 
               <div className="absolute right-[15%] top-[33%] hidden text-4xl font-black leading-none text-[var(--sun-yellow)] drop-shadow-[0_4px_0_rgba(255,255,255,0.35)] lg:block">★</div>
               <div className="absolute left-[35%] top-[40%] hidden -rotate-12 text-5xl font-black leading-none text-white/85 lg:block">✈</div>
               <div
-                className={`absolute bottom-0 right-0 h-[56%] w-[72%] rounded-tl-[68%] ${slide.decorClass}`}
+                className={`absolute bottom-0 right-0 h-[42%] w-[92%] rounded-tl-[68%] sm:h-[50%] sm:w-[82%] lg:h-[56%] lg:w-[72%] ${slide.decorClass}`}
               />
-              <div className="cloud-bank absolute inset-x-0 bottom-0 z-10 h-44 opacity-95" />
-              <img src="/assets/toy-bear.svg" alt="" aria-hidden="true" className="absolute left-[8%] top-[22%] hidden w-24 rotate-[-8deg] opacity-95 md:block" />
+              <div className="cloud-bank absolute inset-x-0 bottom-0 z-10 h-32 opacity-95 sm:h-40 lg:h-44" />
+              <img src="/assets/toy-bear.svg" alt="" aria-hidden="true" className="absolute left-[8%] top-[22%] hidden w-24 rotate-[-8deg] opacity-95 lg:block" />
               <img src="/assets/kite.svg" alt="" aria-hidden="true" className="absolute right-[10%] top-[9%] hidden w-24 rotate-12 opacity-75 lg:block" />
-              <img src="/assets/blocks.svg" alt="" aria-hidden="true" className="absolute bottom-10 left-[8%] z-20 hidden w-36 opacity-95 md:block" />
+              <img src="/assets/blocks.svg" alt="" aria-hidden="true" className="absolute bottom-10 left-[8%] z-20 hidden w-36 opacity-95 lg:block" />
 
-              <div className="relative mx-auto grid min-h-screen max-w-7xl items-center gap-8 px-5 py-24 sm:px-8 lg:grid-cols-[0.44fr_0.56fr]">
+              <div className="relative mx-auto grid min-h-[max(100svh,760px)] max-w-7xl grid-rows-[auto_1fr] items-start gap-5 px-5 pb-24 pt-28 sm:min-h-[max(100svh,880px)] sm:gap-8 sm:px-10 sm:pb-28 sm:pt-32 lg:min-h-screen lg:grid-cols-[0.44fr_0.56fr] lg:grid-rows-1 lg:items-center lg:px-8 lg:py-24">
                 <motion.div
                   initial={false}
                   animate={{
@@ -346,22 +364,22 @@ function Hero({ bannerCtaHrefs = [], bannerImageSrcs = [] }: { bannerCtaHrefs?: 
                     x: activeSlide === index ? 0 : -24,
                   }}
                   transition={{ duration: 0.9, delay: activeSlide === index ? 0.18 : 0 }}
-                  className="relative z-20 max-w-xl pt-8 text-center sm:text-left lg:pt-0"
+                  className="relative z-20 mx-auto w-full max-w-xl text-center lg:mx-0 lg:text-left"
                 >
-                  <div className="hero-sign px-7 py-8 sm:px-9 sm:py-9">
-                    <p className="mb-4 font-serif text-xl italic text-[var(--sun-coral-strong)] drop-shadow-[0_2px_0_rgba(255,255,255,0.75)]">
+                  <div className="hero-sign px-5 py-6 sm:px-9 sm:py-9">
+                    <p className="mb-3 font-serif text-lg italic text-[var(--sun-coral-strong)] drop-shadow-[0_2px_0_rgba(255,255,255,0.75)] sm:mb-4 sm:text-xl">
                       {slide.eyebrow}
                     </p>
-                    <h1 className="text-4xl font-black leading-[1.02] text-[var(--sun-ink)] drop-shadow-[0_3px_0_rgba(255,255,255,0.75)] sm:text-5xl lg:text-6xl">
+                    <h1 className="text-[2.15rem] font-black leading-[1.02] text-[var(--sun-ink)] drop-shadow-[0_3px_0_rgba(255,255,255,0.75)] sm:text-5xl lg:text-6xl">
                       {slide.title}
                       <span className={`block ${slide.accentColor}`}>{slide.accent}</span>
                     </h1>
-                    <p className="mx-auto mt-5 max-w-md text-base font-bold leading-7 text-slate-700 drop-shadow-[0_1px_0_rgba(255,255,255,0.85)] sm:mx-0">
+                    <p className="mx-auto mt-4 max-w-md text-sm font-bold leading-6 text-slate-700 drop-shadow-[0_1px_0_rgba(255,255,255,0.85)] sm:mt-5 sm:text-base sm:leading-7 lg:mx-0">
                       {slide.description}
                     </p>
                     <a
                       href={slide.ctaHref || "/products"}
-                      className={`relative z-10 mt-6 inline-flex rounded-full px-7 py-3.5 text-sm font-black text-white shadow-xl transition hover:-translate-y-1 ${slide.ctaColor}`}
+                      className={`relative z-10 mt-5 inline-flex w-full justify-center rounded-full px-7 py-3.5 text-sm font-black text-white shadow-xl transition hover:-translate-y-1 sm:mt-6 sm:w-auto ${slide.ctaColor}`}
                     >
                       {slide.cta}
                     </a>
@@ -376,7 +394,7 @@ function Hero({ bannerCtaHrefs = [], bannerImageSrcs = [] }: { bannerCtaHrefs?: 
                     x: activeSlide === index ? 0 : 54,
                   }}
                   transition={{ duration: 1, delay: activeSlide === index ? 0.22 : 0 }}
-                  className={`relative z-20 flex justify-center self-end pb-16 lg:self-center lg:pb-0 ${slide.toySide === "center" ? "lg:justify-center" : "lg:justify-end"}`}
+                  className={`relative z-20 flex min-h-0 items-center justify-center self-stretch pb-8 sm:pb-12 lg:self-center lg:pb-0 ${slide.toySide === "center" ? "lg:justify-center" : "lg:justify-end"}`}
                 >
                   <div className="absolute bottom-2 left-1/2 h-20 w-[68%] -translate-x-1/2 rounded-[50%] bg-slate-900/14 blur-2xl" />
                   <motion.img
@@ -387,8 +405,8 @@ function Hero({ bannerCtaHrefs = [], bannerImageSrcs = [] }: { bannerCtaHrefs?: 
                     className={[
                       "relative drop-shadow-[0_34px_30px_rgba(40,141,176,0.23)]",
                       slide.customBanner
-                        ? "h-[22rem] w-full max-w-[780px] rounded-[28px] object-cover sm:h-[30rem]"
-                        : `${slide.imageClass ?? "w-full max-w-[780px]"} hero-product-cutout object-contain`,
+                        ? "h-[15rem] w-full max-w-[780px] rounded-[22px] object-cover sm:h-[24rem] sm:rounded-[28px] lg:h-[30rem]"
+                        : `${slide.imageClass ?? "w-full max-w-[780px]"} hero-product-cutout h-[clamp(13rem,27svh,18rem)] object-contain sm:h-[clamp(20rem,34svh,28rem)] lg:h-auto`,
                     ].join(" ")}
                   />
                 </motion.div>
@@ -401,7 +419,7 @@ function Hero({ bannerCtaHrefs = [], bannerImageSrcs = [] }: { bannerCtaHrefs?: 
           type="button"
           aria-label="Previous banner"
           onClick={() => goToSlide(activeSlide - 1)}
-          className="absolute left-0 top-1/2 z-30 grid h-20 w-11 -translate-y-1/2 place-items-center bg-white/25 text-4xl font-light text-white backdrop-blur-sm transition hover:bg-white/40"
+          className="absolute bottom-5 left-5 z-30 grid size-10 place-items-center rounded-full bg-white/35 text-3xl font-light text-white shadow-lg backdrop-blur-sm transition hover:bg-white/50 sm:bottom-auto sm:left-0 sm:top-1/2 sm:h-16 sm:w-10 sm:-translate-y-1/2 sm:rounded-none"
         >
           ‹
         </button>
@@ -409,12 +427,12 @@ function Hero({ bannerCtaHrefs = [], bannerImageSrcs = [] }: { bannerCtaHrefs?: 
           type="button"
           aria-label="Next banner"
           onClick={() => goToSlide(activeSlide + 1)}
-          className="absolute right-0 top-1/2 z-30 grid h-20 w-11 -translate-y-1/2 place-items-center bg-white/25 text-4xl font-light text-white backdrop-blur-sm transition hover:bg-white/40"
+          className="absolute bottom-5 right-5 z-30 grid size-10 place-items-center rounded-full bg-white/35 text-3xl font-light text-white shadow-lg backdrop-blur-sm transition hover:bg-white/50 sm:bottom-auto sm:right-0 sm:top-1/2 sm:h-16 sm:w-10 sm:-translate-y-1/2 sm:rounded-none"
         >
           ›
         </button>
 
-        <div className="absolute bottom-7 left-1/2 z-30 flex -translate-x-1/2 items-center gap-3" aria-label="Hero banner slides">
+        <div className="absolute bottom-8 left-1/2 z-30 flex -translate-x-1/2 items-center gap-2.5" aria-label="Hero banner slides">
           {slides.map((item, index) => (
             <button
               key={item.accent}
@@ -422,8 +440,8 @@ function Hero({ bannerCtaHrefs = [], bannerImageSrcs = [] }: { bannerCtaHrefs?: 
               aria-label={`Show banner ${index + 1}`}
               aria-current={activeSlide === index}
               onClick={() => goToSlide(index)}
-              className={`size-3 rounded-full border-2 border-white transition-all ${
-                activeSlide === index ? "bg-white" : "bg-transparent hover:bg-white/70"
+              className={`h-3 rounded-full border-2 border-white transition-all ${
+                activeSlide === index ? "w-7 bg-white" : "w-3 bg-transparent hover:bg-white/70"
               }`}
             />
           ))}
@@ -561,21 +579,21 @@ function RockerRange({ products }: { products: Product[] }) {
   const findProduct = (code: string) => products.find((product) => normalCode(product.code) === normalCode(code) || product.slug.startsWith(`${code}-`));
   const rockerRange = [
     {
-      product: findProduct("lf-624"),
+      product: findProduct("ap-624"),
       label: "Riders",
       image: "/assets/catalog/cutouts/pony-rocking-rideon.png",
       accent: "bg-[var(--sun-yellow)]",
       badge: "bg-[var(--sun-sky)]",
     },
     {
-      product: findProduct("lf-108b"),
+      product: findProduct("ap-108b"),
       label: "Rock & Riders",
       image: "/assets/catalog/cutouts/crab-see-saw.png",
       accent: "bg-[var(--sun-mint)]",
       badge: "bg-[var(--sun-coral)]",
     },
     {
-      product: findProduct("lf-925c"),
+      product: findProduct("ap-925c"),
       label: "Rockers",
       image: "/assets/catalog/cutouts/elephant-rocker.png",
       accent: "bg-[var(--sun-coral)]",
@@ -872,6 +890,21 @@ function Promo() {
 }
 
 function Testimonials() {
+  const sliderRef = useRef<HTMLDivElement>(null);
+
+  const scrollTestimonials = (direction: "left" | "right") => {
+    const slider = sliderRef.current;
+
+    if (!slider) {
+      return;
+    }
+
+    slider.scrollBy({
+      left: direction === "left" ? -slider.clientWidth * 0.86 : slider.clientWidth * 0.86,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <section id="testimonials" className="kid-pattern relative overflow-hidden pb-28 pt-16">
       <img src="/assets/toy-bear.svg" alt="" aria-hidden="true" className="absolute right-10 top-10 hidden w-24 rotate-6 opacity-80 lg:block" />
@@ -885,30 +918,51 @@ function Testimonials() {
       <div className="relative">
         <SectionTitle eyebrow="Testimonial" title="Happy" accent="Clients" />
       </div>
-      <div className="relative mx-auto grid max-w-7xl gap-6 px-5 sm:px-8 lg:grid-cols-3">
-        {testimonials.map((item, index) => (
-          <motion.article
-            key={item.name}
-            {...fadeUp(index * 0.06)}
-            className={`${item.tint} relative overflow-hidden rounded-[24px] border border-white bg-white p-7 shadow-xl shadow-[#7ecae1]/20`}
-          >
-            <div className="absolute -right-8 -top-8 size-24 rounded-full bg-white/50" />
-            <div className={`mb-6 grid size-14 place-items-center rounded-2xl text-3xl font-black text-white ${
-              index % 3 === 0 ? "bg-[var(--sun-coral)]" : index % 3 === 1 ? "bg-[var(--sun-sky)]" : "bg-[var(--sun-yellow)]"
-            }`}>
-              “
-            </div>
-            <p className="relative z-10 min-h-32 text-base font-bold leading-7 text-slate-700">"{item.quote}"</p>
-            <div className="mt-6 flex items-center justify-between gap-4">
-              <h3 className="text-lg font-black text-[var(--sun-ink)]">{item.name}</h3>
-              <div className="flex gap-1 text-lg text-[var(--sun-yellow)]" aria-hidden="true">
-                <span>★</span>
-                <span>★</span>
-                <span>★</span>
+      <div className="relative mx-auto max-w-7xl px-5 sm:px-16">
+        <button
+          type="button"
+          aria-label="Previous client reviews"
+          onClick={() => scrollTestimonials("left")}
+          className="absolute left-1 top-1/2 z-20 grid size-11 -translate-y-1/2 place-items-center rounded-full bg-white text-2xl font-black text-[var(--sun-ink)] shadow-xl shadow-[#7ecae1]/25 transition hover:-translate-x-0.5 hover:bg-[var(--sun-sky-soft)] sm:left-3"
+        >
+          ‹
+        </button>
+        <div
+          ref={sliderRef}
+          className="flex snap-x snap-mandatory gap-6 overflow-x-auto scroll-smooth px-1 pb-5 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        >
+          {testimonials.map((item, index) => (
+            <motion.article
+              key={item.name}
+              {...fadeUp(index * 0.06)}
+              className={`${item.tint} relative w-[82vw] shrink-0 snap-start overflow-hidden rounded-[24px] border border-white bg-white p-7 shadow-xl shadow-[#7ecae1]/20 sm:w-[calc(50%_-_12px)] lg:w-[calc(33.333%_-_16px)]`}
+            >
+              <div className="absolute -right-8 -top-8 size-24 rounded-full bg-white/50" />
+              <div className={`mb-6 grid size-14 place-items-center rounded-2xl text-3xl font-black text-white ${
+                index % 3 === 0 ? "bg-[var(--sun-coral)]" : index % 3 === 1 ? "bg-[var(--sun-sky)]" : "bg-[var(--sun-yellow)]"
+              }`}>
+                “
               </div>
-            </div>
-          </motion.article>
-        ))}
+              <p className="relative z-10 min-h-32 text-base font-bold leading-7 text-slate-700">"{item.quote}"</p>
+              <div className="mt-6 flex items-center justify-between gap-4">
+                <h3 className="text-lg font-black text-[var(--sun-ink)]">{item.name}</h3>
+                <div className="flex gap-1 text-lg text-[var(--sun-yellow)]" aria-hidden="true">
+                  <span>★</span>
+                  <span>★</span>
+                  <span>★</span>
+                </div>
+              </div>
+            </motion.article>
+          ))}
+        </div>
+        <button
+          type="button"
+          aria-label="Next client reviews"
+          onClick={() => scrollTestimonials("right")}
+          className="absolute right-1 top-1/2 z-20 grid size-11 -translate-y-1/2 place-items-center rounded-full bg-white text-2xl font-black text-[var(--sun-ink)] shadow-xl shadow-[#7ecae1]/25 transition hover:translate-x-0.5 hover:bg-[var(--sun-sky-soft)] sm:right-3"
+        >
+          ›
+        </button>
       </div>
     </section>
   );
@@ -938,9 +992,9 @@ function Footer() {
           <div>
             <h3 className="text-3xl font-black">Contact Us</h3>
             <div className="mt-6 grid gap-4 text-sm font-semibold leading-7 text-white/90">
-              <p>Phone: +91-9811148225</p>
-              <p>Email: contact@gmail.com</p>
-              <p>Address: Sector 3, Bawana Industrial Area, Delhi 110039, India.</p>
+              <p>Phone: 7814511770</p>
+              <p>Email: ankushplayways@gmail.com</p>
+              <p>Address: E-110, Phase-7, Industrial Area, Mohali, Punjab, 160059, India</p>
             </div>
           </div>
         </div>
@@ -955,7 +1009,7 @@ function Footer() {
 function WhatsAppButton() {
   return (
     <a
-      href="https://wa.me/919811148225"
+      href="https://wa.me/917814511770"
       aria-label="Chat on WhatsApp"
       className="fixed bottom-6 right-5 z-50 grid size-16 place-items-center rounded-2xl bg-[#25d366] text-white shadow-2xl shadow-[#a6e5cd]/50 transition hover:-translate-y-1"
     >
