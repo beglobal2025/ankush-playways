@@ -170,7 +170,7 @@ a {
 }
 
 .route-loader-dot {
-  animation: route-loader-bounce 0.8s ease-in-out infinite;
+  animation: route-loader-bounce 0.9s ease-in-out infinite;
 }
 
 @keyframes route-loader-slide {
@@ -188,9 +188,11 @@ a {
 @keyframes route-loader-bounce {
   0%,
   100% {
-    transform: translateY(-6px);
+    transform: translateY(3px) scale(0.82);
+    opacity: 0.58;
   }
   50% {
-    transform: translateY(6px);
+    transform: translateY(-7px) scale(1);
+    opacity: 1;
   }
 }

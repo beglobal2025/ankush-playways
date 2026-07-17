@@ -7,303 +7,303 @@ Shared product-code image folders: 1
 
 ## Shared Product-Code Folders
 
-- `/catalogue/play-equipment/lf-101/cover.jpg` is shared by: `lf-101`, `lf-101-2`
+- `/catalogue/play-equipment/ap-101/cover.jpg` is shared by: `ap-101`, `ap-101-2`
 
 ## Review Items
 
-- `lf-0407` (Middle & High Classes, PDF page 13): Dual Seating Desk
+- `ap-0407` (Middle & High Classes, PDF page 13): Dual Seating Desk
   - Issues: used page crop fallback for cover image
-- `lf-158` (Primary Classes, PDF page 21): Dual Seating Desk (Adjustable)
+- `ap-158` (Primary Classes, PDF page 21): Dual Seating Desk (Adjustable)
   - Issues: missing price
-- `lf-205` (Pre Classes, PDF page 34): LF-205
+- `ap-205` (Pre Classes, PDF page 34): AP-205
   - Issues: name could not be inferred
-- `lf-202` (Pre Classes, PDF page 34): LF-202
+- `ap-202` (Pre Classes, PDF page 34): AP-202
   - Issues: name could not be inferred
-- `lf-1421` (Pre Classes, PDF page 35): LF-1421
+- `ap-1421` (Pre Classes, PDF page 35): AP-1421
   - Issues: name could not be inferred
-- `lf-1422` (Pre Classes, PDF page 35): LF-1422
+- `ap-1422` (Pre Classes, PDF page 35): AP-1422
   - Issues: name could not be inferred
-- `lf-1423` (Pre Classes, PDF page 35): LF-1423
+- `ap-1423` (Pre Classes, PDF page 35): AP-1423
   - Issues: name could not be inferred
-- `lf-1425` (Pre Classes, PDF page 35): LF-1425
+- `ap-1425` (Pre Classes, PDF page 35): AP-1425
   - Issues: name could not be inferred
-- `lf-1424` (Pre Classes, PDF page 35): LF-1424
+- `ap-1424` (Pre Classes, PDF page 35): AP-1424
   - Issues: name could not be inferred
-- `lf-1451` (Pre Classes, PDF page 37): LF-1451
+- `ap-1451` (Pre Classes, PDF page 37): AP-1451
   - Issues: price on demand, name could not be inferred
-- `lf-1452` (Pre Classes, PDF page 37): ............
+- `ap-1452` (Pre Classes, PDF page 37): ............
   - Issues: price on demand
-- `lf-1453` (Pre Classes, PDF page 37): ............
+- `ap-1453` (Pre Classes, PDF page 37): ............
   - Issues: missing price
-- `lf-1454` (Pre Classes, PDF page 37): ............
+- `ap-1454` (Pre Classes, PDF page 37): ............
   - Issues: missing price
-- `lf-1455` (Pre Classes, PDF page 37): ............
+- `ap-1455` (Pre Classes, PDF page 37): ............
   - Issues: missing price
-- `lf-1456` (Pre Classes, PDF page 37): ............
+- `ap-1456` (Pre Classes, PDF page 37): ............
   - Issues: missing price
-- `lf-1501` (Pre Classes, PDF page 38): LF-1501
+- `ap-1501` (Pre Classes, PDF page 38): AP-1501
   - Issues: name could not be inferred
-- `lf-1502` (Pre Classes, PDF page 38): LF-1502
+- `ap-1502` (Pre Classes, PDF page 38): AP-1502
   - Issues: name could not be inferred
-- `lf-1503` (Pre Classes, PDF page 38): LF-1503
+- `ap-1503` (Pre Classes, PDF page 38): AP-1503
   - Issues: name could not be inferred
-- `lf-1504` (Pre Classes, PDF page 38): LF-1504
+- `ap-1504` (Pre Classes, PDF page 38): AP-1504
   - Issues: name could not be inferred
-- `lf-1481` (Soft Seating, PDF page 42): L120 × W60 cm
+- `ap-1481` (Soft Seating, PDF page 42): L120 × W60 cm
   - Issues: missing price, specifications are sparse or missing
-- `lf-1482` (Soft Seating, PDF page 42): L120 × W60 cm
+- `ap-1482` (Soft Seating, PDF page 42): L120 × W60 cm
   - Issues: missing price
-- `lf-1483` (Soft Seating, PDF page 42): L60 × W51 cm
+- `ap-1483` (Soft Seating, PDF page 42): L60 × W51 cm
   - Issues: missing price
-- `lf-1484` (Soft Seating, PDF page 42): L60 × W60 cm
+- `ap-1484` (Soft Seating, PDF page 42): L60 × W60 cm
   - Issues: missing price, specifications are sparse or missing
-- `lf-1485` (Soft Seating, PDF page 42): L60 × W60 cm
+- `ap-1485` (Soft Seating, PDF page 42): L60 × W60 cm
   - Issues: missing price, specifications are sparse or missing
-- `lf-1486` (Soft Seating, PDF page 42): L60 × W60 cm
+- `ap-1486` (Soft Seating, PDF page 42): L60 × W60 cm
   - Issues: missing price
-- `lf-106` (For All Category Classes, PDF page 46): Plastic Chair
+- `ap-106` (For All Category Classes, PDF page 46): Plastic Chair
   - Issues: specifications are sparse or missing
-- `lf-116` (For All Category Classes, PDF page 46): Adj Plastic Chair
+- `ap-116` (For All Category Classes, PDF page 46): Adj Plastic Chair
   - Issues: specifications are sparse or missing
-- `lf-186` (For All Category Classes, PDF page 46): Adj Plastic Chair
+- `ap-186` (For All Category Classes, PDF page 46): Adj Plastic Chair
   - Issues: specifications are sparse or missing
-- `lf-146` (For All Category Classes, PDF page 46): Adj Plastic Chair
+- `ap-146` (For All Category Classes, PDF page 46): Adj Plastic Chair
   - Issues: specifications are sparse or missing
-- `lf-176` (For All Category Classes, PDF page 46): Metal Chair
+- `ap-176` (For All Category Classes, PDF page 46): Metal Chair
   - Issues: specifications are sparse or missing
-- `lf-156` (For All Category Classes, PDF page 46): Metal Handle Chair
+- `ap-156` (For All Category Classes, PDF page 46): Metal Handle Chair
   - Issues: specifications are sparse or missing
-- `lf-126` (For All Category Classes, PDF page 46): Metal Chair
+- `ap-126` (For All Category Classes, PDF page 46): Metal Chair
   - Issues: specifications are sparse or missing
-- `lf-127` (For All Category Classes, PDF page 46): Metal Handle Chair
+- `ap-127` (For All Category Classes, PDF page 46): Metal Handle Chair
   - Issues: specifications are sparse or missing
-- `lf-166` (For All Category Classes, PDF page 46): Metal Handle Chair
+- `ap-166` (For All Category Classes, PDF page 46): Metal Handle Chair
   - Issues: specifications are sparse or missing
-- `lf-128` (For All Category Classes, PDF page 46): Metal Handle Chair
+- `ap-128` (For All Category Classes, PDF page 46): Metal Handle Chair
   - Issues: specifications are sparse or missing
-- `lf-129` (For All Category Classes, PDF page 46): Plastic Chair
+- `ap-129` (For All Category Classes, PDF page 46): Plastic Chair
   - Issues: specifications are sparse or missing
-- `lf-801` (Play Equipment, PDF page 47): Mini Home & Kitchen Playhouse
+- `ap-801` (Play Equipment, PDF page 47): Mini Home & Kitchen Playhouse
   - Issues: price on demand
-- `lf-802` (Play Equipment, PDF page 47): Junior Living House
+- `ap-802` (Play Equipment, PDF page 47): Junior Living House
   - Issues: price on demand
-- `lf-903` (Play Equipment, PDF page 49): Royal Cottage
+- `ap-903` (Play Equipment, PDF page 49): Royal Cottage
   - Issues: price on demand
-- `lf-904` (Play Equipment, PDF page 49): Classic Cottage
+- `ap-904` (Play Equipment, PDF page 49): Classic Cottage
   - Issues: price on demand
-- `lf-926a` (Rideon, PDF page 61): Swing Car
+- `ap-926a` (Rideon, PDF page 61): Swing Car
   - Issues: specifications are sparse or missing
-- `lf-928b` (Rideon, PDF page 61): Motorcycle
+- `ap-928b` (Rideon, PDF page 61): Motorcycle
   - Issues: specifications are sparse or missing
-- `lf-963` (Ball Pool, PDF page 64): Ball Pool 2.7m2
+- `ap-963` (Ball Pool, PDF page 64): Ball Pool 2.7m2
   - Issues: specifications are sparse or missing
-- `lf-964` (Ball Pool, PDF page 64): Ball Pool 4.64m2
+- `ap-964` (Ball Pool, PDF page 64): Ball Pool 4.64m2
   - Issues: specifications are sparse or missing
-- `lf-930c` (Play Equipment, PDF page 67): Wall Basketball
+- `ap-930c` (Play Equipment, PDF page 67): Wall Basketball
   - Issues: specifications are sparse or missing
-- `lf-930d` (Play Equipment, PDF page 67): Wall Basketball
+- `ap-930d` (Play Equipment, PDF page 67): Wall Basketball
   - Issues: specifications are sparse or missing
-- `lft-3992d-p` (Play Equipment, PDF page 69): Blocks 16 Pcs
+- `apt-3992d-p` (Play Equipment, PDF page 69): Blocks 16 Pcs
   - Issues: specifications are sparse or missing
-- `lft-3994p-d` (Play Equipment, PDF page 69): Blocks 32 Pcs
+- `apt-3994p-d` (Play Equipment, PDF page 69): Blocks 32 Pcs
   - Issues: specifications are sparse or missing
-- `lfo-tr` (Trampoline, PDF page 70): Trampoline
+- `apo-tr` (Trampoline, PDF page 70): Trampoline
   - Issues: specifications are sparse or missing
-- `lf-72` (Trampoline, PDF page 70): LF-72
+- `ap-72` (Trampoline, PDF page 70): AP-72
   - Issues: name could not be inferred
-- `lf-96` (Trampoline, PDF page 70): LF-96
+- `ap-96` (Trampoline, PDF page 70): AP-96
   - Issues: name could not be inferred
-- `lf-120` (Trampoline, PDF page 70): LF-120
+- `ap-120` (Trampoline, PDF page 70): AP-120
   - Issues: name could not be inferred
-- `lf-144` (Trampoline, PDF page 70): LF-144
+- `ap-144` (Trampoline, PDF page 70): AP-144
   - Issues: name could not be inferred
-- `lf-168` (Trampoline, PDF page 70): LF-168
+- `ap-168` (Trampoline, PDF page 70): AP-168
   - Issues: name could not be inferred
-- `lf-55` (Trampoline, PDF page 70): LF-55
+- `ap-55` (Trampoline, PDF page 70): AP-55
   - Issues: name could not be inferred
-- `lf-536d` (Trampoline, PDF page 70): 36"
+- `ap-536d` (Trampoline, PDF page 70): 36"
   - Issues: specifications are sparse or missing
-- `lf-936` (Toy Shelf, PDF page 72): LF-936
+- `ap-936` (Toy Sheap, PDF page 72): AP-936
   - Issues: name could not be inferred
-- `lf-935` (Toy Shelf, PDF page 72): LF-935
+- `ap-935` (Toy Sheap, PDF page 72): AP-935
   - Issues: name could not be inferred
-- `lf-937` (Toy Shelf, PDF page 72): LF-937
+- `ap-937` (Toy Sheap, PDF page 72): AP-937
   - Issues: name could not be inferred
-- `lf-5052` (Tent House, PDF page 73): LF-5052
+- `ap-5052` (Tent House, PDF page 73): AP-5052
   - Issues: name could not be inferred
-- `lf-51` (Sports, PDF page 74): Hurdle
+- `ap-51` (Sports, PDF page 74): Hurdle
   - Issues: specifications are sparse or missing
-- `lf-56` (Sports, PDF page 74): Ring (40 dia)
+- `ap-56` (Sports, PDF page 74): Ring (40 dia)
   - Issues: specifications are sparse or missing
-- `lf-57` (Sports, PDF page 74): Ring (50 dia)
+- `ap-57` (Sports, PDF page 74): Ring (50 dia)
   - Issues: specifications are sparse or missing
-- `lf-52` (Sports, PDF page 74): Divider 10 pcs
+- `ap-52` (Sports, PDF page 74): Divider 10 pcs
   - Issues: specifications are sparse or missing
-- `lf-58` (Sports, PDF page 74): Agility Ladde
+- `ap-58` (Sports, PDF page 74): Agility Ladde
   - Issues: specifications are sparse or missing
 - `f-3` (Sports, PDF page 74): Rope Ladder
   - Issues: specifications are sparse or missing
-- `lf-414a` (Sports, PDF page 74): Swing
+- `ap-414a` (Sports, PDF page 74): Swing
   - Issues: specifications are sparse or missing
-- `lf-62s` (Play Equipment, PDF page 88): 6.5 ft Dia
+- `ap-62s` (Play Equipment, PDF page 88): 6.5 ft Dia
   - Issues: used page crop fallback for cover image, specifications are sparse or missing
-- `lf-62` (Play Equipment, PDF page 88): 9 ft Dia
+- `ap-62` (Play Equipment, PDF page 88): 9 ft Dia
   - Issues: used page crop fallback for cover image
-- `lft-21a` (Learning Toys, PDF page 89): LFT-21A
+- `apt-21a` (Learning Toys, PDF page 89): APT-21A
   - Issues: name could not be inferred, specifications are sparse or missing
-- `lft-22a` (Learning Toys, PDF page 89): LFT-22A
+- `apt-22a` (Learning Toys, PDF page 89): APT-22A
   - Issues: name could not be inferred, specifications are sparse or missing
-- `lft-23a` (Learning Toys, PDF page 89): LFT-23A
+- `apt-23a` (Learning Toys, PDF page 89): APT-23A
   - Issues: name could not be inferred, specifications are sparse or missing
-- `lft-25a` (Learning Toys, PDF page 89): LFT-25A
+- `apt-25a` (Learning Toys, PDF page 89): APT-25A
   - Issues: name could not be inferred, specifications are sparse or missing
-- `lft-26a` (Learning Toys, PDF page 89): LFT-26A
+- `apt-26a` (Learning Toys, PDF page 89): APT-26A
   - Issues: name could not be inferred, specifications are sparse or missing
-- `lft-24a` (Learning Toys, PDF page 89): LFT-24A
+- `apt-24a` (Learning Toys, PDF page 89): APT-24A
   - Issues: name could not be inferred, specifications are sparse or missing
-- `lft-28a` (Learning Toys, PDF page 89): LFT-28A
+- `apt-28a` (Learning Toys, PDF page 89): APT-28A
   - Issues: name could not be inferred, specifications are sparse or missing
-- `lft-29a` (Learning Toys, PDF page 89): LFT-29A
+- `apt-29a` (Learning Toys, PDF page 89): APT-29A
   - Issues: name could not be inferred, specifications are sparse or missing
-- `lft-27a` (Learning Toys, PDF page 89): LFT-27A
+- `apt-27a` (Learning Toys, PDF page 89): APT-27A
   - Issues: name could not be inferred, specifications are sparse or missing
-- `lft-30a` (Learning Toys, PDF page 90): LFT-30A
+- `apt-30a` (Learning Toys, PDF page 90): APT-30A
   - Issues: name could not be inferred, specifications are sparse or missing
-- `lft-31a` (Learning Toys, PDF page 90): LFT-31A
+- `apt-31a` (Learning Toys, PDF page 90): APT-31A
   - Issues: name could not be inferred, specifications are sparse or missing
-- `lft-32a` (Learning Toys, PDF page 90): LFT-32A
+- `apt-32a` (Learning Toys, PDF page 90): APT-32A
   - Issues: name could not be inferred, specifications are sparse or missing
-- `lft-33a` (Learning Toys, PDF page 90): LFT-33A
+- `apt-33a` (Learning Toys, PDF page 90): APT-33A
   - Issues: name could not be inferred, specifications are sparse or missing
-- `lft-35a` (Learning Toys, PDF page 90): LFT-35A
+- `apt-35a` (Learning Toys, PDF page 90): APT-35A
   - Issues: name could not be inferred, specifications are sparse or missing
-- `lft-34a` (Learning Toys, PDF page 90): LFT-34A
+- `apt-34a` (Learning Toys, PDF page 90): APT-34A
   - Issues: name could not be inferred, specifications are sparse or missing
-- `lft-37a` (Learning Toys, PDF page 90): 450.00
+- `apt-37a` (Learning Toys, PDF page 90): 450.00
   - Issues: specifications are sparse or missing
-- `lft-36a` (Learning Toys, PDF page 90): 450.00
+- `apt-36a` (Learning Toys, PDF page 90): 450.00
   - Issues: specifications are sparse or missing
-- `lft-38a` (Learning Toys, PDF page 90): LFT-38A
+- `apt-38a` (Learning Toys, PDF page 90): APT-38A
   - Issues: name could not be inferred, specifications are sparse or missing
-- `lft-39a` (Learning Toys, PDF page 90): LFT-39A
+- `apt-39a` (Learning Toys, PDF page 90): APT-39A
   - Issues: name could not be inferred, specifications are sparse or missing
-- `lft-40a` (Learning Toys, PDF page 90): LFT-40A
+- `apt-40a` (Learning Toys, PDF page 90): APT-40A
   - Issues: name could not be inferred, specifications are sparse or missing
-- `lfp-7` (Puppets, PDF page 91): Fruits/Vegitables Puppet (Set of 12)
+- `app-7` (Puppets, PDF page 91): Fruits/Vegitables Puppet (Set of 12)
   - Issues: missing price
-- `lfp-8` (Puppets, PDF page 91): Water Animals
+- `app-8` (Puppets, PDF page 91): Water Animals
   - Issues: missing price
-- `lfp-9` (Puppets, PDF page 91): Birds Puppet
+- `app-9` (Puppets, PDF page 91): Birds Puppet
   - Issues: missing price
-- `lfp-12` (Puppets, PDF page 91): Community Helpers
+- `app-12` (Puppets, PDF page 91): Community Helpers
   - Issues: missing price
-- `lfp-10` (Puppets, PDF page 91): Insect Puppet
+- `app-10` (Puppets, PDF page 91): Insect Puppet
   - Issues: missing price
-- `lfp-11` (Puppets, PDF page 91): Family Puppet
+- `app-11` (Puppets, PDF page 91): Family Puppet
   - Issues: missing price
-- `lft-1212` (Role Play Costumes, PDF page 92): Construction
+- `apt-1212` (Role Play Costumes, PDF page 92): Construction
   - Issues: specifications are sparse or missing
-- `lft-1211` (Role Play Costumes, PDF page 92): Military Forces
+- `apt-1211` (Role Play Costumes, PDF page 92): Military Forces
   - Issues: specifications are sparse or missing
-- `lft-1213` (Role Play Costumes, PDF page 92): Pilot
+- `apt-1213` (Role Play Costumes, PDF page 92): Pilot
   - Issues: specifications are sparse or missing
-- `lft-1214` (Role Play Costumes, PDF page 92): Lawyer
+- `apt-1214` (Role Play Costumes, PDF page 92): Lawyer
   - Issues: specifications are sparse or missing
-- `lft-1216` (Role Play Costumes, PDF page 92): Lady Doctor
+- `apt-1216` (Role Play Costumes, PDF page 92): Lady Doctor
   - Issues: specifications are sparse or missing
-- `lft-1215` (Role Play Costumes, PDF page 92): Doctor
+- `apt-1215` (Role Play Costumes, PDF page 92): Doctor
   - Issues: specifications are sparse or missing
-- `lft-1219` (Role Play Costumes, PDF page 92): Fireghter
+- `apt-1219` (Role Play Costumes, PDF page 92): Fireghter
   - Issues: specifications are sparse or missing
-- `lft-1217` (Role Play Costumes, PDF page 92): Chef
+- `apt-1217` (Role Play Costumes, PDF page 92): Chef
   - Issues: specifications are sparse or missing
-- `lft-1218` (Role Play Costumes, PDF page 92): Nurse
+- `apt-1218` (Role Play Costumes, PDF page 92): Nurse
   - Issues: specifications are sparse or missing
-- `lft-012` (Toys, PDF page 93): Roll Ball
+- `apt-012` (Toys, PDF page 93): Roll Ball
   - Issues: specifications are sparse or missing
-- `lft-014` (Toys, PDF page 93): Shape Sorting Baby Toy
+- `apt-014` (Toys, PDF page 93): Shape Sorting Baby Toy
   - Issues: specifications are sparse or missing
-- `lft-011` (Toys, PDF page 93): Shape Sorter
+- `apt-011` (Toys, PDF page 93): Shape Sorter
   - Issues: specifications are sparse or missing
-- `lft-015` (Toys, PDF page 93): LFT-015
+- `apt-015` (Toys, PDF page 93): APT-015
   - Issues: name could not be inferred
-- `lft-016` (Toys, PDF page 93): LFT-016
+- `apt-016` (Toys, PDF page 93): APT-016
   - Issues: name could not be inferred
-- `lft-1251` (Flash Cards, PDF page 94): Alphabet
+- `apt-1251` (Flash Cards, PDF page 94): Alphabet
   - Issues: specifications are sparse or missing
-- `lft-1252` (Flash Cards, PDF page 94): Numbers
+- `apt-1252` (Flash Cards, PDF page 94): Numbers
   - Issues: specifications are sparse or missing
-- `lft-1253` (Flash Cards, PDF page 94): Colours & Shapes
+- `apt-1253` (Flash Cards, PDF page 94): Colours & Shapes
   - Issues: specifications are sparse or missing
-- `lft-1254` (Flash Cards, PDF page 94): Colours & Shapes
+- `apt-1254` (Flash Cards, PDF page 94): Colours & Shapes
   - Issues: specifications are sparse or missing
-- `lft-1255` (Flash Cards, PDF page 94): Fruits
+- `apt-1255` (Flash Cards, PDF page 94): Fruits
   - Issues: specifications are sparse or missing
-- `lft-1256` (Flash Cards, PDF page 94): Birds
+- `apt-1256` (Flash Cards, PDF page 94): Birds
   - Issues: specifications are sparse or missing
-- `lft-1257` (Flash Cards, PDF page 94): Animals
+- `apt-1257` (Flash Cards, PDF page 94): Animals
   - Issues: specifications are sparse or missing
-- `lft-1258` (Flash Cards, PDF page 94): Animals
+- `apt-1258` (Flash Cards, PDF page 94): Animals
   - Issues: specifications are sparse or missing
-- `lft-1259` (Flash Cards, PDF page 94): Vechicles
+- `apt-1259` (Flash Cards, PDF page 94): Vechicles
   - Issues: specifications are sparse or missing
-- `lft-1260` (Flash Cards, PDF page 94): Community Helpers
+- `apt-1260` (Flash Cards, PDF page 94): Community Helpers
   - Issues: specifications are sparse or missing
-- `lft-1261` (Flash Cards, PDF page 94): Opposites
+- `apt-1261` (Flash Cards, PDF page 94): Opposites
   - Issues: specifications are sparse or missing
-- `lft-054` (Toys, PDF page 96): Stack-o-Cubes
+- `apt-054` (Toys, PDF page 96): Stack-o-Cubes
   - Issues: specifications are sparse or missing
-- `lft-052` (Toys, PDF page 96): Stack-o-Egg
+- `apt-052` (Toys, PDF page 96): Stack-o-Egg
   - Issues: specifications are sparse or missing
-- `lft-053` (Toys, PDF page 96): Stack-o-Cubes
+- `apt-053` (Toys, PDF page 96): Stack-o-Cubes
   - Issues: specifications are sparse or missing
-- `lft-051` (Toys, PDF page 96): Stack-o-Egg
+- `apt-051` (Toys, PDF page 96): Stack-o-Egg
   - Issues: specifications are sparse or missing
-- `lft-97c` (Toys, PDF page 96): Bowling Set Jumbo
+- `apt-97c` (Toys, PDF page 96): Bowling Set Jumbo
   - Issues: specifications are sparse or missing
-- `lft-98` (Toys, PDF page 96): Bowling Set Jumbo
+- `apt-98` (Toys, PDF page 96): Bowling Set Jumbo
   - Issues: specifications are sparse or missing
-- `lft-92` (Toys, PDF page 96): Sand Toys
+- `apt-92` (Toys, PDF page 96): Sand Toys
   - Issues: specifications are sparse or missing
-- `lft-1203` (Toys, PDF page 96): FruitsCutting
+- `apt-1203` (Toys, PDF page 96): FruitsCutting
   - Issues: specifications are sparse or missing
-- `lft-99` (Toys, PDF page 96): Bowling Set
+- `apt-99` (Toys, PDF page 96): Bowling Set
   - Issues: specifications are sparse or missing
 - `fb3cm1` (Toys, PDF page 96): Football
   - Issues: specifications are sparse or missing
 - `bb3cm1` (Toys, PDF page 96): Basketball
   - Issues: specifications are sparse or missing
-- `lft-1201` (Toys, PDF page 96): Fruits Cutting
+- `apt-1201` (Toys, PDF page 96): Fruits Cutting
   - Issues: specifications are sparse or missing
-- `lft-1202` (Toys, PDF page 96): Vegetables Cutting
+- `apt-1202` (Toys, PDF page 96): Vegetables Cutting
   - Issues: specifications are sparse or missing
-- `lft-1210` (Toys, PDF page 96): Vegetables
+- `apt-1210` (Toys, PDF page 96): Vegetables
   - Issues: specifications are sparse or missing
-- `lft-1209` (Toys, PDF page 96): Vegetables
+- `apt-1209` (Toys, PDF page 96): Vegetables
   - Issues: specifications are sparse or missing
-- `lft-90d` (Toys, PDF page 97): Hopscotch
+- `apt-90d` (Toys, PDF page 97): Hopscotch
   - Issues: specifications are sparse or missing
-- `lft-1241` (Toys, PDF page 97): Digital
+- `apt-1241` (Toys, PDF page 97): Digital
   - Issues: specifications are sparse or missing
-- `lft-1151` (Toys, PDF page 97): Xylophone
+- `apt-1151` (Toys, PDF page 97): Xylophone
   - Issues: specifications are sparse or missing
-- `lft-1152` (Toys, PDF page 97): Xylophone Big
+- `apt-1152` (Toys, PDF page 97): Xylophone Big
   - Issues: specifications are sparse or missing
-- `lft-1243` (Toys, PDF page 97): Bin Buddy
+- `apt-1243` (Toys, PDF page 97): Bin Buddy
   - Issues: specifications are sparse or missing
-- `lft-1234` (Toys, PDF page 97): Beauty set
+- `apt-1234` (Toys, PDF page 97): Beauty set
   - Issues: specifications are sparse or missing
-- `lft-1233` (Toys, PDF page 97): Beauty set
+- `apt-1233` (Toys, PDF page 97): Beauty set
   - Issues: specifications are sparse or missing
-- `lft-1231` (Toys, PDF page 97): Doctor set
+- `apt-1231` (Toys, PDF page 97): Doctor set
   - Issues: specifications are sparse or missing
-- `lft-1232` (Toys, PDF page 97): Tool kit
+- `apt-1232` (Toys, PDF page 97): Tool kit
   - Issues: specifications are sparse or missing
-- `lft-1223` (Toys, PDF page 97): Ocean
+- `apt-1223` (Toys, PDF page 97): Ocean
   - Issues: specifications are sparse or missing
-- `lft-1221` (Toys, PDF page 97): Farm Set
+- `apt-1221` (Toys, PDF page 97): Farm Set
   - Issues: specifications are sparse or missing
-- `lft-1222` (Toys, PDF page 97): Ocean
+- `apt-1222` (Toys, PDF page 97): Ocean
   - Issues: specifications are sparse or missing
-- `lft-1224` (Toys, PDF page 97): Insects Set
+- `apt-1224` (Toys, PDF page 97): Insects Set
   - Issues: specifications are sparse or missing

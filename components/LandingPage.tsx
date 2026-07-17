@@ -453,8 +453,11 @@ function Hero({ bannerCtaHrefs = [], bannerImageSrcs = [] }: { bannerCtaHrefs?: 
 
 function About() {
   return (
-    <section id="about" className="relative overflow-hidden bg-white py-14 lg:py-16">
+    <section id="about" className="relative scroll-mt-24 overflow-hidden bg-white py-14 lg:py-16">
       <img src="/assets/kite.svg" alt="" aria-hidden="true" className="absolute left-4 top-20 hidden w-32 -rotate-12 opacity-80 lg:block" />
+      <motion.p {...fadeUp()} className="relative mx-auto mb-6 w-fit rounded-full bg-[var(--sun-sky-soft)] px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-[var(--sun-sky-dark)]">
+        About Us
+      </motion.p>
       <div className="mx-auto grid max-w-7xl items-center gap-14 px-5 sm:px-8 lg:grid-cols-2">
         <motion.div {...fadeUp()} className="relative mx-auto w-full max-w-[600px]">
           <div className="absolute -left-8 top-12 h-44 w-44 rounded-full bg-[var(--sun-sky-soft)]" />

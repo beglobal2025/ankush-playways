@@ -34,7 +34,9 @@ export default function RouteChangeLoader() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const [loading, setLoading] = useState(false);
-  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const routeAtStartRef = useRef<string | null>(null);
+  const finishTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const currentRoute = `${pathname}${searchParams.toString() ? `?${searchParams.toString()}` : ""}`;
 
   useEffect(() => {
     const handleClick = (event: MouseEvent) => {
@@ -42,6 +44,8 @@ export default function RouteChangeLoader() {
         return;
       }
 
+      const routeBeforeNavigation = `${window.location.pathname}${window.location.search}`;
+      routeAtStartRef.current = routeBeforeNavigation;
       setLoading(true);
     };
 
@@ -53,54 +57,42 @@ export default function RouteChangeLoader() {
   }, []);
 
   useEffect(() => {
-    if (!loading) {
+    if (!loading || !routeAtStartRef.current || currentRoute === routeAtStartRef.current) {
       return;
     }
 
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
+    if (finishTimeoutRef.current) {
+      clearTimeout(finishTimeoutRef.current);
     }
 
-    timeoutRef.current = setTimeout(() => {
+    finishTimeoutRef.current = setTimeout(() => {
       setLoading(false);
-    }, 350);
+      routeAtStartRef.current = null;
+    }, 180);
 
     return () => {
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current);
+      if (finishTimeoutRef.current) {
+        clearTimeout(finishTimeoutRef.current);
       }
     };
-  }, [loading, pathname, searchParams]);
-
-  useEffect(() => {
-    if (!loading) {
-      return;
-    }
-
-    const fallbackTimeout = setTimeout(() => {
-      setLoading(false);
-    }, 8000);
-
-    return () => clearTimeout(fallbackTimeout);
-  }, [loading]);
+  }, [currentRoute, loading]);
 
   if (!loading) {
     return null;
   }
 
   return (
-    <div className="pointer-events-none fixed inset-x-0 top-0 z-[80]" role="status" aria-live="polite" aria-label="Loading page">
-      <div className="h-1 w-full overflow-hidden bg-[var(--sun-sky-soft)]">
+    <div className="fixed inset-0 z-[80] grid place-items-center bg-white/55 backdrop-blur-[2px]" role="status" aria-live="polite" aria-label="Loading page">
+      <div className="absolute inset-x-0 top-0 h-1 w-full overflow-hidden bg-[var(--sun-sky-soft)]">
         <div className="route-loader-bar h-full w-1/2 rounded-r-full bg-[var(--sun-coral-strong)]" />
       </div>
-      <div className="mx-auto mt-4 flex max-w-7xl justify-end px-5 sm:px-8">
-        <div className="flex items-center gap-3 rounded-full border border-[var(--sun-line)] bg-white/95 px-4 py-2 shadow-xl shadow-[#7ecae1]/20 backdrop-blur">
-          <span className="relative grid size-8 place-items-center rounded-full bg-[var(--sun-yellow-soft)]">
-            <span className="route-loader-dot absolute size-2 rounded-full bg-[var(--sun-coral-strong)]" />
-            <span className="size-4 rounded-full border-2 border-[var(--sun-sky)] bg-white" />
-          </span>
-          <span className="text-sm font-black text-[var(--sun-ink)]">Loading</span>
+      <div className="mx-5 flex min-w-52 flex-col items-center rounded-[24px] border border-[var(--sun-line)] bg-white/95 px-8 py-6 shadow-2xl shadow-[#7ecae1]/25">
+        <div className="flex h-8 items-center gap-2" aria-hidden="true">
+          <span className="route-loader-dot size-3 rounded-full bg-[var(--sun-coral-strong)]" />
+          <span className="route-loader-dot size-3 rounded-full bg-[var(--sun-yellow)] [animation-delay:0.14s]" />
+          <span className="route-loader-dot size-3 rounded-full bg-[var(--sun-mint-strong)] [animation-delay:0.28s]" />
         </div>
+        <span className="mt-2 text-sm font-black text-[var(--sun-ink)]">Loading your page…</span>
       </div>
     </div>
   );

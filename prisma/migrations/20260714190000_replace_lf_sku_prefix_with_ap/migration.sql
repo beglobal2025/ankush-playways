@@ -3,6 +3,7 @@ SET
   "code" = regexp_replace("code", '^LF', 'AP'),
   "slug" = regexp_replace("slug", '^lf', 'ap'),
   "name" = replace("name", 'LF', 'AP'),
+  "specifications" = replace("specifications"::text, 'LF', 'AP')::jsonb,
   "updatedAt" = CURRENT_TIMESTAMP
 WHERE "code" LIKE 'LF%';
 

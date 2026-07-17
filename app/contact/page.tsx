@@ -15,13 +15,12 @@ export default function ContactPage() {
     <main className="min-h-screen bg-[var(--sun-yellow-pale)]">
       <SiteHeader />
 
-      <section className="relative overflow-hidden bg-[var(--sun-sky-soft)] px-5 pb-20 pt-36 sm:px-8 sm:pt-40">
+      <section className="relative overflow-hidden bg-[var(--sun-sky-soft)] px-5 pb-12 pt-28 sm:px-8 sm:pb-16 sm:pt-32">
         <div className="absolute inset-0 opacity-70 [background-image:radial-gradient(circle,rgba(255,255,255,0.9)_0_3px,transparent_4px)] [background-size:82px_82px]" />
         <div className="absolute -right-20 top-24 size-72 rounded-full bg-[var(--sun-yellow)]/25 blur-2xl" />
         <div className="absolute -left-16 bottom-0 size-64 rounded-full bg-[var(--sun-coral)]/25 blur-2xl" />
         <div className="relative mx-auto max-w-4xl text-center">
-          <p className="text-sm font-black text-[var(--sun-coral-strong)]">We are here to help</p>
-          <h1 className="mt-4 text-5xl font-black leading-tight text-[var(--sun-sky-dark)] sm:text-6xl">Contact Ankush Playways</h1>
+          <h1 className="text-5xl font-black leading-tight text-[var(--sun-sky-dark)] sm:text-6xl">Contact Ankush Playways</h1>
           <p className="mx-auto mt-6 max-w-2xl text-base font-semibold leading-8 text-slate-700 sm:text-lg">
             Planning a school, play zone, retail order, or outdoor playground? Share your requirement and our team will help you find the right products.
           </p>
@@ -33,7 +32,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="px-5 pb-24 pt-16 sm:px-8 sm:pt-20">
+      <section className="px-5 pb-24 pt-10 sm:px-8 sm:pt-12">
         <div className="mx-auto grid max-w-7xl items-start gap-10 lg:grid-cols-[0.72fr_1.28fr]">
           <div className="rounded-[32px] bg-[var(--sun-sky-dark)] p-8 text-white shadow-[0_24px_70px_rgba(40,141,176,0.24)] sm:p-10">
             <p className="text-sm font-black text-[var(--sun-yellow-soft)]">Business enquiries</p>
