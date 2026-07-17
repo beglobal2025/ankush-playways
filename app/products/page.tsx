@@ -7,9 +7,9 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 import { getPublishedCategories, getPublishedProducts } from "@/lib/catalogue-db";
 
 export const metadata: Metadata = {
-  title: "Product Catalogue | ANKUSH Playways",
+  title: "Product Catalogue | Ankush Playways",
   description:
-    "Browse ANKUSH Playways products by category, search product codes, compare MRP, and enquire directly on WhatsApp.",
+    "Browse Ankush Playways products by category, search product codes, compare MRP, and enquire directly on WhatsApp.",
 };
 
 export const dynamic = "force-dynamic";

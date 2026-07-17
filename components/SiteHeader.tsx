@@ -44,13 +44,16 @@ export default function SiteHeader({ overlayUntilScroll = false }: SiteHeaderPro
       }`}
     >
       <nav className="mx-auto flex h-24 max-w-7xl items-center justify-between px-5 sm:px-8">
-        <Link href="/" className="flex items-center" aria-label="ANKUSH Playways home">
+        <Link
+          href="/"
+          className="brand-logo-badge group relative isolate flex items-center overflow-hidden rounded-[22px] border border-white/90 bg-white/95 px-3 py-1.5 shadow-[0_12px_30px_rgba(254,179,0,0.24),0_4px_0_rgba(243,108,120,0.14)] ring-1 ring-[var(--sun-line)]/80 transition duration-300 hover:-translate-y-0.5 hover:scale-[1.025] hover:shadow-[0_16px_34px_rgba(254,179,0,0.30),0_4px_0_rgba(243,108,120,0.18)]"
+          aria-label="Ankush Playways home"
+        >
+          <span className="absolute -left-10 top-0 h-full w-10 -skew-x-12 bg-white/45 opacity-0 transition-all duration-700 group-hover:left-[115%] group-hover:opacity-100" aria-hidden="true" />
           <img
-            src="/assets/sunshine-logo.png"
-            alt="ANKUSH Playways"
-            className={`h-24 w-auto max-w-[220px] object-contain transition-all duration-300 sm:h-[180px] sm:max-w-[260px] ${
-              headerVisible ? "" : "drop-shadow-[0_8px_20px_rgba(255,255,255,0.65)]"
-            }`}
+            src="/assets/sunshine-logo-cropped.png"
+            alt="Ankush Playways"
+            className="relative z-10 h-auto w-[142px] object-contain sm:w-[164px]"
           />
         </Link>
 

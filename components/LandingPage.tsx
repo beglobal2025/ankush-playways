@@ -107,7 +107,7 @@ const heroSlides = [
     description:
       "We provide colourful slides, playhouses, activity toys, ride-ons, and indoor play products for the development of children.",
     image: "/assets/catalog/cutouts/play-slide.png",
-    alt: "Colorful indoor slide and play structure from the ANKUSH Playways catalog",
+    alt: "Colorful indoor slide and play structure from the Ankush Playways catalog",
     background: "hero-scene-coral",
     accentColor: "text-[var(--sun-sky-dark)]",
     ctaColor: "bg-[var(--sun-mint-strong)] hover:bg-[var(--sun-sky-dark)] shadow-[#a6e5cd]/40",
@@ -122,7 +122,7 @@ const heroSlides = [
     description:
       "Bright indoor play structures with sturdy balance, smooth edges, and attractive designs for active play.",
     image: "/assets/catalog/cutouts/play-structure.png",
-    alt: "Colorful indoor play structure with slide from the ANKUSH Playways catalog",
+    alt: "Colorful indoor play structure with slide from the Ankush Playways catalog",
     background: "hero-scene-yellow",
     accentColor: "text-[var(--sun-coral-strong)]",
     ctaColor: "bg-[var(--sun-coral-strong)] hover:bg-[var(--sun-sky-dark)] shadow-[#fd9aa0]/30",
@@ -137,7 +137,7 @@ const heroSlides = [
     description:
       "Cheerful ride-on cars and toddler toys made to turn every room into a little playground.",
     image: "/assets/catalog/cutouts/ride-on-car.png",
-    alt: "Red ride-on toy car from the ANKUSH Playways catalog",
+    alt: "Red ride-on toy car from the Ankush Playways catalog",
     background: "hero-scene-sky",
     accentColor: "text-[var(--sun-yellow)]",
     ctaColor: "bg-[var(--sun-yellow)] hover:bg-[var(--sun-sky-dark)] shadow-[#feb300]/25",
@@ -152,7 +152,7 @@ const heroSlides = [
     description:
       "A practical two-seat study desk with adjustable support, comfortable chairs, and a sturdy classroom-ready build.",
     image: "/assets/catalog/cutouts/dual-seating-desk-adjustable.png",
-    alt: "Dual Seating Desk Adjustable from the ANKUSH Playways catalog",
+    alt: "Dual Seating Desk Adjustable from the Ankush Playways catalog",
     background: "hero-scene-sky",
     accentColor: "text-[var(--sun-coral-strong)]",
     ctaColor: "bg-[var(--sun-sky)] hover:bg-[var(--sun-sky-dark)] shadow-[#7ecae1]/25",
@@ -167,7 +167,7 @@ const heroSlides = [
     description:
       "A charming activity playhouse for imaginative role play, social learning, and bright indoor play corners.",
     image: "/assets/catalog/cutouts/junior-living-house.png",
-    alt: "Junior Living House from the ANKUSH Playways catalog",
+    alt: "Junior Living House from the Ankush Playways catalog",
     background: "hero-scene-mint",
     accentColor: "text-[var(--sun-sky-dark)]",
     ctaColor: "bg-[var(--sun-mint-strong)] hover:bg-[var(--sun-sky-dark)] shadow-[#a6e5cd]/35",
@@ -198,10 +198,10 @@ function Header() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-[var(--sun-line)] bg-white/90 shadow-[0_10px_30px_rgba(126,202,225,0.18)] backdrop-blur">
       <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 sm:px-8">
-        <a href="#home" className="flex items-center" aria-label="ANKUSH Playways home">
+        <a href="#home" className="flex items-center" aria-label="Ankush Playways home">
           <img
             src="/assets/sunshine-logo.png"
-            alt="ANKUSH Playways"
+            alt="Ankush Playways"
             className="h-16 w-auto max-w-[150px] object-contain sm:h-[120px] sm:max-w-[200px]"
           />
         </a>
@@ -299,7 +299,7 @@ function Hero({ bannerCtaHrefs = [], bannerImageSrcs = [] }: { bannerCtaHrefs?: 
           ...slide,
           ctaHref: bannerCtaHrefs[index],
           image: bannerImageSrc,
-          alt: `ANKUSH Playways homepage banner ${index + 1}`,
+          alt: `Ankush Playways homepage banner ${index + 1}`,
           customBanner: true,
         }
       : {
@@ -465,7 +465,7 @@ function About() {
           <div className="paper-shadow relative overflow-hidden rounded-[34px] border-[14px] border-white bg-[var(--sun-coral-soft)] p-6">
             <img
               src="/assets/catalog/playroom-tables.jpg"
-              alt="Colorful indoor playroom table and chair setup from the ANKUSH Playways catalog"
+              alt="Colorful indoor playroom table and chair setup from the Ankush Playways catalog"
               className="mx-auto h-80 w-full rounded-[20px] object-cover sm:h-[23rem]"
             />
           </div>
@@ -561,7 +561,7 @@ function ProductCategories({ categories }: { categories: Category[] }) {
         eyebrow="Browse by range"
         title="All Catalogue"
         accent="Categories"
-        description="Discover every ANKUSH Playways catalogue range, grouped for schools, play zones, preschools, and family spaces."
+        description="Discover every Ankush Playways catalogue range, grouped for schools, play zones, preschools, and family spaces."
       />
       <div className="grid w-full gap-6 px-5 sm:grid-cols-2 sm:px-8 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
         {catalogueCategories.map((category, index) => (
@@ -869,7 +869,7 @@ function Promo() {
           <div className="absolute bottom-0 left-1/2 h-20 w-[70%] -translate-x-1/2 rounded-[50%] bg-slate-950/20 blur-2xl" />
           <img
             src="/assets/catalog/cutouts/play-structure.png"
-            alt="Indoor play structure from the ANKUSH Playways catalog"
+            alt="Indoor play structure from the Ankush Playways catalog"
             className="hero-product-cutout relative mx-auto h-80 w-full object-contain sm:h-[27rem]"
           />
         </motion.div>
@@ -1002,7 +1002,7 @@ function Footer() {
           </div>
         </div>
         <div className="mx-auto mt-12 max-w-7xl border-t border-[#7ecae1]/40 pt-7 text-center text-sm font-semibold text-white/90">
-          &copy; 2026 ANKUSH Playways. All Rights Reserved.
+          &copy; 2026 Ankush Playways. All Rights Reserved.
         </div>
       </div>
     </footer>

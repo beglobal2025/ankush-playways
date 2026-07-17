@@ -27,16 +27,16 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
 
   if (!product) {
     return {
-      title: "Product Not Found | ANKUSH Playways",
+      title: "Product Not Found | Ankush Playways",
     };
   }
 
   return {
-    title: `${product.code} - ${product.name} | ANKUSH Playways`,
-    description: `View ${product.code} ${product.name} from the ANKUSH Playways ${product.category} catalogue. MRP: ${formatPrice(product.price)}.`,
+    title: `${product.code} - ${product.name} | Ankush Playways`,
+    description: `View ${product.code} ${product.name} from the Ankush Playways ${product.category} catalogue. MRP: ${formatPrice(product.price)}.`,
     openGraph: {
       title: `${product.code} - ${product.name}`,
-      description: `ANKUSH Playways ${product.category} product details and enquiry.`,
+      description: `Ankush Playways ${product.category} product details and enquiry.`,
       images: product.images.map((image) => image.src),
     },
   };
@@ -74,7 +74,7 @@ export default async function ProductPage({ params, searchParams }: ProductPageP
               <h1 className="mt-6 text-4xl font-black leading-tight text-slate-900 sm:text-5xl">{product.name}</h1>
               <p className="mt-5 text-3xl font-black text-[var(--sun-ink)]">{formatPrice(product.price)}</p>
               <p className="mt-6 max-w-2xl text-base font-semibold leading-8 text-slate-600">
-                Real catalogue product from ANKUSH Playways. Enquire for availability, finish options, dispatch, and
+                Real catalogue product from Ankush Playways. Enquire for availability, finish options, dispatch, and
                 institutional supply details.
               </p>
               {product.colorOptions.length ? (

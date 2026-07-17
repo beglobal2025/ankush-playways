@@ -40,7 +40,7 @@ export default function SiteFooter() {
           </div>
         </div>
         <div className="mx-auto mt-12 max-w-7xl border-t border-[#7ecae1]/40 pt-7 text-center text-sm font-semibold text-white/90">
-          &copy; 2026 ANKUSH Playways. All Rights Reserved.
+          &copy; 2026 Ankush Playways. All Rights Reserved.
         </div>
       </div>
     </footer>

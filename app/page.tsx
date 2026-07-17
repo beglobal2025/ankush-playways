@@ -7,7 +7,7 @@ import { prisma } from "@/lib/prisma";
 export const metadata: Metadata = {
   title: "Home",
   description:
-    "Browse ANKUSH Playways products with real catalogue images, featured categories, popular products, and WhatsApp enquiries.",
+    "Browse Ankush Playways products with real catalogue images, featured categories, popular products, and WhatsApp enquiries.",
 };
 
 export const dynamic = "force-dynamic";

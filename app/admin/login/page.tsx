@@ -24,7 +24,7 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
         <p className="text-sm font-black uppercase tracking-[0.18em] text-[var(--sun-coral-strong)]">Admin</p>
         <h1 className="mt-2 text-3xl font-black text-[var(--sun-sky-dark)]">Sign in</h1>
         <p className="mt-3 text-sm font-semibold leading-6 text-slate-600">
-          Manage ANKUSH Playways catalogue content from one simple panel.
+          Manage Ankush Playways catalogue content from one simple panel.
         </p>
 
         {params?.error === "invalid" ? (

@@ -9,11 +9,11 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://ankushplayways.com"
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "ANKUSH Playways | Kids Play Equipment Catalogue",
-    template: "%s | ANKUSH Playways",
+    default: "Ankush Playways | Kids Play Equipment Catalogue",
+    template: "%s | Ankush Playways",
   },
   description:
-    "Explore ANKUSH Playways indoor play equipment, school furniture, toys, ride-ons, slides, ball pools, and learning products.",
+    "Explore Ankush Playways indoor play equipment, school furniture, toys, ride-ons, slides, ball pools, and learning products.",
 };
 
 export default function RootLayout({

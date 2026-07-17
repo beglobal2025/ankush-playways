@@ -209,7 +209,7 @@ export function formatPrice(price: number | null): string {
 export function getWhatsAppUrl(product?: Pick<Product, "code" | "name">): string {
   const message = product
     ? `Hi, I am interested in ${product.code} - ${product.name}. Please share details.`
-    : "Hi, I would like to know more about ANKUSH Playways products.";
+    : "Hi, I would like to know more about Ankush Playways products.";
 
   return `https://wa.me/917814511770?text=${encodeURIComponent(message)}`;
 }
