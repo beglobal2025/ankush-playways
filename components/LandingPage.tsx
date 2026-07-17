@@ -200,7 +200,7 @@ function Header() {
       <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 sm:px-8">
         <a href="#home" className="flex items-center" aria-label="Ankush Playways home">
           <img
-            src="/assets/sunshine-logo.png"
+            src="/assets/ankush-logo.png"
             alt="Ankush Playways"
             className="h-16 w-auto max-w-[150px] object-contain sm:h-[120px] sm:max-w-[200px]"
           />

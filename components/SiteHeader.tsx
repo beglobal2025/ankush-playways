@@ -1,7 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+
+import { useScrolled } from "@/hooks/useScrolled";
 
 const navItems = [
   ["Home", "/#home"],
@@ -17,43 +19,27 @@ interface SiteHeaderProps {
 
 export default function SiteHeader({ overlayUntilScroll = false }: SiteHeaderProps) {
   const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(!overlayUntilScroll);
-  const headerVisible = !overlayUntilScroll || scrolled || open;
-
-  useEffect(() => {
-    if (!overlayUntilScroll) {
-      return;
-    }
-
-    const updateScrolled = () => {
-      setScrolled(window.scrollY > 60);
-    };
-
-    updateScrolled();
-    window.addEventListener("scroll", updateScrolled, { passive: true });
-
-    return () => window.removeEventListener("scroll", updateScrolled);
-  }, [overlayUntilScroll]);
+  const scrolled = useScrolled(24, overlayUntilScroll);
+  const glassVisible = !overlayUntilScroll || scrolled || open;
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        headerVisible
-          ? "border-b border-[var(--sun-line)] bg-white/90 shadow-[0_10px_30px_rgba(30,120,180,0.10)] backdrop-blur"
-          : "border-b border-transparent bg-transparent shadow-none"
+      className={`fixed inset-x-0 top-0 z-50 border-b transition-[background-color,border-color,box-shadow,backdrop-filter] duration-[400ms] ease-out ${
+        glassVisible
+          ? "border-white/[0.35] bg-white/[0.82] shadow-[0_10px_35px_rgba(0,0,0,0.06)] backdrop-blur-[18px]"
+          : "border-transparent bg-transparent shadow-none backdrop-blur-none"
       }`}
     >
-      <nav className="mx-auto flex h-24 max-w-7xl items-center justify-between px-5 sm:px-8">
+      <nav className="relative mx-auto flex h-[90px] max-w-7xl items-center justify-between px-5 sm:h-[100px] sm:px-8 lg:h-[110px]">
         <Link
           href="/"
-          className="brand-logo-badge group relative isolate flex items-center overflow-hidden rounded-[22px] border border-white/90 bg-white/95 px-3 py-1.5 shadow-[0_12px_30px_rgba(254,179,0,0.24),0_4px_0_rgba(243,108,120,0.14)] ring-1 ring-[var(--sun-line)]/80 transition duration-300 hover:-translate-y-0.5 hover:scale-[1.025] hover:shadow-[0_16px_34px_rgba(254,179,0,0.30),0_4px_0_rgba(243,108,120,0.18)]"
+          className="shrink-0 rounded-md outline-none focus-visible:ring-2 focus-visible:ring-[#173A63] focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
           aria-label="Ankush Playways home"
         >
-          <span className="absolute -left-10 top-0 h-full w-10 -skew-x-12 bg-white/45 opacity-0 transition-all duration-700 group-hover:left-[115%] group-hover:opacity-100" aria-hidden="true" />
           <img
-            src="/assets/sunshine-logo-cropped.png"
+            src="/assets/ankush-logo.png"
             alt="Ankush Playways"
-            className="relative z-10 h-auto w-[142px] object-contain sm:w-[164px]"
+            className="h-[70px] w-auto translate-y-[0px] object-contain [filter:drop-shadow(0_8px_20px_rgba(0,0,0,0.12))] sm:h-[81px] lg:h-[95px]"
           />
         </Link>
 
@@ -62,11 +48,7 @@ export default function SiteHeader({ overlayUntilScroll = false }: SiteHeaderPro
           aria-label="Toggle menu"
           aria-expanded={open}
           onClick={() => setOpen((value) => !value)}
-          className={`grid size-11 place-items-center rounded-full border text-[var(--sun-ink)] shadow-sm transition ${
-            headerVisible
-              ? "border-[var(--sun-line)] bg-[var(--sun-sky-soft)]"
-              : "border-white/70 bg-white/75 backdrop-blur"
-          } md:hidden`}
+          className="grid size-11 place-items-center rounded-full border border-white/50 bg-white/70 text-[#173A63] shadow-sm backdrop-blur-md transition-colors duration-[250ms] hover:bg-white/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173A63] focus-visible:ring-offset-2 lg:hidden"
         >
           <span className="relative block h-3.5 w-5">
             <span className="absolute left-0 top-0 h-0.5 w-5 rounded bg-current" />
@@ -75,13 +57,13 @@ export default function SiteHeader({ overlayUntilScroll = false }: SiteHeaderPro
           </span>
         </button>
 
-        <div
-          className={`hidden items-center gap-7 text-sm font-bold text-[var(--sun-ink)] transition-all duration-300 md:flex ${
-            headerVisible ? "opacity-100" : "pointer-events-none opacity-0 -translate-y-2"
-          }`}
-        >
+        <div className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-9 text-sm font-bold text-[#173A63] lg:flex">
           {navItems.map(([label, href]) => (
-            <Link key={label} href={href} className="transition hover:text-[var(--sun-coral-strong)]">
+            <Link
+              key={label}
+              href={href}
+              className="relative whitespace-nowrap rounded-sm py-2 outline-none transition-colors duration-[250ms] ease-out after:absolute after:inset-x-0 after:bottom-0 after:h-0.5 after:origin-center after:scale-x-0 after:rounded-full after:bg-[var(--sun-coral-strong)] after:transition-transform after:duration-[250ms] after:ease-out hover:text-[var(--sun-coral-strong)] hover:after:scale-x-100 focus-visible:text-[var(--sun-coral-strong)] focus-visible:ring-2 focus-visible:ring-[#173A63]/70 focus-visible:ring-offset-4 focus-visible:after:scale-x-100"
+            >
               {label}
             </Link>
           ))}
@@ -89,10 +71,15 @@ export default function SiteHeader({ overlayUntilScroll = false }: SiteHeaderPro
       </nav>
 
       {open ? (
-        <div className="border-t border-[var(--sun-line)] bg-white px-5 py-4 md:hidden">
-          <div className="grid gap-3 text-sm font-bold text-[var(--sun-ink)]">
+        <div className="border-t border-white/40 bg-white/[0.9] px-5 py-4 shadow-[0_16px_35px_rgba(0,0,0,0.08)] backdrop-blur-[18px] lg:hidden">
+          <div className="grid gap-2 text-sm font-bold text-[#173A63]">
             {navItems.map(([label, href]) => (
-              <Link key={label} href={href} onClick={() => setOpen(false)} className="rounded-full bg-[var(--sun-sky-soft)] px-4 py-3">
+              <Link
+                key={label}
+                href={href}
+                onClick={() => setOpen(false)}
+                className="rounded-xl px-4 py-3 transition-colors duration-[250ms] hover:bg-[var(--sun-sky-soft)] hover:text-[var(--sun-coral-strong)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173A63]"
+              >
                 {label}
               </Link>
             ))}
