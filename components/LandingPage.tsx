@@ -995,7 +995,7 @@ function Footer() {
           <div>
             <h3 className="text-3xl font-black">Contact Us</h3>
             <div className="mt-6 grid gap-4 text-sm font-semibold leading-7 text-white/90">
-              <p>Phone: 7814511770</p>
+              <p>Phone: 99150 00770</p>
               <p>Email: ankushplayways@gmail.com</p>
               <p>Address: E-110, Phase-7, Industrial Area, Mohali, Punjab, 160059, India</p>
             </div>
@@ -1012,7 +1012,7 @@ function Footer() {
 function WhatsAppButton() {
   return (
     <a
-      href="https://wa.me/917814511770"
+      href="https://wa.me/919915000770"
       aria-label="Chat on WhatsApp"
       className="fixed bottom-6 right-5 z-50 grid size-16 place-items-center rounded-2xl bg-[#25d366] text-white shadow-2xl shadow-[#a6e5cd]/50 transition hover:-translate-y-1"
     >

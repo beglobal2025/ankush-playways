@@ -25,8 +25,8 @@ export default function ContactPage() {
             Planning a school, play zone, retail order, or outdoor playground? Share your requirement and our team will help you find the right products.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <a href="tel:+917814511770" className="inline-flex items-center justify-center rounded-full bg-white px-7 py-3 text-sm font-black text-[var(--sun-sky-dark)] shadow-lg ring-1 ring-[var(--sun-line)] transition hover:-translate-y-0.5">
-              Call 7814511770
+            <a href="tel:+919915000770" className="inline-flex items-center justify-center rounded-full bg-white px-7 py-3 text-sm font-black text-[var(--sun-sky-dark)] shadow-lg ring-1 ring-[var(--sun-line)] transition hover:-translate-y-0.5">
+              Call 99150 00770
             </a>
           </div>
         </div>

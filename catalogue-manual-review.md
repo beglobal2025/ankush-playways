@@ -7,7 +7,7 @@ Shared product-code image folders: 1
 
 ## Shared Product-Code Folders
 
-- `/catalogue/play-equipment/ap-101/cover.jpg` is shared by: `ap-101`, `ap-101-2`
+- `/catalogue-webp/play-equipment/lf-101/cover.webp` is shared by: `ap-101`, `ap-101-2`
 
 ## Review Items
 
