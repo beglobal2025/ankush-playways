@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 
+const MAX_COLOR_OPTIONS = 2;
+
 interface ColorOptionRow {
   id: string;
   color: string;
@@ -31,15 +33,16 @@ export default function ProductColorOptionsField({ options }: ProductColorOption
         <div>
           <h2 className="text-base font-black text-slate-950">Color options</h2>
           <p className="mt-1 text-sm font-semibold text-slate-500">
-            Add one row per colour and upload the matching product image.
+            Add up to 2 colours and upload one matching image for each.
           </p>
         </div>
         <button
           type="button"
           onClick={() => setRows((currentRows) => [...currentRows, blankRow(currentRows.length)])}
-          className="rounded-lg bg-[var(--sun-sky-soft)] px-4 py-2 text-sm font-black text-[var(--sun-sky-dark)] transition hover:bg-[var(--sun-sky)] hover:text-white"
+          disabled={rows.length >= MAX_COLOR_OPTIONS}
+          className="rounded-lg bg-[var(--sun-sky-soft)] px-4 py-2 text-sm font-black text-[var(--sun-sky-dark)] transition hover:bg-[var(--sun-sky)] hover:text-white disabled:cursor-not-allowed disabled:bg-slate-100 disabled:text-slate-400"
         >
-          Add color
+          {rows.length >= MAX_COLOR_OPTIONS ? "2 color limit reached" : "Add color"}
         </button>
       </div>
 

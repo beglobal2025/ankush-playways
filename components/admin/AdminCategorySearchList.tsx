@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import AdminSubmitButton from "@/components/admin/AdminSubmitButton";
 
 export interface AdminCategoryListItem {
   description: string;
@@ -78,12 +79,11 @@ export default function AdminCategorySearchList({ categories, deleteAction }: Ad
 
               <form action={deleteAction}>
                 <input type="hidden" name="categoryId" value={category.id} />
-                <button
-                  type="submit"
+                <AdminSubmitButton
+                  idleText="Delete"
+                  pendingText="Deleting..."
                   className="rounded-lg bg-white px-3 py-1 text-xs font-black text-red-600 ring-1 ring-red-100 transition hover:bg-red-50"
-                >
-                  Delete
-                </button>
+                />
               </form>
             </div>
           </article>

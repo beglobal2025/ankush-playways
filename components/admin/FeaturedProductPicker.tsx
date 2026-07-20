@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import AdminSubmitButton from "@/components/admin/AdminSubmitButton";
 
 type FeaturedPickerProduct = {
   id: string;
@@ -137,9 +138,11 @@ export default function FeaturedProductPicker({ categories, featureAction }: Fea
                     </p>
                   </div>
                   <form action={featureAction.bind(null, product.id)}>
-                    <button className="w-full rounded-lg bg-[var(--sun-mint-strong)] px-4 py-3 text-sm font-black text-white transition hover:bg-[var(--sun-sky-dark)] sm:w-auto">
-                      Add Featured
-                    </button>
+                    <AdminSubmitButton
+                      idleText="Add Featured"
+                      pendingText="Adding..."
+                      className="w-full justify-center rounded-lg bg-[var(--sun-mint-strong)] px-4 py-3 text-sm font-black text-white transition hover:bg-[var(--sun-sky-dark)] sm:w-auto"
+                    />
                   </form>
                 </div>
               ))}

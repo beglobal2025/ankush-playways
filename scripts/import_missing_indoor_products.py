@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 import json
-import shutil
 import subprocess
 from pathlib import Path
 
@@ -9,7 +8,7 @@ ROOT = Path(__file__).resolve().parents[1]
 PDF = Path("/home/dsy/Documents/ankush playways/Indoor Catalogue March 2026-.pdf")
 WORK = Path("/tmp/ankush-catalogue-xml")
 PRODUCTS_JSON = ROOT / "products.json"
-PUBLIC_CATALOGUE = ROOT / "public" / "catalogue"
+PUBLIC_CATALOGUE = ROOT / "public" / "catalogue-webp"
 
 
 MISSING_PRODUCTS = [
@@ -180,34 +179,34 @@ MISSING_PRODUCTS = [
 
 
 TOY_FIXES = [
-    {"id": "lft-011", "name": "Shape Sorter", "price": 699, "crop": {"page": 93, "left": 30, "top": 115, "right": 230, "bottom": 330}},
-    {"id": "lft-012", "name": "Baby's First Blocks", "price": 499, "crop": {"page": 93, "left": 235, "top": 115, "right": 380, "bottom": 330}},
-    {"id": "lft-013", "name": "Roll Ball", "price": 599, "crop": {"page": 93, "left": 390, "top": 115, "right": 615, "bottom": 330}},
-    {"id": "lft-014", "name": "Shape Sorting Baby Toy", "price": 899, "crop": {"page": 93, "left": 615, "top": 115, "right": 870, "bottom": 330}},
+    {"id": "apt-011", "name": "Shape Sorter", "price": 699, "crop": {"page": 93, "left": 30, "top": 115, "right": 230, "bottom": 330}},
+    {"id": "apt-012", "name": "Baby's First Blocks", "price": 499, "crop": {"page": 93, "left": 235, "top": 115, "right": 380, "bottom": 330}},
+    {"id": "apt-013", "name": "Roll Ball", "price": 599, "crop": {"page": 93, "left": 390, "top": 115, "right": 615, "bottom": 330}},
+    {"id": "apt-014", "name": "Shape Sorting Baby Toy", "price": 899, "crop": {"page": 93, "left": 615, "top": 115, "right": 870, "bottom": 330}},
     {
-        "id": "lft-015",
+        "id": "apt-015",
         "name": "Fun Inertia Animal Car",
         "price": 1196,
         "crop": {"page": 93, "left": 25, "top": 570, "right": 870, "bottom": 750},
         "specifications": {"set": "4 Pcs.", "models": ["Horse", "Zebra", "Sheep", "Lion"]},
     },
     {
-        "id": "lft-016",
+        "id": "apt-016",
         "name": "My First Car",
         "price": 1196,
         "crop": {"page": 93, "left": 25, "top": 930, "right": 870, "bottom": 1115},
         "specifications": {"set": "4 Pcs.", "models": ["Police", "Ambulance", "Taxi", "Bus"]},
     },
-    {"id": "lft-051", "name": "Stack-o-Barrel", "price": 179, "crop": {"page": 96, "left": 35, "top": 105, "right": 230, "bottom": 290}},
-    {"id": "lft-052", "name": "Stack-o-Egg", "price": 239, "crop": {"page": 96, "left": 245, "top": 105, "right": 440, "bottom": 290}},
-    {"id": "lft-053", "name": "Stack-o-Cups", "price": 199, "crop": {"page": 96, "left": 455, "top": 105, "right": 640, "bottom": 290}},
-    {"id": "lft-054", "name": "Stack-o-Cubes", "price": 249, "crop": {"page": 96, "left": 665, "top": 105, "right": 855, "bottom": 290}},
-    {"id": "lft-92", "name": "Sand Toys", "price": 299, "crop": {"page": 96, "left": 20, "top": 340, "right": 240, "bottom": 585}},
-    {"id": "lft-97c", "name": "Toddler Ring", "price": 499, "crop": {"page": 96, "left": 250, "top": 345, "right": 430, "bottom": 585}},
-    {"id": "lft-98", "name": "Bowling Set Jumbo", "price": 1395, "crop": {"page": 96, "left": 445, "top": 385, "right": 655, "bottom": 585}},
-    {"id": "lft-99", "name": "Bowling Set", "price": 995, "crop": {"page": 96, "left": 445, "top": 385, "right": 655, "bottom": 585}},
-    {"id": "lft-1203", "name": "FruitsCutting", "price": 699, "crop": {"page": 96, "left": 665, "top": 380, "right": 860, "bottom": 585}},
-    {"id": "lft-1204", "name": "Vegetables Cutting", "price": 699, "crop": {"page": 96, "left": 20, "top": 640, "right": 240, "bottom": 840}},
+    {"id": "apt-051", "name": "Stack-o-Barrel", "price": 179, "crop": {"page": 96, "left": 35, "top": 105, "right": 230, "bottom": 290}},
+    {"id": "apt-052", "name": "Stack-o-Egg", "price": 239, "crop": {"page": 96, "left": 245, "top": 105, "right": 440, "bottom": 290}},
+    {"id": "apt-053", "name": "Stack-o-Cups", "price": 199, "crop": {"page": 96, "left": 455, "top": 105, "right": 640, "bottom": 290}},
+    {"id": "apt-054", "name": "Stack-o-Cubes", "price": 249, "crop": {"page": 96, "left": 665, "top": 105, "right": 855, "bottom": 290}},
+    {"id": "apt-92", "name": "Sand Toys", "price": 299, "crop": {"page": 96, "left": 20, "top": 340, "right": 240, "bottom": 585}},
+    {"id": "apt-97c", "name": "Toddler Ring", "price": 499, "crop": {"page": 96, "left": 250, "top": 345, "right": 430, "bottom": 585}},
+    {"id": "apt-98", "name": "Bowling Set Jumbo", "price": 1395, "crop": {"page": 96, "left": 445, "top": 385, "right": 655, "bottom": 585}},
+    {"id": "apt-99", "name": "Bowling Set", "price": 995, "crop": {"page": 96, "left": 445, "top": 385, "right": 655, "bottom": 585}},
+    {"id": "apt-1203", "name": "FruitsCutting", "price": 699, "crop": {"page": 96, "left": 665, "top": 380, "right": 860, "bottom": 585}},
+    {"id": "apt-1204", "name": "Vegetables Cutting", "price": 699, "crop": {"page": 96, "left": 20, "top": 640, "right": 240, "bottom": 840}},
     {
         "id": "pu6cm1",
         "name": "Fun PU Balls",
@@ -218,47 +217,47 @@ TOY_FIXES = [
     {"id": "fb3cm1", "name": "Football", "price": 799, "crop": {"page": 96, "left": 445, "top": 635, "right": 655, "bottom": 845}},
     {"id": "bb3cm1", "name": "Basketball", "price": 549, "crop": {"page": 96, "left": 660, "top": 635, "right": 855, "bottom": 845}},
     {
-        "id": "lft-1201",
+        "id": "apt-1201",
         "name": "Fruits Cutting",
         "price": 399,
         "crop": {"page": 96, "left": 35, "top": 920, "right": 215, "bottom": 1120},
     },
     {
-        "id": "lft-1202",
+        "id": "apt-1202",
         "name": "Vegetables Cutting",
         "price": 399,
         "crop": {"page": 96, "left": 235, "top": 920, "right": 420, "bottom": 1120},
     },
-    {"id": "lft-1209", "name": "Fruits", "price": 499, "crop": {"page": 96, "left": 450, "top": 915, "right": 650, "bottom": 1120}},
-    {"id": "lft-1210", "name": "Vegetables", "price": 499, "crop": {"page": 96, "left": 660, "top": 915, "right": 850, "bottom": 1120}},
-    {"id": "lft-90d", "name": "Hopscotch", "price": 1199, "crop": {"page": 97, "left": 40, "top": 90, "right": 275, "bottom": 345}},
-    {"id": "lft-1241", "name": "Digital Ice Lolly", "price": 1199, "crop": {"page": 97, "left": 485, "top": 95, "right": 700, "bottom": 345}},
-    {"id": "lft-1151", "name": "Xylophone", "price": 599, "crop": {"page": 97, "left": 70, "top": 340, "right": 275, "bottom": 505}},
-    {"id": "lft-1152", "name": "Xylophone Big", "price": 899, "crop": {"page": 97, "left": 330, "top": 335, "right": 560, "bottom": 505}},
-    {"id": "lft-1243", "name": "Bin Buddy", "price": 499, "crop": {"page": 97, "left": 585, "top": 325, "right": 835, "bottom": 530}},
-    {"id": "lft-1231", "name": "Doctor set", "price": 899, "crop": {"page": 97, "left": 25, "top": 575, "right": 240, "bottom": 795}},
-    {"id": "lft-1232", "name": "Kitchen set", "price": 899, "crop": {"page": 97, "left": 255, "top": 575, "right": 455, "bottom": 795}},
-    {"id": "lft-1233", "name": "Tool kit", "price": 899, "crop": {"page": 97, "left": 455, "top": 575, "right": 660, "bottom": 795}},
-    {"id": "lft-1234", "name": "Beauty set", "price": 899, "crop": {"page": 97, "left": 665, "top": 575, "right": 860, "bottom": 795}},
-    {"id": "lft-1221", "name": "Wild Animal Set", "price": 499, "crop": {"page": 97, "left": 25, "top": 900, "right": 210, "bottom": 1095}},
-    {"id": "lft-1222", "name": "Farm Set", "price": 499, "crop": {"page": 97, "left": 230, "top": 900, "right": 415, "bottom": 1095}},
-    {"id": "lft-1223", "name": "Ocean Animal Set", "price": 599, "crop": {"page": 97, "left": 440, "top": 900, "right": 635, "bottom": 1095}},
-    {"id": "lft-1224", "name": "Insects Set", "price": 499, "crop": {"page": 97, "left": 655, "top": 900, "right": 845, "bottom": 1095}},
+    {"id": "apt-1209", "name": "Fruits", "price": 499, "crop": {"page": 96, "left": 450, "top": 915, "right": 650, "bottom": 1120}},
+    {"id": "apt-1210", "name": "Vegetables", "price": 499, "crop": {"page": 96, "left": 660, "top": 915, "right": 850, "bottom": 1120}},
+    {"id": "apt-90d", "name": "Hopscotch", "price": 1199, "crop": {"page": 97, "left": 40, "top": 90, "right": 275, "bottom": 345}},
+    {"id": "apt-1241", "name": "Digital Ice Lolly", "price": 1199, "crop": {"page": 97, "left": 485, "top": 95, "right": 700, "bottom": 345}},
+    {"id": "apt-1151", "name": "Xylophone", "price": 599, "crop": {"page": 97, "left": 70, "top": 340, "right": 275, "bottom": 505}},
+    {"id": "apt-1152", "name": "Xylophone Big", "price": 899, "crop": {"page": 97, "left": 330, "top": 335, "right": 560, "bottom": 505}},
+    {"id": "apt-1243", "name": "Bin Buddy", "price": 499, "crop": {"page": 97, "left": 585, "top": 325, "right": 835, "bottom": 530}},
+    {"id": "apt-1231", "name": "Doctor set", "price": 899, "crop": {"page": 97, "left": 25, "top": 575, "right": 240, "bottom": 795}},
+    {"id": "apt-1232", "name": "Kitchen set", "price": 899, "crop": {"page": 97, "left": 255, "top": 575, "right": 455, "bottom": 795}},
+    {"id": "apt-1233", "name": "Tool kit", "price": 899, "crop": {"page": 97, "left": 455, "top": 575, "right": 660, "bottom": 795}},
+    {"id": "apt-1234", "name": "Beauty set", "price": 899, "crop": {"page": 97, "left": 665, "top": 575, "right": 860, "bottom": 795}},
+    {"id": "apt-1221", "name": "Wild Animal Set", "price": 499, "crop": {"page": 97, "left": 25, "top": 900, "right": 210, "bottom": 1095}},
+    {"id": "apt-1222", "name": "Farm Set", "price": 499, "crop": {"page": 97, "left": 230, "top": 900, "right": 415, "bottom": 1095}},
+    {"id": "apt-1223", "name": "Ocean Animal Set", "price": 599, "crop": {"page": 97, "left": 440, "top": 900, "right": 635, "bottom": 1095}},
+    {"id": "apt-1224", "name": "Insects Set", "price": 499, "crop": {"page": 97, "left": 655, "top": 900, "right": 845, "bottom": 1095}},
 ]
 
 
 FLASH_CARD_FIXES = [
-    {"id": "lft-1251", "name": "Alphabet", "crop": {"page": 94, "left": 35, "top": 120, "right": 250, "bottom": 380}},
-    {"id": "lft-1252", "name": "Numbers", "crop": {"page": 94, "left": 255, "top": 120, "right": 465, "bottom": 380}},
-    {"id": "lft-1253", "name": "Colours & Shapes", "crop": {"page": 94, "left": 470, "top": 120, "right": 680, "bottom": 380}},
-    {"id": "lft-1254", "name": "Vegetables", "crop": {"page": 94, "left": 685, "top": 120, "right": 875, "bottom": 380}},
-    {"id": "lft-1255", "name": "Fruits", "crop": {"page": 94, "left": 35, "top": 470, "right": 250, "bottom": 730}},
-    {"id": "lft-1256", "name": "Birds", "crop": {"page": 94, "left": 255, "top": 470, "right": 465, "bottom": 730}},
-    {"id": "lft-1257", "name": "Animals", "crop": {"page": 94, "left": 470, "top": 470, "right": 680, "bottom": 730}},
-    {"id": "lft-1258", "name": "Parts Of The Body", "crop": {"page": 94, "left": 685, "top": 470, "right": 875, "bottom": 730}},
-    {"id": "lft-1259", "name": "Vechicles", "crop": {"page": 94, "left": 70, "top": 815, "right": 315, "bottom": 1075}},
-    {"id": "lft-1260", "name": "Community Helpers", "crop": {"page": 94, "left": 335, "top": 815, "right": 580, "bottom": 1075}},
-    {"id": "lft-1261", "name": "Opposites", "crop": {"page": 94, "left": 605, "top": 815, "right": 845, "bottom": 1075}},
+    {"id": "apt-1251", "name": "Alphabet", "crop": {"page": 94, "left": 35, "top": 120, "right": 250, "bottom": 380}},
+    {"id": "apt-1252", "name": "Numbers", "crop": {"page": 94, "left": 255, "top": 120, "right": 465, "bottom": 380}},
+    {"id": "apt-1253", "name": "Colours & Shapes", "crop": {"page": 94, "left": 470, "top": 120, "right": 680, "bottom": 380}},
+    {"id": "apt-1254", "name": "Vegetables", "crop": {"page": 94, "left": 685, "top": 120, "right": 875, "bottom": 380}},
+    {"id": "apt-1255", "name": "Fruits", "crop": {"page": 94, "left": 35, "top": 470, "right": 250, "bottom": 730}},
+    {"id": "apt-1256", "name": "Birds", "crop": {"page": 94, "left": 255, "top": 470, "right": 465, "bottom": 730}},
+    {"id": "apt-1257", "name": "Animals", "crop": {"page": 94, "left": 470, "top": 470, "right": 680, "bottom": 730}},
+    {"id": "apt-1258", "name": "Parts Of The Body", "crop": {"page": 94, "left": 685, "top": 470, "right": 875, "bottom": 730}},
+    {"id": "apt-1259", "name": "Vechicles", "crop": {"page": 94, "left": 70, "top": 815, "right": 315, "bottom": 1075}},
+    {"id": "apt-1260", "name": "Community Helpers", "crop": {"page": 94, "left": 335, "top": 815, "right": 580, "bottom": 1075}},
+    {"id": "apt-1261", "name": "Opposites", "crop": {"page": 94, "left": 605, "top": 815, "right": 845, "bottom": 1075}},
 ]
 
 
@@ -276,12 +275,14 @@ def ensure_pdf_cache():
 
 
 def copy_image(item):
+    from PIL import Image
+
     category_slug = slugify(item["category"])
     dest_dir = PUBLIC_CATALOGUE / category_slug / item["id"]
     dest_dir.mkdir(parents=True, exist_ok=True)
-    dest = dest_dir / "cover.jpg"
-    shutil.copyfile(WORK / item["image"], dest)
-    return f"/catalogue/{category_slug}/{item['id']}/cover.jpg"
+    dest = dest_dir / "cover.webp"
+    Image.open(WORK / item["image"]).convert("RGB").save(dest, format="WEBP", quality=82, method=6)
+    return f"/catalogue-webp/{category_slug}/{item['id']}/cover.webp"
 
 
 def render_page(page_number):
@@ -328,9 +329,9 @@ def copy_crop(item, category):
     category_slug = slugify(category)
     dest_dir = PUBLIC_CATALOGUE / category_slug / item["id"]
     dest_dir.mkdir(parents=True, exist_ok=True)
-    dest = dest_dir / "cover.jpg"
-    img.crop(box).save(dest, quality=92)
-    return f"/catalogue/{category_slug}/{item['id']}/cover.jpg"
+    dest = dest_dir / "cover.webp"
+    img.crop(box).save(dest, format="WEBP", quality=82, method=6)
+    return f"/catalogue-webp/{category_slug}/{item['id']}/cover.webp"
 
 
 def copy_catalogue_asset(item, category):

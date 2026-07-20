@@ -141,7 +141,6 @@ function storefrontCategoryName(rawCategoryName) {
 async function main() {
   const dryRun = process.argv.includes("--dry-run");
   const pruneEmptyCategories = process.argv.includes("--prune-empty-categories");
-  const useOriginalImages = process.argv.includes("--use-original-images");
   const positionalArgs = process.argv.slice(2).filter((arg) => !arg.startsWith("--"));
   const csvPath = path.resolve(positionalArgs[0] || "imports/indoor-products.csv");
 
@@ -160,7 +159,7 @@ async function main() {
     const categoryName = storefrontCategoryName(row.category);
     const categorySlug = slugify(categoryName);
     const productSlug = row.slug || `${slugify(row.id || code)}-${slugify(name)}`;
-    const imageSources = useOriginalImages ? splitList(row.images) : splitList(row.webp_images);
+    const imageSources = splitList(row.webp_images);
     const fallbackImages = splitList(row.images);
     const images = imageSources.length ? imageSources : fallbackImages;
 
@@ -279,7 +278,7 @@ async function main() {
 
   const mode = dryRun ? "Validated" : "Imported";
   console.log(`${mode} indoor products. Created: ${created}. Updated: ${updated}. Total: ${rows.length}.`);
-  console.log(`Images: ${useOriginalImages ? "original catalogue images" : "WebP catalogue images"}.`);
+  console.log("Images: WebP catalogue images.");
 }
 
 main()

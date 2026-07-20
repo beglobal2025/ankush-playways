@@ -25,6 +25,7 @@ export default async function AdminProductsPage() {
     imageSrc: product.images[0]?.src ?? "",
     name: product.name,
     price: product.price,
+    slug: product.slug,
     status: product.status,
   }));
 

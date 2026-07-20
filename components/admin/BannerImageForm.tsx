@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState, type ChangeEvent } from "react";
+import AdminSubmitButton from "@/components/admin/AdminSubmitButton";
 import type { Category } from "@/lib/catalogue";
 
 interface BannerSlot {
@@ -112,9 +113,11 @@ export default function BannerImageForm({ action, banners, categories }: BannerI
       </div>
 
       <div className="flex flex-wrap gap-3">
-        <button className="rounded-lg bg-[var(--sun-mint-strong)] px-6 py-3 text-sm font-black text-white shadow-lg shadow-[#a6e5cd]/30 transition hover:bg-[var(--sun-sky-dark)]">
-          Save Banners
-        </button>
+        <AdminSubmitButton
+          idleText="Save Banners"
+          pendingText="Saving banners..."
+          className="rounded-lg bg-[var(--sun-mint-strong)] px-6 py-3 text-sm font-black text-white shadow-lg shadow-[#a6e5cd]/30 transition hover:bg-[var(--sun-sky-dark)]"
+        />
         <a href="/" className="rounded-lg bg-white px-6 py-3 text-sm font-black text-slate-700 ring-1 ring-slate-200 transition hover:bg-slate-50">
           View Site
         </a>

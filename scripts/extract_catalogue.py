@@ -12,12 +12,12 @@ ROOT = Path(__file__).resolve().parents[1]
 WORK = Path("/tmp/ankush-catalogue-xml")
 OUT_JSON = ROOT / "products.json"
 OUT_REPORT = ROOT / "catalogue-manual-review.md"
-OUT_IMAGES = ROOT / "public" / "catalogue"
+OUT_IMAGES = ROOT / "public" / "catalogue-webp"
 
 IGNORE_PAGES = {1, 2, 3, 100}
 FOOTER_RE = re.compile(r"^(www\.|Page\s+\d+|INDOOR CATALOGUE|OUTDOOR|Little Fingers|IS 9873|CM/L|Ph-|E-mail|Follow us)", re.I)
 CODE_RE = re.compile(
-    r"\b(?:LFO|LFT|LFP|LF)[\s-]*[A-Z0-9]+(?:\s+[A-Z])?(?:[-/][A-Z0-9]+)*(?:[A-Z])?\b"
+    r"\b(?:APO|APT|APP|AP|LFO|LFT|LFP|LF)[\s-]*[A-Z0-9]+(?:\s+[A-Z])?(?:[-/][A-Z0-9]+)*(?:[A-Z])?\b"
     r"|\b(?:PU|FB|BB)[A-Z0-9]+\b"
     r"|\bF-3\b"
 )
@@ -92,7 +92,11 @@ def slugify(value):
 def normalize_code(value):
     value = clean_text(value).upper().replace(" ", "")
     value = re.sub(r"^F-?3$", "F-3", value)
-    value = re.sub(r"^(LF|LFT|LFP|LFO)(\d)", r"\1-\2", value)
+    value = re.sub(r"^LFO", "APO", value)
+    value = re.sub(r"^LFT", "APT", value)
+    value = re.sub(r"^LFP", "APP", value)
+    value = re.sub(r"^LF", "AP", value)
+    value = re.sub(r"^(AP|APT|APP|APO)(\d)", r"\1-\2", value)
     return value
 
 
@@ -364,17 +368,19 @@ def find_image(product, page):
 
 
 def copy_cover(image, category, code):
+    from PIL import Image
+
     category_slug = slugify(category)
     code_slug = slugify(code)
     dest_dir = OUT_IMAGES / category_slug / code_slug
     dest_dir.mkdir(parents=True, exist_ok=True)
-    dest = dest_dir / "cover.jpg"
+    dest = dest_dir / "cover.webp"
     src = Path(image["src"])
     if not src.exists():
         src = WORK / Path(image["src"]).name
     if src.exists():
-        shutil.copyfile(src, dest)
-        return f"/catalogue/{category_slug}/{code_slug}/cover.jpg"
+        Image.open(src).convert("RGB").save(dest, format="WEBP", quality=82, method=6)
+        return f"/catalogue-webp/{category_slug}/{code_slug}/cover.webp"
     return None
 
 
@@ -449,9 +455,9 @@ def copy_page_crop(product, page, products, category, code):
     code_slug = slugify(code)
     dest_dir = OUT_IMAGES / category_slug / code_slug
     dest_dir.mkdir(parents=True, exist_ok=True)
-    dest = dest_dir / "cover.jpg"
-    crop.save(dest, quality=92)
-    return f"/catalogue/{category_slug}/{code_slug}/cover.jpg"
+    dest = dest_dir / "cover.webp"
+    crop.save(dest, format="WEBP", quality=82, method=6)
+    return f"/catalogue-webp/{category_slug}/{code_slug}/cover.webp"
 
 
 def main():

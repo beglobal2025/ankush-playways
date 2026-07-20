@@ -1,13 +1,11 @@
 #!/usr/bin/env node
 
-const { execFileSync } = require("child_process");
 const fs = require("fs");
 const path = require("path");
 
 const root = path.resolve(__dirname, "..");
 const productsPath = path.join(root, "products.json");
 const csvPath = path.join(root, "imports", "indoor-products.csv");
-const webpRoot = path.join(root, "public", "catalogue-webp");
 
 function slugify(value) {
   return String(value || "")
@@ -19,7 +17,7 @@ function slugify(value) {
 
 function formatCode(id) {
   const upper = String(id || "").toUpperCase();
-  if (/^(LF|LFT|LFP|LFO)-/.test(upper)) {
+  if (/^(AP|APT|APP|APO)-/.test(upper)) {
     return upper.replace("-", "");
   }
   return upper;
@@ -64,26 +62,9 @@ function publicPathToLocal(publicPath) {
   return path.join(root, "public", cleanPath);
 }
 
-function webpPathFor(publicPath) {
-  const cleanPath = String(publicPath || "").replace(/^\/?catalogue\//, "");
-  const parsed = path.parse(cleanPath);
-  const outputRelative = path.join(parsed.dir, `${parsed.name}.webp`);
-  return {
-    local: path.join(webpRoot, outputRelative),
-    public: `/${path.posix.join("catalogue-webp", ...outputRelative.split(path.sep))}`,
-  };
-}
-
-function convertImage(source, destination) {
-  fs.mkdirSync(path.dirname(destination), { recursive: true });
-  execFileSync("cwebp", ["-quiet", "-q", "88", source, "-o", destination], {
-    stdio: "ignore",
-  });
-}
-
 const products = JSON.parse(fs.readFileSync(productsPath, "utf8"));
 const rows = [];
-let convertedCount = 0;
+let verifiedImageCount = 0;
 let missingImageCount = 0;
 
 for (const product of products) {
@@ -92,16 +73,14 @@ for (const product of products) {
 
   for (const image of images) {
     const source = publicPathToLocal(image);
-    const webp = webpPathFor(image);
 
     if (!fs.existsSync(source)) {
       missingImageCount += 1;
       continue;
     }
 
-    convertImage(source, webp.local);
-    convertedCount += 1;
-    webpImages.push(webp.public);
+    verifiedImageCount += 1;
+    webpImages.push(image);
   }
 
   const id = slugify(product.id || product.name);
@@ -142,7 +121,6 @@ fs.writeFileSync(
 );
 
 console.log(`Products exported: ${rows.length}`);
-console.log(`WebP images converted: ${convertedCount}`);
+console.log(`WebP images verified: ${verifiedImageCount}`);
 console.log(`Missing source images: ${missingImageCount}`);
 console.log(`CSV: ${path.relative(root, csvPath)}`);
-console.log(`WebP root: ${path.relative(root, webpRoot)}`);

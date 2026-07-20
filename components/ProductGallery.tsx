@@ -12,8 +12,9 @@ interface ProductGalleryProps {
 
 export default function ProductGallery({ colorOptions = [], images, initialColor = "", title }: ProductGalleryProps) {
   const safeImages = images.length ? images : [{ src: "/assets/catalog/play-slide.jpg", alt: title }];
-  const initialColorOption =
-    colorOptions.find((option) => option.color.toLowerCase() === initialColor.toLowerCase()) ?? colorOptions[0] ?? null;
+  const initialColorOption = initialColor
+    ? colorOptions.find((option) => option.color.toLowerCase() === initialColor.toLowerCase()) ?? null
+    : null;
   const [active, setActive] = useState(0);
   const [activeColorId, setActiveColorId] = useState<string | null>(initialColorOption?.id ?? null);
   const activeColor = colorOptions.find((option) => option.id === activeColorId) ?? null;
@@ -28,10 +29,26 @@ export default function ProductGallery({ colorOptions = [], images, initialColor
         <div className="mt-4 rounded-[24px] border border-[var(--sun-line)] bg-white p-4 shadow-xl shadow-[#7ecae1]/10">
           <p className="text-sm font-black text-[var(--sun-ink)]">Available colors</p>
           <div className="mt-3 flex flex-wrap gap-3">
+            <button
+              type="button"
+              aria-pressed={!activeColorId}
+              onClick={() => setActiveColorId(null)}
+              className={`inline-flex items-center gap-2 rounded-full border px-3 py-2 text-sm font-black transition ${
+                !activeColorId
+                  ? "border-[var(--sun-sky-dark)] bg-[var(--sun-sky-soft)] text-[var(--sun-sky-dark)]"
+                  : "border-[var(--sun-line)] bg-white text-slate-600 hover:border-[var(--sun-sky-dark)]"
+              }`}
+            >
+              <span className="grid size-9 place-items-center rounded-full bg-white">
+                <img src={safeImages[0].src} alt="" className="h-8 w-8 rounded-full object-contain mix-blend-multiply" />
+              </span>
+              Main image
+            </button>
             {colorOptions.map((option) => (
               <button
                 key={option.id}
                 type="button"
+                aria-pressed={activeColorId === option.id}
                 onClick={() => setActiveColorId(option.id)}
                 className={`inline-flex items-center gap-2 rounded-full border px-3 py-2 text-sm font-black transition ${
                   activeColorId === option.id
@@ -60,7 +77,9 @@ export default function ProductGallery({ colorOptions = [], images, initialColor
                 setActiveColorId(null);
               }}
               className={`grid aspect-square place-items-center rounded-2xl border bg-white p-2 transition ${
-                active === index ? "border-[var(--sun-sky-dark)] shadow-lg shadow-[#7ecae1]/20" : "border-[var(--sun-line)]"
+                !activeColorId && active === index
+                  ? "border-[var(--sun-sky-dark)] shadow-lg shadow-[#7ecae1]/20"
+                  : "border-[var(--sun-line)]"
               }`}
             >
               <img src={image.src} alt="" className="h-full w-full object-contain mix-blend-multiply" />

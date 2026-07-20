@@ -1,3 +1,5 @@
+import AdminSubmitButton from "@/components/admin/AdminSubmitButton";
+
 interface CategoryFormProps {
   action: (formData: FormData) => Promise<void>;
 }
@@ -54,9 +56,11 @@ export default function CategoryForm({ action }: CategoryFormProps) {
       </div>
 
       <div className="flex flex-wrap gap-3">
-        <button className="rounded-lg bg-[var(--sun-mint-strong)] px-6 py-3 text-sm font-black text-white shadow-lg shadow-[#a6e5cd]/30 transition hover:bg-[var(--sun-sky-dark)]">
-          Save Category
-        </button>
+        <AdminSubmitButton
+          idleText="Save Category"
+          pendingText="Saving category..."
+          className="rounded-lg bg-[var(--sun-mint-strong)] px-6 py-3 text-sm font-black text-white shadow-lg shadow-[#a6e5cd]/30 transition hover:bg-[var(--sun-sky-dark)]"
+        />
         <a href="/admin/products/new" className="rounded-lg bg-white px-6 py-3 text-sm font-black text-slate-700 ring-1 ring-slate-200 transition hover:bg-slate-50">
           Add Product
         </a>

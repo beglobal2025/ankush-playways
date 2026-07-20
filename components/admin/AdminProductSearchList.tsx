@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useMemo, useState } from "react";
+import AdminSubmitButton from "@/components/admin/AdminSubmitButton";
 
 export interface AdminProductListItem {
   categoryName: string;
@@ -11,6 +12,7 @@ export interface AdminProductListItem {
   imageSrc: string;
   name: string;
   price: number | null;
+  slug: string;
   status: string;
 }
 
@@ -105,13 +107,32 @@ export default function AdminProductSearchList({ deleteAction, products }: Admin
                   </td>
                   <td className="px-4 py-3">
                     <div className="flex justify-end gap-2">
+                      {product.status === "PUBLISHED" ? (
+                        <Link
+                          href={`/products/${product.slug}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="rounded-full px-3 py-2 font-black text-[#16835f] transition hover:bg-[var(--sun-mint-soft)]"
+                        >
+                          View
+                        </Link>
+                      ) : (
+                        <span
+                          title="Publish this product before viewing it on the website"
+                          className="cursor-not-allowed rounded-full px-3 py-2 font-black text-slate-300"
+                        >
+                          View
+                        </span>
+                      )}
                       <Link href={`/admin/products/${product.id}/edit`} className="rounded-full px-3 py-2 font-black text-[var(--sun-sky-dark)] transition hover:bg-[var(--sun-sky-soft)]">
                         Edit
                       </Link>
                       <form action={deleteAction.bind(null, product.id)}>
-                        <button className="rounded-full px-3 py-2 font-black text-red-600 transition hover:bg-red-50">
-                          Delete
-                        </button>
+                        <AdminSubmitButton
+                          idleText="Delete"
+                          pendingText="Deleting..."
+                          className="rounded-full px-3 py-2 font-black text-red-600 transition hover:bg-red-50"
+                        />
                       </form>
                     </div>
                   </td>

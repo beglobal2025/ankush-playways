@@ -1,4 +1,5 @@
 import Link from "next/link";
+import AdminSubmitButton from "@/components/admin/AdminSubmitButton";
 import AdminHeader from "@/components/admin/AdminHeader";
 import FeaturedProductPicker from "@/components/admin/FeaturedProductPicker";
 import { featureProductAction, unfeatureProductAction } from "@/lib/admin/actions";
@@ -102,9 +103,11 @@ export default async function FeaturedProductsPage() {
                 </div>
               </div>
               <form action={unfeatureProductAction.bind(null, product.id)}>
-                <button className="w-full rounded-lg bg-white px-4 py-3 text-sm font-black text-red-600 ring-1 ring-red-100 transition hover:bg-red-50 sm:w-auto">
-                  Remove
-                </button>
+                <AdminSubmitButton
+                  idleText="Remove"
+                  pendingText="Removing..."
+                  className="w-full justify-center rounded-lg bg-white px-4 py-3 text-sm font-black text-red-600 ring-1 ring-red-100 transition hover:bg-red-50 sm:w-auto"
+                />
               </form>
             </article>
           ))}

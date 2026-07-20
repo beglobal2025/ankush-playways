@@ -5,8 +5,13 @@ import { redirect } from "next/navigation";
 import { HOME_BANNER_CATEGORY_SETTING_KEYS, HOME_BANNER_LEGACY_KEY, HOME_BANNER_SETTING_KEYS } from "@/lib/banner-settings";
 import { prisma } from "@/lib/prisma";
 import { signInAdmin, signOutAdmin, requireAdmin } from "./auth";
+import { setAdminNotification } from "./notifications";
 import { slugify } from "./slug";
-import { saveUploadedImage } from "./storage";
+import { deleteUploadedProductImages, saveUploadedImage } from "./storage";
+
+const MAX_PRODUCT_IMAGE_FILES = 8;
+const MAX_PRODUCT_COLOR_OPTIONS = 2;
+const MAX_PRODUCT_UPLOAD_BYTES = 45 * 1024 * 1024;
 
 function requiredString(formData: FormData, key: string): string {
   const value = formData.get(key);
@@ -97,15 +102,41 @@ function uploadedFileAt(formData: FormData, key: string, index: number): File | 
   return value instanceof File && value.size > 0 ? value : null;
 }
 
+function validateProductUploads(formData: FormData) {
+  const productImages = uploadedFiles(formData, "imageFiles");
+  const colorImages = uploadedFiles(formData, "colorOptionImages");
+  const colorNames = formData
+    .getAll("colorOptionColors")
+    .filter((value): value is string => typeof value === "string" && Boolean(value.trim()));
+
+  if (productImages.length > MAX_PRODUCT_IMAGE_FILES) {
+    throw new Error(`Upload no more than ${MAX_PRODUCT_IMAGE_FILES} product images at once`);
+  }
+
+  if (colorNames.length > MAX_PRODUCT_COLOR_OPTIONS) {
+    throw new Error(`Add no more than ${MAX_PRODUCT_COLOR_OPTIONS} color variations per product`);
+  }
+
+  const totalBytes = [...productImages, ...colorImages].reduce((total, file) => total + file.size, 0);
+
+  if (totalBytes > MAX_PRODUCT_UPLOAD_BYTES) {
+    throw new Error("The combined product images are larger than the 45 MB upload limit");
+  }
+}
+
 async function saveOptionalImage(formData: FormData, key: string, folder: string, baseName: string): Promise<string | null> {
   const [file] = uploadedFiles(formData, key);
   return file ? saveUploadedImage(file, folder, baseName) : null;
 }
 
 async function parseProductImages(formData: FormData, code: string, name: string, fallbackToDefault: boolean) {
+  const directlyUploadedSources = formData
+    .getAll("imageUploadedUrls")
+    .filter((value): value is string => typeof value === "string" && value.startsWith("https://"));
   const files = uploadedFiles(formData, "imageFiles");
   const sources = await Promise.all(files.map((file, index) => saveUploadedImage(file, "products", `${code}-${name}`, index)));
-  const imageSources = sources.length || fallbackToDefault ? (sources.length ? sources : ["/assets/catalog/play-slide.jpg"]) : [];
+  const uploadedSources = [...directlyUploadedSources, ...sources];
+  const imageSources = uploadedSources.length || fallbackToDefault ? (uploadedSources.length ? uploadedSources : ["/assets/catalog/play-slide.jpg"]) : [];
 
   return imageSources.map((src, index) => ({
     src,
@@ -117,6 +148,7 @@ async function parseProductImages(formData: FormData, code: string, name: string
 async function parseProductColorOptions(formData: FormData, code: string, name: string) {
   const colors = formData.getAll("colorOptionColors");
   const existingImages = formData.getAll("colorOptionExistingImages");
+  const directlyUploadedImages = formData.getAll("colorOptionUploadedImages");
   const options = [];
 
   for (let index = 0; index < colors.length; index += 1) {
@@ -129,10 +161,15 @@ async function parseProductColorOptions(formData: FormData, code: string, name: 
     }
 
     const existingImage = typeof existingImageValue === "string" ? existingImageValue.trim() : "";
+    const directlyUploadedImageValue = directlyUploadedImages[index];
+    const directlyUploadedImage =
+      typeof directlyUploadedImageValue === "string" && directlyUploadedImageValue.startsWith("https://")
+        ? directlyUploadedImageValue
+        : "";
     const uploadedImage = uploadedFileAt(formData, "colorOptionImages", index);
-    const imageSrc = uploadedImage
+    const imageSrc = directlyUploadedImage || (uploadedImage
       ? await saveUploadedImage(uploadedImage, "products", `${code}-${name}-${color}`, index)
-      : existingImage;
+      : existingImage);
 
     if (!imageSrc) {
       continue;
@@ -149,18 +186,63 @@ async function parseProductColorOptions(formData: FormData, code: string, name: 
   return options;
 }
 
-async function getOrCreateCategory(name: string) {
+async function findCategoryByNameOrSlug(name: string) {
   const categorySlug = slugify(name);
+  const categoryByName = await prisma.category.findFirst({
+    where: {
+      name: {
+        equals: name,
+        mode: "insensitive",
+      },
+    },
+  });
 
-  return prisma.category.upsert({
-    where: { slug: categorySlug },
-    update: { name },
-    create: {
+  if (categoryByName) {
+    return categoryByName;
+  }
+
+  return prisma.category.findUnique({ where: { slug: categorySlug } });
+}
+
+async function getOrCreateCategory(name: string) {
+  const existingCategory = await findCategoryByNameOrSlug(name);
+
+  if (existingCategory) {
+    return existingCategory;
+  }
+
+  return prisma.category.create({
+    data: {
       name,
-      slug: categorySlug,
+      slug: slugify(name),
       imageAlt: `${name} product category`,
     },
   });
+}
+
+async function cleanupUnreferencedProductImages(imageSources: string[]) {
+  const uniqueSources = Array.from(new Set(imageSources.filter(Boolean)));
+
+  if (!uniqueSources.length) {
+    return { error: null, removedCount: 0 };
+  }
+
+  const [referencedImages, referencedColorOptions] = await Promise.all([
+    prisma.productImage.findMany({
+      where: { src: { in: uniqueSources } },
+      select: { src: true },
+    }),
+    prisma.productColorOption.findMany({
+      where: { imageSrc: { in: uniqueSources } },
+      select: { imageSrc: true },
+    }),
+  ]);
+  const referencedSources = new Set([
+    ...referencedImages.map((image) => image.src),
+    ...referencedColorOptions.map((option) => option.imageSrc),
+  ]);
+
+  return deleteUploadedProductImages(uniqueSources.filter((source) => !referencedSources.has(source)));
 }
 
 export async function createCategoryAction(formData: FormData) {
@@ -175,37 +257,45 @@ export async function createCategoryAction(formData: FormData) {
 
   const uploadedImageSrc = await saveOptionalImage(formData, "imageFile", "categories", categorySlug);
   const imageAlt = optionalString(formData, "imageAlt") || `${name} product category`;
+  const existingCategory = await findCategoryByNameOrSlug(name);
 
-  await prisma.category.upsert({
-    where: { slug: categorySlug },
-    update: {
-      description: optionalString(formData, "description"),
-      ...(uploadedImageSrc ? { imageSrc: uploadedImageSrc } : {}),
-      imageAlt,
-      name,
-    },
-    create: {
-      name,
-      slug: categorySlug,
-      description: optionalString(formData, "description"),
-      imageSrc: uploadedImageSrc ?? "",
-      imageAlt,
-    },
-  });
+  if (existingCategory) {
+    await prisma.category.update({
+      where: { id: existingCategory.id },
+      data: {
+        description: optionalString(formData, "description"),
+        ...(uploadedImageSrc ? { imageSrc: uploadedImageSrc } : {}),
+        imageAlt,
+        name,
+      },
+    });
+  } else {
+    await prisma.category.create({
+      data: {
+        name,
+        slug: categorySlug,
+        description: optionalString(formData, "description"),
+        imageSrc: uploadedImageSrc ?? "",
+        imageAlt,
+      },
+    });
+  }
 
   revalidatePath("/");
   revalidatePath("/admin");
   revalidatePath("/products");
   revalidatePath("/admin/products");
+  await setAdminNotification(`Category “${name}” saved successfully.`);
   redirect("/admin/products/new");
 }
 
 export async function featureProductAction(productId: string) {
   await requireAdmin();
 
-  await prisma.product.update({
+  const product = await prisma.product.update({
     where: { id: productId },
     data: { isFeatured: true },
+    select: { name: true },
   });
 
   revalidatePath("/");
@@ -213,14 +303,16 @@ export async function featureProductAction(productId: string) {
   revalidatePath("/admin");
   revalidatePath("/admin/featured");
   revalidatePath("/admin/products");
+  await setAdminNotification(`“${product.name}” added to featured products.`);
 }
 
 export async function unfeatureProductAction(productId: string) {
   await requireAdmin();
 
-  await prisma.product.update({
+  const product = await prisma.product.update({
     where: { id: productId },
     data: { isFeatured: false },
+    select: { name: true },
   });
 
   revalidatePath("/");
@@ -228,6 +320,7 @@ export async function unfeatureProductAction(productId: string) {
   revalidatePath("/admin");
   revalidatePath("/admin/featured");
   revalidatePath("/admin/products");
+  await setAdminNotification(`“${product.name}” removed from featured products.`);
 }
 
 export async function loginAction(formData: FormData) {
@@ -236,14 +329,17 @@ export async function loginAction(formData: FormData) {
   const didLogin = await signInAdmin(email, password);
 
   if (!didLogin) {
+    await setAdminNotification("The email or password is incorrect.", "error");
     redirect("/admin/login?error=invalid");
   }
 
+  await setAdminNotification("Signed in successfully.");
   redirect("/admin");
 }
 
 export async function logoutAction() {
   await signOutAdmin();
+  await setAdminNotification("Signed out successfully.");
   redirect("/admin/login");
 }
 
@@ -291,11 +387,13 @@ export async function updateBannerImageAction(formData: FormData) {
   revalidatePath("/");
   revalidatePath("/admin");
   revalidatePath("/admin/banner");
+  await setAdminNotification("Homepage banner settings updated successfully.");
   redirect("/admin/banner");
 }
 
 export async function createProductAction(formData: FormData) {
   await requireAdmin();
+  validateProductUploads(formData);
 
   const code = requiredString(formData, "code").toUpperCase().replace(/\s+/g, "");
   const name = requiredString(formData, "name");
@@ -328,11 +426,21 @@ export async function createProductAction(formData: FormData) {
   revalidatePath("/products");
   revalidatePath("/admin/products");
   revalidatePath(`/products/${slug}`);
+  await setAdminNotification(`Product “${name}” added successfully.`);
   redirect("/admin/products");
 }
 
 export async function updateProductAction(productId: string, formData: FormData) {
   await requireAdmin();
+  validateProductUploads(formData);
+
+  const existingProduct = await prisma.product.findUnique({
+    where: { id: productId },
+    select: {
+      colorOptions: { select: { imageSrc: true } },
+      images: { select: { src: true } },
+    },
+  });
 
   const code = requiredString(formData, "code").toUpperCase().replace(/\s+/g, "");
   const name = requiredString(formData, "name");
@@ -368,10 +476,28 @@ export async function updateProductAction(productId: string, formData: FormData)
     },
   });
 
+  const retainedImageSources = new Set([
+    ...(uploadedImages.length
+      ? uploadedImages.map((image) => image.src)
+      : existingProduct?.images.map((image) => image.src) ?? []),
+    ...colorOptions.map((option) => option.imageSrc),
+  ]);
+  const previousImageSources = [
+    ...(existingProduct?.images.map((image) => image.src) ?? []),
+    ...(existingProduct?.colorOptions.map((option) => option.imageSrc) ?? []),
+  ];
+  const replacedImageSources = previousImageSources.filter((source) => !retainedImageSources.has(source));
+  const storageCleanup = await cleanupUnreferencedProductImages(replacedImageSources);
+
   revalidatePath("/");
   revalidatePath("/products");
   revalidatePath("/admin/products");
   revalidatePath(`/products/${slug}`);
+  await setAdminNotification(
+    storageCleanup.error
+      ? `Product “${name}” updated, but some replaced images could not be removed from storage.`
+      : `Product “${name}” updated successfully.`,
+  );
   redirect("/admin/products");
 }
 
@@ -380,12 +506,22 @@ export async function deleteProductAction(productId: string) {
 
   const product = await prisma.product.findUnique({
     where: { id: productId },
-    select: { slug: true },
+    select: {
+      colorOptions: { select: { imageSrc: true } },
+      images: { select: { src: true } },
+      name: true,
+      slug: true,
+    },
   });
 
   await prisma.product.delete({
     where: { id: productId },
   });
+
+  const storageCleanup = await cleanupUnreferencedProductImages([
+    ...(product?.images.map((image) => image.src) ?? []),
+    ...(product?.colorOptions.map((option) => option.imageSrc) ?? []),
+  ]);
 
   revalidatePath("/");
   revalidatePath("/products");
@@ -393,6 +529,13 @@ export async function deleteProductAction(productId: string) {
   if (product) {
     revalidatePath(`/products/${product.slug}`);
   }
+  await setAdminNotification(
+    storageCleanup.error
+      ? `Product “${product?.name ?? "Product"}” was deleted, but some images could not be removed from storage.`
+      : product
+        ? `Product “${product.name}” and its images were deleted successfully.`
+        : "Product and its images were deleted successfully.",
+  );
 }
 
 export async function deleteCategoryAction(formData: FormData) {
@@ -425,5 +568,6 @@ export async function deleteCategoryAction(formData: FormData) {
   revalidatePath("/admin");
   revalidatePath("/admin/products");
   revalidatePath("/admin/categories/new");
+  await setAdminNotification(`Category “${category.name}” deleted successfully.`);
   redirect("/admin/categories/new");
 }

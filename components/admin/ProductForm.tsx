@@ -1,5 +1,15 @@
+"use client";
+
 import type { Category, Product, ProductColorOption, ProductImage } from "@prisma/client";
+import { useState, type FormEvent } from "react";
+import AdminSubmitButton from "@/components/admin/AdminSubmitButton";
 import ProductColorOptionsField from "@/components/admin/ProductColorOptionsField";
+import { createProductImageUploadTarget } from "@/lib/admin/upload-actions";
+import { createClient } from "@/lib/supabase/client";
+
+const MAX_IMAGE_BYTES = 10 * 1024 * 1024;
+const MAX_COLOR_OPTIONS = 2;
+const MAX_PRODUCT_IMAGES = 8;
 
 type ProductWithImagesAndCategory = Product & {
   category: Category;
@@ -14,6 +24,10 @@ interface ProductFormProps {
 }
 
 export default function ProductForm({ action, categories, product }: ProductFormProps) {
+  const [error, setError] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [loadingText, setLoadingText] = useState("");
+
   function specsToLines(spec: any) {
     if (!spec) return "";
     if (typeof spec === "string") return spec;
@@ -33,8 +47,107 @@ export default function ProductForm({ action, categories, product }: ProductForm
     imageAlt: option.imageAlt,
   }));
 
+  async function uploadImage(file: File, baseName: string, index: number) {
+    const target = await createProductImageUploadTarget({
+      baseName,
+      fileName: file.name,
+      fileSize: file.size,
+      fileType: file.type,
+      index,
+    });
+    const supabase = createClient();
+    const { error: uploadError } = await supabase.storage
+      .from(target.bucket)
+      .uploadToSignedUrl(target.path, target.token, file, {
+        cacheControl: "31536000",
+        contentType: file.type,
+      });
+
+    if (uploadError) {
+      throw new Error(`Could not upload ${file.name}: ${uploadError.message}`);
+    }
+
+    return target.publicUrl;
+  }
+
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+
+    if (isSubmitting) return;
+
+    const formData = new FormData(event.currentTarget);
+    const productFiles = formData
+      .getAll("imageFiles")
+      .filter((value): value is File => value instanceof File && value.size > 0);
+    const colorFiles = formData
+      .getAll("colorOptionImages")
+      .map((value) => (value instanceof File && value.size > 0 ? value : null));
+    const colorNames = formData
+      .getAll("colorOptionColors")
+      .filter((value): value is string => typeof value === "string" && Boolean(value.trim()));
+    const allFiles = [...productFiles, ...colorFiles.filter((file): file is File => file !== null)];
+
+    if (productFiles.length > MAX_PRODUCT_IMAGES) {
+      setError(`Please select no more than ${MAX_PRODUCT_IMAGES} product images.`);
+      return;
+    }
+
+    if (colorNames.length > MAX_COLOR_OPTIONS) {
+      setError(`Please add no more than ${MAX_COLOR_OPTIONS} color variations.`);
+      return;
+    }
+
+    const oversizedFile = allFiles.find((file) => file.size > MAX_IMAGE_BYTES);
+    if (oversizedFile) {
+      setError(`${oversizedFile.name} is larger than 10 MB. Please choose a smaller image.`);
+      return;
+    }
+
+    setError("");
+    setIsSubmitting(true);
+
+    try {
+      const code = String(formData.get("code") || "product");
+      const name = String(formData.get("name") || "image");
+      const totalUploads = allFiles.length;
+      let completedUploads = 0;
+
+      formData.delete("imageFiles");
+      formData.delete("colorOptionImages");
+
+      for (let index = 0; index < productFiles.length; index += 1) {
+        setLoadingText(`Uploading image ${completedUploads + 1} of ${totalUploads}...`);
+        const publicUrl = await uploadImage(productFiles[index], `${code}-${name}`, index);
+        formData.append("imageUploadedUrls", publicUrl);
+        completedUploads += 1;
+      }
+
+      for (let index = 0; index < colorFiles.length; index += 1) {
+        const file = colorFiles[index];
+
+        if (file) {
+          setLoadingText(`Uploading image ${completedUploads + 1} of ${totalUploads}...`);
+          const color = String(formData.getAll("colorOptionColors")[index] || `color-${index + 1}`);
+          const publicUrl = await uploadImage(file, `${code}-${name}-${color}`, productFiles.length + index);
+          formData.append("colorOptionUploadedImages", publicUrl);
+          completedUploads += 1;
+        } else {
+          formData.append("colorOptionUploadedImages", "");
+        }
+      }
+
+      setLoadingText(product ? "Updating product..." : "Adding product...");
+      await action(formData);
+    } catch (submissionError) {
+      setError(submissionError instanceof Error ? submissionError.message : "Could not save the product. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+      setLoadingText("");
+    }
+  }
+
   return (
-    <form action={action} className="grid gap-6">
+    <form onSubmit={handleSubmit} className="grid gap-6">
       <div className="rounded-lg border border-slate-200 bg-white shadow-sm">
         <div className="border-b border-slate-100 px-5 py-4">
           <h2 className="text-base font-black text-slate-950">Product details</h2>
@@ -117,7 +230,7 @@ export default function ProductForm({ action, categories, product }: ProductForm
         <div>
           <h2 className="text-base font-black text-slate-950">Product images</h2>
           <p className="mt-1 text-sm font-semibold text-slate-500">
-            Upload one or more images. The first uploaded image becomes the main thumbnail.
+            Upload up to 8 images, maximum 10 MB each. The first uploaded image becomes the main thumbnail.
           </p>
         </div>
 
@@ -159,14 +272,29 @@ export default function ProductForm({ action, categories, product }: ProductForm
           name="specifications"
           rows={9}
           defaultValue={specifications}
+          placeholder={`Size: 120 x 60 x 80 cm
+Material: LLDPE plastic
+Recommended Age: 3 to 8 years
+Usage: Indoor and outdoor
+Assembly Required: Yes`}
           className="mt-2 rounded-lg border border-slate-200 px-4 py-3 font-mono text-sm font-semibold outline-none transition focus:border-[var(--sun-sky-dark)] focus:ring-4 focus:ring-[var(--sun-sky-soft)]"
         />
       </label>
 
+      {error ? (
+        <div role="alert" className="rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm font-bold text-red-700">
+          {error}
+        </div>
+      ) : null}
+
       <div className="flex flex-wrap gap-3">
-        <button className="rounded-lg bg-[var(--sun-mint-strong)] px-6 py-3 text-sm font-black text-white shadow-lg shadow-[#a6e5cd]/30 transition hover:bg-[var(--sun-sky-dark)]">
-          Save Product
-        </button>
+        <AdminSubmitButton
+          idleText="Save Product"
+          pendingText={product ? "Updating product..." : "Adding product..."}
+          loading={isSubmitting}
+          loadingText={loadingText}
+          className="rounded-lg bg-[var(--sun-mint-strong)] px-6 py-3 text-sm font-black text-white shadow-lg shadow-[#a6e5cd]/30 transition hover:bg-[var(--sun-sky-dark)]"
+        />
         <a href="/admin/products" className="rounded-lg bg-white px-6 py-3 text-sm font-black text-slate-700 ring-1 ring-slate-200 transition hover:bg-slate-50">
           Cancel
         </a>

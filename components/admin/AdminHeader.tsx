@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
+import AdminSubmitButton from "@/components/admin/AdminSubmitButton";
 import { logoutAction } from "@/lib/admin/actions";
 
 type AdminSection = "dashboard" | "products" | "featured" | "banner" | "new-product" | "new-category";
@@ -96,9 +97,11 @@ export default function AdminHeader({
             </div>
           </div>
           <form action={logoutAction} className="mt-3">
-            <button className="w-full rounded-lg border border-white/20 px-4 py-3 text-left text-sm font-black text-sky-50 transition hover:bg-white hover:text-[var(--sun-ink)]">
-              Sign out
-            </button>
+            <AdminSubmitButton
+              idleText="Sign out"
+              pendingText="Signing out..."
+              className="w-full rounded-lg border border-white/20 px-4 py-3 text-left text-sm font-black text-sky-50 transition hover:bg-white hover:text-[var(--sun-ink)]"
+            />
           </form>
         </div>
       </aside>
@@ -118,9 +121,11 @@ export default function AdminHeader({
                 View site
               </Link>
               <form action={logoutAction} className="lg:hidden">
-                <button className="rounded-lg bg-[var(--sun-ink)] px-4 py-2 text-sm font-black text-white transition hover:bg-[var(--sun-sky-dark)]">
-                  Logout
-                </button>
+                <AdminSubmitButton
+                  idleText="Logout"
+                  pendingText="Signing out..."
+                  className="rounded-lg bg-[var(--sun-ink)] px-4 py-2 text-sm font-black text-white transition hover:bg-[var(--sun-sky-dark)]"
+                />
               </form>
               <div className="hidden h-10 w-10 place-items-center rounded-full bg-[var(--sun-coral-strong)] text-sm font-black text-white sm:grid">
                 {adminName.charAt(0).toUpperCase()}

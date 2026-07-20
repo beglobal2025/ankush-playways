@@ -1,4 +1,5 @@
 import { redirect } from "next/navigation";
+import AdminSubmitButton from "@/components/admin/AdminSubmitButton";
 import { loginAction } from "@/lib/admin/actions";
 import { getCurrentAdmin } from "@/lib/admin/auth";
 
@@ -56,9 +57,11 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
           </label>
         </div>
 
-        <button className="mt-6 w-full rounded-full bg-[var(--sun-sky-dark)] px-5 py-3 text-sm font-black text-white transition hover:bg-[var(--sun-coral-strong)]">
-          Login
-        </button>
+        <AdminSubmitButton
+          idleText="Login"
+          pendingText="Signing in..."
+          className="mt-6 w-full justify-center rounded-full bg-[var(--sun-sky-dark)] px-5 py-3 text-sm font-black text-white transition hover:bg-[var(--sun-coral-strong)]"
+        />
       </form>
     </main>
   );
